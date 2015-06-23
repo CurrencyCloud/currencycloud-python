@@ -46,7 +46,7 @@ class ApiError(Exception):
             self.code = errors['error_code']
             self.messages = []
 
-            for field, messages in errors['error_messages'].iteritems():
+            for field, messages in errors['error_messages'].items():
                 for message in messages:
                     self.messages.append(ApiError.ApiErrorMessage(field, message))
 
