@@ -60,9 +60,9 @@ class RequestHandler(object):
 
             response_handler = ResponseHandler(verb, full_url, params, response)
             return response_handler.process()
-        except (ApiError, UnexpectedError), e:
+        except (ApiError, UnexpectedError) as e:
             raise
-        except Exception, e:
+        except Exception as e:
             raise UnexpectedError(verb, full_url, params, e)
 
     def __process_options(self, verb, **kargs):
