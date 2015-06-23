@@ -27,7 +27,7 @@ class TestError:
                 currencycloud.session().authenticate()
 
                 raise Exception("Should have failed")
-            except BadRequestError, e:
+            except BadRequestError as e:
                 error = e
 
         assert error is not None
@@ -68,7 +68,7 @@ class TestError:
                 currencycloud.session().authenticate()
 
                 raise Exception("Should have failed")
-            except BadRequestError, e:
+            except BadRequestError as e:
                 error = e
 
             assert error.code == 'auth_invalid_user_login_details'
@@ -94,7 +94,7 @@ class TestError:
                 currencycloud.session().authenticate()
 
                 raise Exception("Should have failed")
-            except AuthenticationError, e:
+            except AuthenticationError as e:
                 error = e
 
             assert error.code == 'auth_failed'
@@ -123,7 +123,7 @@ class TestError:
                     currencycloud.session().authenticate()
 
                     raise Exception("Should have failed")
-                except UnexpectedError, e:
+                except UnexpectedError as e:
                     error = e
 
         assert error is not None
@@ -158,7 +158,7 @@ class TestError:
     #             currencycloud.session().authenticate()
 
     #             raise Exception("Should have failed")
-    #         except ForbiddenError, e:
+    #         except ForbiddenError as e:
     #             error = e
 
     #         assert error.code == 'auth_failed'
