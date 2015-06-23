@@ -1,0 +1,19 @@
+.*
+*.py[co]
+*.egg
+*.egg-info
+*.log
+/dist
+/build
+/docs/_build
+
+# Unit test / coverage reports
+.tox/
+.coverage
+.cache
+__pycache__
+nosetests.xml
+coverage.xml
+
+!.gitignore
+!.travis.yml
