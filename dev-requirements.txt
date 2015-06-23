@@ -1,0 +1,6 @@
+pytest
+mock
+tox
+twine
+requests-mock
+betamax
