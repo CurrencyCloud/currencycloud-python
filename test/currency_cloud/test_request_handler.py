@@ -8,7 +8,7 @@ from currencycloud.session import Session
 
 class TestRequestHandler:
     def setup(self):
-        self.session = Session(currencycloud.CONFIG, currencycloud.ENV_DEMOSTRATION, None, None, '4df5b3e5882a412f148dcd08fa4e5b73')
+        self.session = Session(currencycloud.ENV_DEMOSTRATION, None, None, '4df5b3e5882a412f148dcd08fa4e5b73')
 
     def test_request_handler_on_behalf_of_in_request(self):
        with requests_mock.Mocker() as mock:
