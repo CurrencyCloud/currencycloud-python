@@ -1,4 +1,6 @@
 import currencycloud
+from currencycloud import config
+
 from .utilities import validate_uuid4
 from .errors import *
 from .response_handler import ResponseHandler
@@ -48,6 +50,8 @@ class RequestHandler(object):
             retry_count = self.session.config['retry_count'] if should_retry else 1
 
             while retry_count:
+                retry_count -= 1
+
                 response = callback(full_url, params, options)
 
                 # if Unauthorized than retry, otherwise stop here!
@@ -55,8 +59,7 @@ class RequestHandler(object):
                     break
 
                 self.session.reauthenticate()
-
-                retry_count -= 1
+                self.__refresh_options(options)
 
             response_handler = ResponseHandler(verb, full_url, params, response)
             return response_handler.process()
@@ -69,6 +72,10 @@ class RequestHandler(object):
         options = {'headers': self.__headers()}
         options.update(kargs)
 
+        return options
+
+    def __refresh_options(self, options):
+        options['headers'].update(self.__headers())
         return options
 
     def __process_params(self, params):
