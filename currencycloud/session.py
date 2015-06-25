@@ -1,15 +1,14 @@
 from .errors import *
-
 from .request_handler import RequestHandler
+from .config import CONFIG
 
 import requests
 
 class Session(object):
 
-    def __init__ (self, config, environment, login_id, api_key, token, authenticate=True):
+    def __init__ (self, environment, login_id, api_key, token, authenticate=True):
         self.__requests_session = requests.Session()
 
-        self.__config = config
         self.__environment = environment
         self.__login_id = login_id
         self.__api_key = api_key
@@ -21,7 +20,7 @@ class Session(object):
 
 
         if token:
-            self.__validata_environment(environment)
+            Session.validata_environment(environment)
             self.token = token
             self.__authenticated = True
         elif authenticate == True:
@@ -29,15 +28,16 @@ class Session(object):
 
     # private
 
-    def __validata_environment(self, environment):
-        if environment not in self.config['environments']:
+    @classmethod
+    def validata_environment(cls, environment):
+        if environment not in CONFIG['environments']:
             raise GeneralError("'{environment}' is not a valid environment, must be one of: {environments}".format(
                     environment = environment,
-                    environments = self.config['environments'].keys()
+                    environments = CONFIG['environments'].keys()
                 ))
 
-    def __validate(self):
-        self.__validata_environment(self.environment)
+    def validate(self):
+        Session.validata_environment(self.environment)
 
         if not self.login_id:
             raise GeneralError("login_id must be set using CurrencyCloud.login_id=")
@@ -48,16 +48,16 @@ class Session(object):
     # public
 
     @property
+    def config(self):
+        return CONFIG
+
+    @property
     def authenticated(self):
         return self.__authenticated
 
     @property
     def requests_session(self):
         return self.__requests_session
-
-    @property
-    def config(self):
-        return self.__config
 
     @property
     def environment(self):
@@ -76,13 +76,13 @@ class Session(object):
         return RequestHandler(self)
 
     def environment_url(self):
-        return self.config['environments'][self.environment]
+        return CONFIG['environments'][self.environment]
 
     def close(self):
         self.request.post('authenticate/close_session')
 
     def authenticate(self):
-        self.__validate()
+        self.validate()
 
         params = dict(
             login_id = self.login_id,

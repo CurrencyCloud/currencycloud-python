@@ -3,6 +3,7 @@ from contextlib import contextmanager
 from .errors import *
 from .session import Session
 from .version import API_VERSION
+from .config import *
 
 # Configuration
 
@@ -10,19 +11,6 @@ environment = None
 login_id = None
 api_key = None
 token = None
-
-ENV_PRODUCTION = 'production'
-ENV_DEMOSTRATION = 'demonstration'
-ENV_UAT = 'uat'
-
-CONFIG = {
-	'retry_count': 3,
-	'environments': {
-		ENV_PRODUCTION: 'https://api.thecurrencycloud.com',
-		ENV_DEMOSTRATION: 'https://devapi.thecurrencycloud.com',
-		ENV_UAT: 'https://api-uat1.ccycloud.com',
-	}
-}
 
 # global session management
 __session = None
@@ -32,7 +20,7 @@ def session(authenticate=True):
 	global __session
 
 	if not __session:
-		__session = Session(CONFIG, environment, login_id, api_key, token, authenticate=authenticate)
+		__session = Session(environment, login_id, api_key, token, authenticate=authenticate)
 
 	if not __session.authenticated and authenticate is True:
 		__session.authenticate()
