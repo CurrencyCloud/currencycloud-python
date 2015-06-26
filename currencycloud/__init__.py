@@ -4,6 +4,7 @@ from .errors import *
 from .session import Session
 from .version import API_VERSION
 from .config import *
+from .resources import *
 
 # Configuration
 
