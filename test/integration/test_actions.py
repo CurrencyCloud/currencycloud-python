@@ -44,7 +44,7 @@ class TestActions:
         currencycloud.reset_session()
         currencycloud.environment = currencycloud.ENV_DEMOSTRATION
         currencycloud.login_id = 'rjnienaber@gmail.com'
-        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
+        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'  # noqa
         currencycloud.token = None
 
     def test_actions_can_create(self):
@@ -89,7 +89,7 @@ class TestActions:
             betamax.use_cassette('actions/can_find')
 
             beneficiaries = Beneficiary.find(
-                bank_account_holder_name=TestActions.beneficiary_params['bank_account_holder_name'])
+                bank_account_holder_name=TestActions.beneficiary_params['bank_account_holder_name'])  # noqa
 
             assert beneficiaries
             assert len(beneficiaries) >= 1
@@ -114,11 +114,11 @@ class TestActions:
             betamax.use_cassette('actions/can_first')
 
             beneficiary = Beneficiary.first(
-                bank_account_holder_name=TestActions.beneficiary_params['bank_account_holder_name'])
+                bank_account_holder_name=TestActions.beneficiary_params['bank_account_holder_name'])  # noqa
 
             assert isinstance(beneficiary, Beneficiary)
             assert beneficiary.id == TestActions.beneficiary_first_id
-            assert beneficiary.bank_account_holder_name == TestActions.beneficiary_params[
+            assert beneficiary.bank_account_holder_name == TestActions.beneficiary_params[  # noqa
                 'bank_account_holder_name']
 
     def test_actions_can_update(self):
@@ -166,15 +166,15 @@ class TestActions:
             params = {
                 'bank_country': 'GB',
                 'currency': 'GBP',
-                'account_number': TestActions.beneficiary_params['account_number'],
-                'routing_code_type_1': TestActions.beneficiary_params['routing_code_type_2'],
-                'routing_code_value_1': TestActions.beneficiary_params['routing_code_value_2'],
+                'account_number': TestActions.beneficiary_params['account_number'],  # noqa
+                'routing_code_type_1': TestActions.beneficiary_params['routing_code_type_2'],  # noqa
+                'routing_code_value_1': TestActions.beneficiary_params['routing_code_value_2'],  # noqa
                 'payment_types': ['regular']}
 
             beneficiary = Beneficiary.validate(**params)
 
             assert isinstance(beneficiary, Beneficiary)
-            assert beneficiary.account_number == TestActions.beneficiary_params[
+            assert beneficiary.account_number == TestActions.beneficiary_params[  # noqa
                 'account_number']
             assert 'regular' in beneficiary.payment_types
 

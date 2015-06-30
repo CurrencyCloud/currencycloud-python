@@ -15,7 +15,7 @@ class TestRates:
         currencycloud.reset_session()
         currencycloud.environment = currencycloud.ENV_DEMOSTRATION
         currencycloud.login_id = 'rjnienaber@gmail.com'
-        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
+        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'  # noqa
         currencycloud.token = None
 
     def test_rates_can_find(self):

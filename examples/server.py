@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-# let's include the project directory to have access to the lib
-# import sys
-# sys.path.append('..')
 
 import os
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
@@ -12,7 +9,7 @@ import currencycloud
 
 currencycloud.environment = currencycloud.ENV_DEMOSTRATION
 currencycloud.login_id = 'rjnienaber@gmail.com'
-currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
+currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'  # noqa
 
 
 class CurrencyCloudHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -47,9 +44,9 @@ def run():
     PORT = int(os.environ.get('CC_PORT', 8080))
 
     print(
-        'HTTP server is started at http://{address}:{port}'.format(address=ADDRESS, port=PORT))
+        'HTTP server is started at http://{address}:{port}'.format(address=ADDRESS, port=PORT))  # noqa
     print(
-        "Try: http://localhost:8080/conversion?buy_currency=GBP&sell_currency=USD&fixed_side=buy&amount=1000&reason=mortage&term_agreement=true")
+        "Try: http://localhost:8080/conversion?buy_currency=GBP&sell_currency=USD&fixed_side=buy&amount=1000&reason=mortage&term_agreement=true")  # noqa
 
     server_address = (ADDRESS, PORT)
     httpd = HTTPServer(server_address, CurrencyCloudHTTPRequestHandler)

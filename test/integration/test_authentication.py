@@ -18,7 +18,7 @@ class TestAuthentication:
         currencycloud.reset_session()
         currencycloud.environment = currencycloud.ENV_DEMOSTRATION
         currencycloud.login_id = 'rjnienaber@gmail.com'
-        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
+        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'  # noqa
         currencycloud.token = None
 
     def teardown(self):
@@ -65,7 +65,7 @@ class TestAuthentication:
 
         # session = currencycloud.session(authenticate=False)
         # with Betamax(session.requests_session) as betamax:
-        #     betamax.use_cassette('authentication/handles_session_timeout', match_requests_on=['uri', 'method', 'headers'])
+        #     betamax.use_cassette('authentication/handles_session_timeout', match_requests_on=['uri', 'method', 'headers'])  # noqa
 
         response = Beneficiary.find()
 

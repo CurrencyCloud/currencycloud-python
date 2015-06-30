@@ -38,7 +38,7 @@ class Session(object):
     def validata_environment(cls, environment):
         if environment not in CONFIG['environments']:
             raise GeneralError(
-                "'{environment}' is not a valid environment, must be one of: {environments}".format(
+                "'{environment}' is not a valid environment, must be one of: {environments}".format(  # noqa
                     environment=environment,
                     environments=CONFIG['environments'].keys()))
 

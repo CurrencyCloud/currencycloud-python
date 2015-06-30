@@ -19,7 +19,7 @@ class TestRequestHandler:
     def test_request_handler_on_behalf_of_in_request(self):
         with requests_mock.Mocker() as mock:
             def request_tester(request, context):
-                assert 'on_behalf_of=d1f7f5c2-4187-41da-88fc-b3ae40fa958f' in request.body
+                assert 'on_behalf_of=d1f7f5c2-4187-41da-88fc-b3ae40fa958f' in request.body  # noqa
 
                 return {}
 

@@ -30,14 +30,14 @@ class Settlement(Resource, Create, Retrieve, Find, Delete):
     @classmethod
     def add_conversion_to_settlement(cls, settlement_id, conversion_id):
         return cls.post(
-            "{settlement_id}/add_conversion".format(settlement_id=settlement_id),
+            "{settlement_id}/add_conversion".format(settlement_id=settlement_id),  # noqa
             conversion_id=conversion_id
         )
 
     @classmethod
     def remove_conversion_from_settlement(cls, settlement_id, conversion_id):
         return cls.post(
-            "{settlement_id}/remove_conversion".format(settlement_id=settlement_id),
+            "{settlement_id}/remove_conversion".format(settlement_id=settlement_id),  # noqa
             conversion_id=conversion_id
         )
 

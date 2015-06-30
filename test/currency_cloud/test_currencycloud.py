@@ -29,13 +29,13 @@ class TestCurrencyCloud:
         assert(currencycloud.login_id == "test@example.com")
 
     def test_api_key(self):
-        currencycloud.api_key = "e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b"
-        assert currencycloud.api_key == "e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b"
+        currencycloud.api_key = "e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b"  # noqa
+        assert currencycloud.api_key == "e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b"  # noqa
 
     def test_session_returns_session_object(self):
         currencycloud.environment = currencycloud.ENV_DEMOSTRATION
         currencycloud.login_id = 'test@example.com'
-        currencycloud.api_key = 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'
+        currencycloud.api_key = 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'  # noqa
 
         with patch.object(RequestHandler, 'post') as request_post:
             request_post.return_value = {'auth_token': '123'}
@@ -78,7 +78,7 @@ class TestCurrencyCloud:
     def test_session_on_behalf_of_sets_removes_value(self):
         self.setup_on_behalf_of()
 
-        with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):
+        with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):  # noqa
             assert currencycloud.session(
             ).on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
 
@@ -88,7 +88,7 @@ class TestCurrencyCloud:
         self.setup_on_behalf_of()
 
         with pytest.raises(Exception) as excinfo:
-            with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):
+            with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):  # noqa
                 assert currencycloud.session(
                 ).on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
 
@@ -101,8 +101,8 @@ class TestCurrencyCloud:
         self.setup_on_behalf_of()
 
         with pytest.raises(Exception) as excinfo:
-            with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):
-                with currencycloud.on_behalf_of('f57b2d33-652c-4589-a8ff-7762add2706d'):
+            with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):  # noqa
+                with currencycloud.on_behalf_of('f57b2d33-652c-4589-a8ff-7762add2706d'):  # noqa
                     raise Exception('Should raise exception')
 
         assert '#on_behalf_of has already been set' in str(excinfo.value)

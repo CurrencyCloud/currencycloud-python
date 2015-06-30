@@ -15,7 +15,7 @@ class TestError:
         currencycloud.reset_session()
         currencycloud.environment = currencycloud.ENV_DEMOSTRATION
         currencycloud.login_id = 'rjnienaber@gmail.com'
-        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
+        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'  # noqa
         currencycloud.token = None
 
     def test_error_contains_full_details_for_api_error(self):
@@ -81,12 +81,12 @@ class TestError:
             error_message = error.messages[0]
             assert error_message.field == 'api_key'
             assert error_message.code == 'api_key_length_is_invalid'
-            assert error_message.message == 'api_key should be 64 character(s) long'
+            assert error_message.message == 'api_key should be 64 character(s) long'  # noqa
             assert error_message.params["length"] == 64
 
     def test_error_is_raised_on_incorrect_authentication_details(self):
         currencycloud.login_id = 'non-existent-login-id'
-        currencycloud.api_key = 'efb5ae2af84978b7a37f18dd61c8bbe139b403009faea83484405a3dcb64c4d8'
+        currencycloud.api_key = 'efb5ae2af84978b7a37f18dd61c8bbe139b403009faea83484405a3dcb64c4d8'  # noqa
 
         session = currencycloud.session(authenticate=False)
         with Betamax(session.requests_session) as betamax:
@@ -108,7 +108,7 @@ class TestError:
             error_message = error.messages[0]
             assert error_message.field == 'username'
             assert error_message.code == 'invalid_supplied_credentials'
-            assert error_message.message == 'Authentication failed with the supplied credentials'
+            assert error_message.message == 'Authentication failed with the supplied credentials'  # noqa
             assert not error_message.params
 
     def test_error_is_raised_on_unexpected_error(self):
@@ -170,7 +170,7 @@ class TestError:
             error_message = error.messages[0]
             assert error_message.field == 'username'
             assert error_message.code == 'invalid_supplied_credentials'
-            assert error_message.message == 'Authentication failed with the supplied credentials'
+            assert error_message.message == 'Authentication failed with the supplied credentials'  # noqa
             assert not error_message.params
 
     def test_error_is_raised_when_a_resource_is_not_found(self):
@@ -194,7 +194,7 @@ class TestError:
             error_message = error.messages[0]
             assert error_message.field == 'id'
             assert error_message.code == 'beneficiary_not_found'
-            assert error_message.message == 'Beneficiary was not found for this id'
+            assert error_message.message == 'Beneficiary was not found for this id'  # noqa
             assert not error_message.params
 
     def test_error_is_raised_on_internal_server_error(self):
@@ -217,7 +217,7 @@ class TestError:
             error_message = error.messages[0]
             assert error_message.field == 'base'
             assert error_message.code == 'internal_application_error'
-            assert error_message.message == 'A general application error occurred'
+            assert error_message.message == 'A general application error occurred'  # noqa
             assert str(
                 error_message.params['request_id']) == '2771875643610572878'
 
@@ -242,5 +242,5 @@ class TestError:
             error_message = error.messages[0]
             assert error_message.field == 'base'
             assert error_message.code == 'too_many_requests'
-            assert error_message.message == 'Too many requests have been made to the api. Please refer to the Developer Center for more information'
+            assert error_message.message == 'Too many requests have been made to the api. Please refer to the Developer Center for more information'  # noqa
             assert not error_message.params

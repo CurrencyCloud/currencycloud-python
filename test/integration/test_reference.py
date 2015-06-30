@@ -15,7 +15,7 @@ class TestReference:
         currencycloud.reset_session()
         currencycloud.environment = currencycloud.ENV_DEMOSTRATION
         currencycloud.login_id = 'rjnienaber@gmail.com'
-        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
+        currencycloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'  # noqa
         currencycloud.token = None
 
     def test_reference_can_retrieve_beneficiary_required_details(self):
@@ -55,7 +55,7 @@ class TestReference:
             assert isinstance(dates, ConversionDates)
             assert dates.first_conversion_date
             assert dates.default_conversion_date
-            assert 'No trading on Saturday' in dates.invalid_conversion_dates.values()
+            assert 'No trading on Saturday' in dates.invalid_conversion_dates.values()  # noqa
 
     def test_reference_can_retrieve_currencies(self):
         session = currencycloud.session(authenticate=False)
@@ -86,4 +86,4 @@ class TestReference:
 
             assert isinstance(settlement_account, SettlementAccount)
             assert settlement_account.bank_name
-            assert 'The Currency Cloud GBP' in settlement_account.bank_account_holder_name
+            assert 'The Currency Cloud GBP' in settlement_account.bank_account_holder_name  # noqa
