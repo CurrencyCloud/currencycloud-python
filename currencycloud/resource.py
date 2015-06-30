@@ -10,11 +10,26 @@ class Resource(object):
 
     # accessors
 
-    def __keys__(self):
+    def keys(self):
         return self.__data.keys()
 
-    def __hasitem__(self, name):
+    def values(self):
+        return self.__data.values()
+
+    def __len__(self):
+        return self.__data.len()
+
+    def __iter__(self):
+        return iter(self.__data)
+
+    def has_key(self, name):
         return name in self.__data
+
+    def __contains__(self, name):
+        return name in self.__data
+
+    def get(self, key, failobj=None):
+        return self.__data.get(key, failobj)
 
     def __getitem__(self, name):
         return self.__data[name]
