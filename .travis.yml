@@ -1,8 +1,11 @@
 language: python
 python: 2.7
+before_script:
+  - pep8 currencycloud
 script: tox -e $TOX_ENV
 install:
   - pip install tox
+  - pip install pep8
 notifications:
   email: false
 env:
