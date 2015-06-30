@@ -15,13 +15,14 @@ base_path = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(base_path, 'currencycloud'))
 from version import VERSION
 
-version = VERSION
+# long description
+long_description = open(os.path.join(base_path, "README.rst"), "r").read()
 
 setup(
 	name='currencycloud',
-    version=version,
+    version=VERSION,
     description="Python SDK for the Currency Cloud API.",
-    long_description="Python SDK for the Currency Cloud API - https://connect.currencycloud.com/",
+    long_description=long_description,
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
@@ -34,6 +35,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.2",
         "Programming Language :: Python :: 3.3",
+        "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
@@ -42,7 +44,7 @@ setup(
     author_email='alessandro.iob@toptal.com',
     url='https://connect.currencycloud.com/documentation/getting-started/introduction',
     license='MIT',
-    packages=['currencycloud', 'currencycloud.errors'],
+    packages=['currencycloud', 'currencycloud.errors', 'currencycloud.actions', 'currencycloud.resources'],
     install_requires=['requests >= 0.8.8', 'PyYAML', 'attrdict'],
     tests_require=[
           'pytest',
