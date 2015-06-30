@@ -10,4 +10,3 @@ with Betamax.configure() as config:
         '<AUTH_TOKEN>',
         os.environ.get('GH_AUTH', 'x' * 20)
     )
-

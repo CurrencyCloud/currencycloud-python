@@ -8,6 +8,7 @@ import currencycloud
 from currencycloud.errors import *
 from currencycloud.resources import *
 
+
 class TestRates:
 
     def setup_method(self, method):
@@ -55,7 +56,7 @@ class TestRates:
                 buy_currency="GBP",
                 sell_currency="USD",
                 fixed_side='buy',
-                amount= 10000
+                amount=10000
             )
 
             assert isinstance(detailed_rate, Rate)

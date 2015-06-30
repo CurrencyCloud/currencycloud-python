@@ -1,3 +1,7 @@
+import platform
+import sys
+import yaml
+
 __all__ = [
     'ApiError',
     'BadRequestError',
@@ -8,12 +12,11 @@ __all__ = [
     'NotFoundError'
 ]
 
-import platform
-import sys
-import yaml
 
 class ApiError(Exception):
+
     class ApiErrorMessage:
+
         def __init__(self, field, error):
             self.field = field
             self.code = error['code']
@@ -48,11 +51,16 @@ class ApiError(Exception):
 
             for field, messages in errors['error_messages'].items():
                 for message in messages:
-                    self.messages.append(ApiError.ApiErrorMessage(field, message))
+                    self.messages.append(
+                        ApiError.ApiErrorMessage(
+                            field,
+                            message))
 
     @property
     def platform(self):
-        return 'python - {version} - {implementation}'.format(version=sys.version.split('\n')[0].strip(), implementation=platform.python_implementation())
+        return 'python - {version} - {implementation}'.format(
+            version=sys.version.split('\n')[0].strip(),
+            implementation=platform.python_implementation())
 
     def __str__(self):
         class_name = self.__class__.__name__
@@ -61,38 +69,48 @@ class ApiError(Exception):
             'platform': self.platform,
             'request': {
                 'parameters': self.params,
-                'verb': str(self.verb),
+                'verb': str(
+                    self.verb),
                 'url': self.route,
             },
             'response': {
                 'status_code': self.status_code,
                 'date': self.raw_response.headers['Date'],
-                'request_id': int(self.raw_response.headers.get('x-request-id', 0)),
+                'request_id': int(
+                    self.raw_response.headers.get(
+                        'x-request-id',
+                        0)),
             },
-            'errors': [m.to_h() for m in self.messages],
+            'errors': [
+                m.to_h() for m in self.messages],
         }
 
         return "{class_name}\n{separator}\n{dump}\n".format(
-            class_name = class_name,
-            separator = "---",
-            dump = yaml.safe_dump(error_details, default_flow_style=False)
+            class_name=class_name,
+            separator="---",
+            dump=yaml.safe_dump(error_details, default_flow_style=False)
         )
+
 
 class BadRequestError(ApiError):
     pass
 
+
 class AuthenticationError(ApiError):
     pass
+
 
 class ForbiddenError(ApiError):
     pass
 
+
 class TooManyRequestsError(ApiError):
     pass
+
 
 class InternalApplicationError(ApiError):
     pass
 
+
 class NotFoundError(ApiError):
     pass
-

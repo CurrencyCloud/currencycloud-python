@@ -1,5 +1,6 @@
 from .request_handler import RequestHandler
 
+
 class Resource(object):
     resource = None
     array_fields = None
@@ -84,11 +85,15 @@ class Resource(object):
 
     @classmethod
     def get(cls, url, **params):
-        return cls.request().get(cls.build_url(url), cls.encode_parameters(params))
+        return cls.request().get(
+            cls.build_url(url),
+            cls.encode_parameters(params))
 
     @classmethod
     def post(cls, url, **params):
-        return cls.request().post(cls.build_url(url), cls.encode_parameters(params))
+        return cls.request().post(
+            cls.build_url(url),
+            cls.encode_parameters(params))
 
     @classmethod
     def build_url(cls, url):

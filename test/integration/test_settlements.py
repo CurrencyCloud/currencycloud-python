@@ -8,6 +8,7 @@ import currencycloud
 from currencycloud.errors import *
 from currencycloud.resources import *
 
+
 class TestSettlements:
     settlement_id = None
     conversion_id = None
@@ -43,7 +44,9 @@ class TestSettlements:
 
             gbp_currency = settlement.entries[0]
             assert "GBP" in gbp_currency
-            assert gbp_currency["GBP"] == { "receive_amount": "1000.00", "send_amount": "0.00" }
+            assert gbp_currency["GBP"] == {
+                "receive_amount": "1000.00",
+                "send_amount": "0.00"}
 
             usd_currency = settlement.entries[1]
             assert "USD" in usd_currency
@@ -82,10 +85,10 @@ class TestSettlements:
             betamax.use_cassette('settlements/can_remove_conversion')
 
             settlement = Settlement.retrieve(TestSettlements.settlement_id)
-            deleted_settlement = settlement.remove_conversion(TestSettlements.conversion_id)
+            deleted_settlement = settlement.remove_conversion(
+                TestSettlements.conversion_id)
 
             assert deleted_settlement is not None
             assert deleted_settlement.type == 'bulk'
             assert deleted_settlement.status == 'open'
             assert TestSettlements.conversion_id not in deleted_settlement.conversion_ids
-

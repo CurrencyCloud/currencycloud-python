@@ -9,11 +9,13 @@ import currencycloud
 from currencycloud.errors import *
 from currencycloud.resources import *
 
+
 def is_string(s):
     if sys.version_info[0] < 3:
         return isinstance(s, basestring)
     else:
         return isinstance(s, str)
+
 
 class TestActions:
     beneficiary_id = None
@@ -62,14 +64,14 @@ class TestActions:
 
             for k, v in TestActions.beneficiary_params.items():
                 if k in ('routing_code_type_1', 'routing_code_value_1'):
-                    # skip fields with wrong values that are cleaned up by the API
+                    # skip fields with wrong values that are cleaned up by the
+                    # API
                     continue
                 b = beneficiary[k]
                 if is_string(v):
                     b = str(b)
                     v = str(v)
                 assert b == v
-
 
     def test_actions_can_retrieve(self):
         session = currencycloud.session(authenticate=False)
@@ -86,7 +88,8 @@ class TestActions:
         with Betamax(session.requests_session) as betamax:
             betamax.use_cassette('actions/can_find')
 
-            beneficiaries = Beneficiary.find(bank_account_holder_name = TestActions.beneficiary_params['bank_account_holder_name'])
+            beneficiaries = Beneficiary.find(
+                bank_account_holder_name=TestActions.beneficiary_params['bank_account_holder_name'])
 
             assert beneficiaries
             assert len(beneficiaries) >= 1
@@ -110,11 +113,13 @@ class TestActions:
         with Betamax(session.requests_session) as betamax:
             betamax.use_cassette('actions/can_first')
 
-            beneficiary = Beneficiary.first(bank_account_holder_name = TestActions.beneficiary_params['bank_account_holder_name'])
+            beneficiary = Beneficiary.first(
+                bank_account_holder_name=TestActions.beneficiary_params['bank_account_holder_name'])
 
             assert isinstance(beneficiary, Beneficiary)
             assert beneficiary.id == TestActions.beneficiary_first_id
-            assert beneficiary.bank_account_holder_name == TestActions.beneficiary_params['bank_account_holder_name']
+            assert beneficiary.bank_account_holder_name == TestActions.beneficiary_params[
+                'bank_account_holder_name']
 
     def test_actions_can_update(self):
         session = currencycloud.session(authenticate=False)
@@ -123,7 +128,7 @@ class TestActions:
 
             beneficiary = Beneficiary.update_id(
                 TestActions.beneficiary_id,
-                bank_account_holder_name = "Test Name 2"
+                bank_account_holder_name="Test Name 2"
             )
 
             assert isinstance(beneficiary, Beneficiary)
@@ -164,19 +169,20 @@ class TestActions:
                 'account_number': TestActions.beneficiary_params['account_number'],
                 'routing_code_type_1': TestActions.beneficiary_params['routing_code_type_2'],
                 'routing_code_value_1': TestActions.beneficiary_params['routing_code_value_2'],
-                'payment_types': ['regular']
-            }
+                'payment_types': ['regular']}
 
             beneficiary = Beneficiary.validate(**params)
 
             assert isinstance(beneficiary, Beneficiary)
-            assert beneficiary.account_number == TestActions.beneficiary_params['account_number']
+            assert beneficiary.account_number == TestActions.beneficiary_params[
+                'account_number']
             assert 'regular' in beneficiary.payment_types
 
     def test_actions_can_use_currency_to_retrieve_balance(self):
         session = currencycloud.session(authenticate=False)
         with Betamax(session.requests_session) as betamax:
-            betamax.use_cassette('actions/can_use_currency_to_retrieve_balance')
+            betamax.use_cassette(
+                'actions/can_use_currency_to_retrieve_balance')
 
             balance = Balance.currency_with_code('GBP')
 

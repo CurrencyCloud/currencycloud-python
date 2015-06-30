@@ -1,8 +1,10 @@
 from ..resource import Resource
 from ..actions import *
 
+
 class Rates(Resource):
     pass
+
 
 class Rate(Resource):
     resource = "rates"

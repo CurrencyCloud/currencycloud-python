@@ -1,5 +1,6 @@
 
 class Save(object):
+
     def save(self):
         if not self.changed:
             return self

@@ -8,5 +8,5 @@ class Delete(object):
 
     @classmethod
     def delete_id(cls, resourceId):
-        return cls(**cls.post("{resourceId}/delete".format(resourceId=resourceId)))
-
+        return cls(
+            **cls.post("{resourceId}/delete".format(resourceId=resourceId)))

@@ -5,7 +5,9 @@ import currencycloud
 from currencycloud.resource import *
 from currencycloud.actions import *
 
+
 class TestResource:
+
     class Person(Resource, Save, Delete):
         resource = 'people'
 
@@ -20,15 +22,15 @@ class TestResource:
 
             person.name = 'Penelope'
 
-            assert person.changed == True
+            assert person.changed
             assert person.save() == person
-            assert person.changed == False
+            assert person.changed is False
 
     def test_resource_save_does_nothing_if_nothing_has_changed(self):
         person = TestResource.Person(id=1, name="Alessandro", surename="Iob")
 
         assert person.save() == person
-        assert person.changed == False
+        assert person.changed is False
 
     def test_resource_delete_removes_resource(self):
         person = TestResource.Person(id=1, name="Alessandro", surename="Iob")

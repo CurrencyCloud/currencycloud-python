@@ -1,6 +1,8 @@
 from .errors import *
 
+
 class ResponseHandler(object):
+
     def __init__(self, verb, route, params, response):
         self.__verb = verb
         self.__route = route
@@ -36,7 +38,9 @@ class ResponseHandler(object):
 
     def __handle_failure(self):
 
-        error = HTTP_CODE_TO_ERROR.get(self.response.status_code, UnexpectedError)
+        error = HTTP_CODE_TO_ERROR.get(
+            self.response.status_code,
+            UnexpectedError)
         raise error(self.verb, self.route, self.params, self.response)
 
     def __parsed_reponse(self):

@@ -1,17 +1,22 @@
 from ..resource import Resource
 from ..actions import *
 
+
 class Currency(Resource):
     pass
+
 
 class ConversionDates(Resource):
     pass
 
+
 class SettlementAccount(Resource):
     pass
 
+
 class BeneficiaryRequiredDetails(Resource):
     pass
+
 
 class Reference(Resource):
     resource = "reference"
@@ -37,5 +42,6 @@ class Reference(Resource):
     @classmethod
     def settlement_accounts(cls, **params):
         response = cls.get("settlement_accounts", **params)
-        data = [SettlementAccount(**d) for d in response['settlement_accounts']]
+        data = [SettlementAccount(**d)
+                for d in response['settlement_accounts']]
         return data

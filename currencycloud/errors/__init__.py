@@ -10,4 +10,3 @@ HTTP_CODE_TO_ERROR = {
     429: TooManyRequestsError,
     500: InternalApplicationError,
 }
-

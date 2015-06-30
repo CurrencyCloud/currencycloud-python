@@ -3,6 +3,7 @@
 import os
 import sys
 import warnings
+import codecs
 
 try:
     from setuptools import setup
@@ -16,12 +17,11 @@ sys.path.insert(0, os.path.join(base_path, 'currencycloud'))
 from version import VERSION
 
 # long description
-import codecs
 with codecs.open('README.rst', 'r', encoding='utf8') as file:
     long_description = file.read()
 
 setup(
-	name='currencycloud',
+    name='currencycloud',
     version=VERSION,
     description="Python SDK for the Currency Cloud API.",
     long_description=long_description,
@@ -46,15 +46,20 @@ setup(
     author_email='alessandro.iob@toptal.com',
     url='https://connect.currencycloud.com/documentation/getting-started/introduction',
     license='MIT',
-    packages=['currencycloud', 'currencycloud.errors', 'currencycloud.actions', 'currencycloud.resources'],
+    packages=[
+        'currencycloud',
+        'currencycloud.errors',
+        'currencycloud.actions',
+        'currencycloud.resources'
+    ],
     install_requires=['requests >= 0.8.8', 'PyYAML', 'attrdict'],
     tests_require=[
-          'pytest',
-          'mock',
-          'tox',
-          'twine',
-          'requests-mock',
-          'betamax',
+        'pytest',
+        'mock',
+        'tox',
+        'twine',
+        'requests-mock',
+        'betamax',
     ],
     test_suite='test',
 )

@@ -12,4 +12,3 @@ CONFIG = {
         ENV_UAT: 'https://api-uat1.ccycloud.com',
     }
 }
-

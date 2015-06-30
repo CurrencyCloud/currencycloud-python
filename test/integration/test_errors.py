@@ -8,7 +8,9 @@ import currencycloud
 from currencycloud.errors import *
 from currencycloud.resources import Beneficiary
 
+
 class TestError:
+
     def setup_method(self, method):
         currencycloud.reset_session()
         currencycloud.environment = currencycloud.ENV_DEMOSTRATION
@@ -72,7 +74,7 @@ class TestError:
                 error = e
 
             assert error.code == 'auth_invalid_user_login_details'
-            assert error.raw_response != None
+            assert error.raw_response is not None
             assert error.status_code == 400
             assert len(error.messages) == 1
 
@@ -88,7 +90,8 @@ class TestError:
 
         session = currencycloud.session(authenticate=False)
         with Betamax(session.requests_session) as betamax:
-            betamax.use_cassette('error/is_raised_on_incorrect_authentication_details')
+            betamax.use_cassette(
+                'error/is_raised_on_incorrect_authentication_details')
             error = None
             try:
                 currencycloud.session().authenticate()
@@ -98,7 +101,7 @@ class TestError:
                 error = e
 
             assert error.code == 'auth_failed'
-            assert error.raw_response != None
+            assert error.raw_response is not None
             assert error.status_code == 401
             assert len(error.messages) == 1
 
@@ -160,7 +163,7 @@ class TestError:
                 error = e
 
             assert error.code == 'auth_failed'
-            assert error.raw_response != None
+            assert error.raw_response is not None
             assert error.status_code == 403
             assert len(error.messages) == 1
 
@@ -173,7 +176,8 @@ class TestError:
     def test_error_is_raised_when_a_resource_is_not_found(self):
         session = currencycloud.session(authenticate=False)
         with Betamax(session.requests_session) as betamax:
-            betamax.use_cassette('error/is_raised_when_a_resource_is_not_found')
+            betamax.use_cassette(
+                'error/is_raised_when_a_resource_is_not_found')
             error = None
             try:
                 Beneficiary.retrieve('081596c9-02de-483e-9f2a-4cf55dcdf98c')
@@ -183,7 +187,7 @@ class TestError:
                 error = e
 
             assert error.code == 'beneficiary_not_found'
-            assert error.raw_response != None
+            assert error.raw_response is not None
             assert error.status_code == 404
             assert len(error.messages) == 1
 
@@ -206,7 +210,7 @@ class TestError:
                 error = e
 
             assert error.code == 'internal_application_error'
-            assert error.raw_response != None
+            assert error.raw_response is not None
             assert error.status_code == 500
             assert len(error.messages) == 1
 
@@ -214,12 +218,14 @@ class TestError:
             assert error_message.field == 'base'
             assert error_message.code == 'internal_application_error'
             assert error_message.message == 'A general application error occurred'
-            assert str(error_message.params['request_id']) == '2771875643610572878'
+            assert str(
+                error_message.params['request_id']) == '2771875643610572878'
 
     def test_error_is_raised_when_too_many_requests_have_been_issued(self):
         session = currencycloud.session(authenticate=False)
         with Betamax(session.requests_session) as betamax:
-            betamax.use_cassette('error/is_raised_when_too_many_requests_have_been_issued')
+            betamax.use_cassette(
+                'error/is_raised_when_too_many_requests_have_been_issued')
             error = None
             try:
                 currencycloud.session().authenticate()
@@ -229,7 +235,7 @@ class TestError:
                 error = e
 
             assert error.code == 'too_many_requests'
-            assert error.raw_response != None
+            assert error.raw_response is not None
             assert error.status_code == 429
             assert len(error.messages) == 1
 
@@ -238,4 +244,3 @@ class TestError:
             assert error_message.code == 'too_many_requests'
             assert error_message.message == 'Too many requests have been made to the api. Please refer to the Developer Center for more information'
             assert not error_message.params
-

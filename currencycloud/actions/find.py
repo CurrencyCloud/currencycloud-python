@@ -1,6 +1,7 @@
 import currencycloud
 from ..resourceful_collection import ResourcefulCollection, new_class
 
+
 class Find(object):
 
     @classmethod

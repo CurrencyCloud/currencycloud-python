@@ -8,6 +8,7 @@ from currencycloud.resources import Beneficiary
 
 from currencycloud.response_handler import ResponseHandler
 
+
 class TestAuthentication:
     session_token = None
 
@@ -36,7 +37,7 @@ class TestAuthentication:
 
     def test_authentication_can_use_just_a_token(self):
         currencycloud.login_id = None
-        currencycloud.api_key =  None
+        currencycloud.api_key = None
         currencycloud.token = TestAuthentication.session_token
 
         session = currencycloud.session(authenticate=False)
@@ -69,4 +70,3 @@ class TestAuthentication:
         response = Beneficiary.find()
 
         assert response is not None
-

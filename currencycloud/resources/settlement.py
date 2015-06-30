@@ -1,20 +1,31 @@
 from ..resource import Resource
 from ..actions import *
 
+
 class Settlement(Resource, Create, Retrieve, Find, Delete):
     resource = "settlements"
 
     def add_conversion(self, conversion_id):
-        return self.__update_attributes(Settlement.add_conversion_to_settlement(self['id'], conversion_id))
+        return self.__update_attributes(
+            Settlement.add_conversion_to_settlement(
+                self['id'],
+                conversion_id))
 
     def remove_conversion(self, conversion_id):
-        return self.__update_attributes(Settlement.remove_conversion_from_settlement(self['id'], conversion_id))
+        return self.__update_attributes(
+            Settlement.remove_conversion_from_settlement(
+                self['id'],
+                conversion_id))
 
     def release(self):
-        return self.__update_attributes(Settlement.release_settlement(self['id']))
+        return self.__update_attributes(
+            Settlement.release_settlement(
+                self['id']))
 
     def unrelease(self):
-        return self.__update_attributes(Settlement.unrelease_settlement(self['id']))
+        return self.__update_attributes(
+            Settlement.unrelease_settlement(
+                self['id']))
 
     @classmethod
     def add_conversion_to_settlement(cls, settlement_id, conversion_id):
@@ -50,5 +61,3 @@ class Settlement(Resource, Create, Retrieve, Find, Delete):
         self.released_at = settlement['released_at']
 
         return self
-
-

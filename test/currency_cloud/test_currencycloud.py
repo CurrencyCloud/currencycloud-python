@@ -5,7 +5,9 @@ import currencycloud
 from currencycloud.session import Session
 from currencycloud.request_handler import RequestHandler
 
+
 class TestCurrencyCloud:
+
     def setup_method(self, method):
         currencycloud.environment = None
         currencycloud.login_id = None
@@ -30,7 +32,6 @@ class TestCurrencyCloud:
         currencycloud.api_key = "e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b"
         assert currencycloud.api_key == "e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b"
 
-
     def test_session_returns_session_object(self):
         currencycloud.environment = currencycloud.ENV_DEMOSTRATION
         currencycloud.login_id = 'test@example.com'
@@ -39,7 +40,7 @@ class TestCurrencyCloud:
         with patch.object(RequestHandler, 'post') as request_post:
             request_post.return_value = {'auth_token': '123'}
 
-            assert isinstance(currencycloud.session() , Session)
+            assert isinstance(currencycloud.session(), Session)
 
     def test_session_raises_error_if_environment_is_not_set(self):
         currencycloud.environment = None
@@ -78,22 +79,23 @@ class TestCurrencyCloud:
         self.setup_on_behalf_of()
 
         with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):
-            assert currencycloud.session().on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
+            assert currencycloud.session(
+            ).on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
 
-        assert currencycloud.session().on_behalf_of == None
-
+        assert currencycloud.session().on_behalf_of is None
 
     def test_session_on_behalf_removes_value_on_error(self):
         self.setup_on_behalf_of()
 
         with pytest.raises(Exception) as excinfo:
             with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):
-                assert currencycloud.session().on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
+                assert currencycloud.session(
+                ).on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
 
                 raise Exception('Completed Expected error')
 
         assert 'Completed Expected error' in str(excinfo.value)
-        assert currencycloud.session().on_behalf_of == None
+        assert currencycloud.session().on_behalf_of is None
 
     def test_session_on_behalf_prevent_reentrant_usage(self):
         self.setup_on_behalf_of()
@@ -112,5 +114,5 @@ class TestCurrencyCloud:
             with currencycloud.on_behalf_of('Alessandro Iob'):
                 raise Exception('Should raise exception')
 
-        assert 'contact_id for on_behalf_of is not a valid UUID' in str(excinfo.value)
-
+        assert 'contact_id for on_behalf_of is not a valid UUID' in str(
+            excinfo.value)

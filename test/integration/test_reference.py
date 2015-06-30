@@ -8,6 +8,7 @@ import currencycloud
 from currencycloud.errors import *
 from currencycloud.resources import *
 
+
 class TestReference:
 
     def setup_method(self, method):
@@ -20,12 +21,13 @@ class TestReference:
     def test_reference_can_retrieve_beneficiary_required_details(self):
         session = currencycloud.session(authenticate=False)
         with Betamax(session.requests_session) as betamax:
-            betamax.use_cassette('reference/can_retrieve_beneficiary_required_details')
+            betamax.use_cassette(
+                'reference/can_retrieve_beneficiary_required_details')
 
             details = Reference.beneficiary_required_details(
-                currency = 'GBP',
-                bank_account_country = 'GB',
-                beneficiary_country = 'GB'
+                currency='GBP',
+                bank_account_country='GB',
+                beneficiary_country='GB'
             )
 
             assert len(details) > 0
@@ -48,7 +50,7 @@ class TestReference:
         with Betamax(session.requests_session) as betamax:
             betamax.use_cassette('reference/can_retrieve_conversion_dates')
 
-            dates = Reference.conversion_dates(conversion_pair = 'GBPUSD')
+            dates = Reference.conversion_dates(conversion_pair='GBPUSD')
 
             assert isinstance(dates, ConversionDates)
             assert dates.first_conversion_date
@@ -85,4 +87,3 @@ class TestReference:
             assert isinstance(settlement_account, SettlementAccount)
             assert settlement_account.bank_name
             assert 'The Currency Cloud GBP' in settlement_account.bank_account_holder_name
-

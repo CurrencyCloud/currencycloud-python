@@ -1,9 +1,11 @@
-__all__ = ['UnexpectedError']
-
 from .api import ApiError
 import yaml
 
+__all__ = ['UnexpectedError']
+
+
 class UnexpectedError(ApiError):
+
     def __init__(self, verb, route, params, inner_error):
         super(UnexpectedError, self).__init__(verb, route, params, None)
 
@@ -23,7 +25,7 @@ class UnexpectedError(ApiError):
         }
 
         return "{class_name}\n{separator}\n{dump}\n".format(
-            class_name = class_name,
-            separator = "---",
-            dump = yaml.safe_dump(error_details, default_flow_style=False)
+            class_name=class_name,
+            separator="---",
+            dump=yaml.safe_dump(error_details, default_flow_style=False)
         )
