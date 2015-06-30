@@ -28,14 +28,14 @@ follows:
 -  **Setuptools or Distribute** - When using
    `setuptools <https://pypi.python.org/pypi/setuptools/>`__, the
    library can be installed via setup.py or easy\_install.
--  **pip** - `pip <http://pypi.python.org/pypi/pip/>`__ s an installer
+-  **pip** - `pip <http://pypi.python.org/pypi/pip/>`__ is an installer
    that rides on top of setuptools or distribute, replacing the usage of
    easy\_install. It is often preferred for its simpler mode of usage.
 
 Install via pip
 ~~~~~~~~~~~~~~~
 
-When pip is available, the distribution can be downloaded from Pypi and
+When pip is available, the distribution can be downloaded from PyPi and
 installed in one step:
 
 ::
@@ -59,7 +59,7 @@ Supported Python versions
 -------------------------
 
 This library aims to support and is `tested
-against <https://travis-ci.org/CurrencyCloud/currencycloud-ruby>`__ the
+against <https://travis-ci.org/CurrencyCloud/currencycloud-python>`__ the
 following Ruby implementations:
 
 -  CPython 2.6
@@ -133,7 +133,7 @@ for example:
 
     currencycloud.Account.create(account_name='My Test User', on_behalf_of='c6ece846-6df1-461d-acaa-b42a6aa74045')
 
-Each of the above transactions will be executed in scope of the limits
+Each of the above transactions will be executed in scope of the permissions
 for that contact and linked to that contact. Note that the real user who
 executed the transaction will also be stored.
 
