@@ -16,7 +16,9 @@ sys.path.insert(0, os.path.join(base_path, 'currencycloud'))
 from version import VERSION
 
 # long description
-long_description = open(os.path.join(base_path, "README.rst"), "r").read()
+import codecs
+with codecs.open('README.rst', 'r', encoding='utf8') as file:
+    long_description = file.read()
 
 setup(
 	name='currencycloud',
