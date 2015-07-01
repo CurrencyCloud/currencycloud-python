@@ -11,6 +11,9 @@ class Resource(object):
 
     # accessors
 
+    def __dir__(self):
+        return self.__data.keys()
+
     def keys(self):
         return self.__data.keys()
 
@@ -45,7 +48,7 @@ class Resource(object):
         return self.__getitem__(name)
 
     def __setattr__(self, name, value):
-        if name.startswith('_') or name not in self.__data:
+        if name.startswith('_'):
             super(Resource, self).__setattr__(name, value)
         else:
             self.__setitem__(name, value)
