@@ -124,7 +124,6 @@ of' the user's contact\_id. Here is an example:
         beneficiary = currencycloud.Beneficiary.create(<params>)
         conversion = currencycloud.Conversion.create(<params>)
         payment = currencycloud.Payment.create(<params>)
-    end
 
 Alternatively, you can just add ``on_behalf_of`` to the call parameters,
 for example:
