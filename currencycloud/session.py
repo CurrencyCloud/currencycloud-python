@@ -100,7 +100,8 @@ class Session(object):
         r = self.request.post(
             'authenticate/api',
             params,
-            should_retry=False
+            should_retry=False,
+            disable_on_behalf_of=True
         )
 
         self.token = r['auth_token']

@@ -60,8 +60,9 @@ class RequestHandler(object):
     def __retry_authenticate(self, callback, verb, route, params, **kargs):
         try:
             should_retry = kargs.pop('should_retry', True)
+            disable_on_behalf_of = kargs.pop('disable_on_behalf_of', False)
 
-            params = self.__process_params(params)
+            params = self.__process_params(params, disable_on_behalf_of=disable_on_behalf_of)
             options = self.__process_options(verb, **kargs)
             full_url = self.build_url(route)
 
@@ -102,8 +103,8 @@ class RequestHandler(object):
         options['headers'].update(self.__headers())
         return options
 
-    def __process_params(self, params):
-        if self.session and self.session.on_behalf_of and validate_uuid4(
+    def __process_params(self, params, disable_on_behalf_of=False):
+        if not disable_on_behalf_of and self.session and self.session.on_behalf_of and validate_uuid4(
                 self.session.on_behalf_of):
             params['on_behalf_of'] = self.session.on_behalf_of
 
