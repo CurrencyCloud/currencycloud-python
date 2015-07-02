@@ -62,7 +62,7 @@ class RequestHandler(object):
             should_retry = kargs.pop('should_retry', True)
             disable_on_behalf_of = kargs.pop('disable_on_behalf_of', False)
 
-            params = self.__process_params(params, disable_on_behalf_of=disable_on_behalf_of)
+            params = self.__process_params(params, disable_on_behalf_of=disable_on_behalf_of)  # noqa
             options = self.__process_options(verb, **kargs)
             full_url = self.build_url(route)
 
@@ -104,9 +104,9 @@ class RequestHandler(object):
         return options
 
     def __process_params(self, params, disable_on_behalf_of=False):
-        if not disable_on_behalf_of and self.session and self.session.on_behalf_of and validate_uuid4(
-                self.session.on_behalf_of):
-            params['on_behalf_of'] = self.session.on_behalf_of
+        if not disable_on_behalf_of and self.session and \
+            self.session.on_behalf_of and validate_uuid4(self.session.on_behalf_of):  # noqa
+                params['on_behalf_of'] = self.session.on_behalf_of
 
         return params
 
