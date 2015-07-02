@@ -53,6 +53,8 @@ def on_behalf_of(contact_id):
     global __session
     from .utilities import validate_uuid4
 
+    session()
+
     if __session.on_behalf_of is not None:
         raise GeneralError('#on_behalf_of has already been set')
 
