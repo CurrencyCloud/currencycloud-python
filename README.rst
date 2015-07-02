@@ -1,7 +1,7 @@
 currencycloud-python
 ====================
 
-|Build Status|
+|Build Status| |PyPi Status|
 
 Currency Cloud
 ==============
@@ -245,3 +245,5 @@ details.
 
 .. |Build Status| image:: https://travis-ci.org/CurrencyCloud/currencycloud-python.png?branch=master
    :target: https://travis-ci.org/CurrencyCloud/currencycloud-python
+.. |PyPi Status| image:: https://img.shields.io/pypi/v/currencycloud.svg
+    :target: https://pypi.python.org/pypi/currencycloud
