@@ -1,4 +1,3 @@
-import sys
 from threading import Thread, Event
 
 import pytest
@@ -118,6 +117,19 @@ class TestCurrencyCloud:
 
         assert 'contact_id for on_behalf_of is not a valid UUID' in str(
             excinfo.value)
+
+    def test_session_attribute_is_created_on_thread_local_storage(self):
+        if hasattr(currencycloud.thread_storage, 'session'):
+            delattr(currencycloud.thread_storage, 'session')
+        assert not hasattr(currencycloud.thread_storage, 'session')
+
+        currencycloud.environment = currencycloud.ENV_DEMOSTRATION
+        currencycloud.token = '4df5b3e5882a412f148dcd08fa4e5b73'
+
+        with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):
+            assert currencycloud.session().on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
+
+        assert hasattr(currencycloud.thread_storage, 'session')
 
     '''
     This test ensures that setting on_behalf_of in one thread

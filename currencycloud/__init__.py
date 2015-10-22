@@ -52,7 +52,6 @@ def reset_session():
 
 @contextmanager
 def on_behalf_of(contact_id):
-    __ensure_thread_session
     from .utilities import validate_uuid4
 
     current_session = session()
