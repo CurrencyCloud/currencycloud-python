@@ -60,7 +60,7 @@ Supported Python versions
 
 This library aims to support and is `tested
 against <https://travis-ci.org/CurrencyCloud/currencycloud-python>`__ the
-following Ruby implementations:
+following Python implementations:
 
 -  CPython 2.6
 -  CPython 2.7
@@ -124,6 +124,9 @@ of' the user's contact\_id. Here is an example:
         beneficiary = currencycloud.Beneficiary.create(<params>)
         conversion = currencycloud.Conversion.create(<params>)
         payment = currencycloud.Payment.create(<params>)
+
+**Note:** This works in multithreaded environments by using |local storage|. It's important
+that logic is not switched to a different thread within the `with` statement.
 
 Alternatively, you can just add ``on_behalf_of`` to the call parameters,
 for example:
@@ -247,3 +250,4 @@ details.
    :target: https://travis-ci.org/CurrencyCloud/currencycloud-python
 .. |PyPi Status| image:: https://img.shields.io/pypi/v/currencycloud.svg
     :target: https://pypi.python.org/pypi/currencycloud
+.. |local storage|: https://docs.python.org/2/library/threading.html#threading.local

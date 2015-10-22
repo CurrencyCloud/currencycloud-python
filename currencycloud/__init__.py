@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+import threading
 
 from .errors import *
 from .session import Session
@@ -14,55 +15,61 @@ api_key = None
 token = None
 
 # global session management
-__session = None
+thread_storage = threading.local()
 
 
 def session(authenticate=True):
-    global __session
+    __ensure_thread_session()
+    if not thread_storage.session:
+        thread_storage.session = Session(
+                                    environment,
+                                    login_id,
+                                    api_key,
+                                    token,
+                                    authenticate=authenticate)
+    session = thread_storage.session
 
-    if not __session:
-        __session = Session(
-            environment,
-            login_id,
-            api_key,
-            token,
-            authenticate=authenticate)
+    if not session.authenticated and authenticate is True:
+        session.authenticate()
 
-    if not __session.authenticated and authenticate is True:
-        __session.authenticate()
-
-    return __session
+    return session
 
 
 def close_session():
-    global __session
-    if __session:
-        __session.close()
-        __session = None
+    __ensure_thread_session()
+
+    if thread_storage.session:
+        thread_storage.session.close()
+        thread_storage.session = None
     return True
 
 
 def reset_session():
-    global __session
-    __session = None
+    __ensure_thread_session()
+    thread_storage.session = None
     token = None
 
 
 @contextmanager
 def on_behalf_of(contact_id):
-    global __session
+    __ensure_thread_session
     from .utilities import validate_uuid4
 
-    session()
+    current_session = session()
 
-    if __session.on_behalf_of is not None:
+    if current_session.on_behalf_of is not None:
         raise GeneralError('#on_behalf_of has already been set')
 
     if contact_id is not None and not validate_uuid4(contact_id):
         raise GeneralError('contact_id for on_behalf_of is not a valid UUID')
 
-    __session.on_behalf_of = contact_id
+    current_session.on_behalf_of = contact_id
     try:
         yield
     finally:
-        __session.on_behalf_of = None
+        current_session.on_behalf_of = None
+
+
+def __ensure_thread_session():
+    if not hasattr(thread_storage, 'session'):
+        thread_storage.session = None

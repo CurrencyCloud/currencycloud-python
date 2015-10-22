@@ -1,10 +1,12 @@
+import sys
+from threading import Thread, Event
+
 import pytest
 from mock import patch
 
 import currencycloud
 from currencycloud.session import Session
 from currencycloud.request_handler import RequestHandler
-
 
 class TestCurrencyCloud:
 
@@ -116,3 +118,48 @@ class TestCurrencyCloud:
 
         assert 'contact_id for on_behalf_of is not a valid UUID' in str(
             excinfo.value)
+
+    '''
+    This test ensures that setting on_behalf_of in one thread
+    doesn't get overwritten in another thread
+    '''
+    def test_session_on_behalf_of_threading(self):
+        self.setup_on_behalf_of()
+
+        thread2_event = Event()
+        thread1_event = Event()
+        testThread_event = Event()
+        final_token = None
+        exceptions = []
+
+        def first_thread():
+            try:
+                with currencycloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045'):
+                    assert currencycloud.session().on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
+                    thread2_event.set()
+                    thread1_event.wait(5)
+                    final_token = currencycloud.session().on_behalf_of
+                    testThread_event.set()
+            except Exception as e:
+                exceptions.append("Thread 1 - " + str(e))
+
+        def second_thread():
+            try:
+                thread2_event.wait()
+
+                with currencycloud.on_behalf_of('f57b2d33-652c-4589-a8ff-7762add2706d'):
+                    assert currencycloud.session().on_behalf_of == 'f57b2d33-652c-4589-a8ff-7762add2706d'
+                    thread1_event.set()
+            except Exception as e:
+                exceptions.append("Thread 2 - " + str(e))
+
+        threads = [Thread(target=first_thread), Thread(target=second_thread)]
+        map(lambda x: x.start(), threads)
+        map(lambda x: x.join(5), threads)
+
+        thread2_event.set()
+        thread1_event.set()
+
+        assert len(exceptions) == 0
+        assert currencycloud.session().on_behalf_of == final_token
+
