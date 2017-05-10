@@ -29,7 +29,7 @@ class Payments(Http):
     def find(self, **kwargs):
         '''Returns an Array of Payment objects matching the search criteria.'''
         response = self.get('/v2/payments/find', query=kwargs)
-        data = [Payment(**fields) for fields in response['payments']]
+        data = [Payment(self, **fields) for fields in response['payments']]
         return PaginatedCollection(data, response['pagination'])
 
     def retrieve(self, resource_id, **kwargs):

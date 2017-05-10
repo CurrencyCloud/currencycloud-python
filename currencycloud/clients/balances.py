@@ -10,7 +10,7 @@ class Balances(Http):
         '''
         Provides the balance for a currency and shows the date that the balance was last updated.
         '''
-        return Balance(**self.get('/v2/balances/' + currency, query=kwargs))
+        return Balance(self, **self.get('/v2/balances/' + currency, query=kwargs))
 
     def find(self, **kwargs):
         '''
@@ -18,5 +18,5 @@ class Balances(Http):
         see historic balances.
         '''
         response = self.get('/v2/balances/find', query=kwargs)
-        data = [Balance(**fields) for fields in response['balances']]
+        data = [Balance(self, **fields) for fields in response['balances']]
         return PaginatedCollection(data, response['pagination'])

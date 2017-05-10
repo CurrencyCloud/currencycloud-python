@@ -11,11 +11,11 @@ class Accounts(Http):
         Creates a new account and returns a json structure containing the details of the requested
         account.
         '''
-        return Account(**self.post('/v2/accounts/create', kwargs))
+        return Account(self, **self.post('/v2/accounts/create', kwargs))
 
     def current(self):
         '''Returns a json structure containing the details of the active account.'''
-        return Account(**self.get('/v2/accounts/current'))
+        return Account(self, **self.get('/v2/accounts/current'))
 
     def find(self, **kwargs):
         '''
@@ -23,16 +23,16 @@ class Accounts(Http):
         search criteria for the logged in user.
         '''
         response = self.get('/v2/accounts/find', query=kwargs)
-        data = [Account(**fields) for fields in response['accounts']]
+        data = [Account(self, **fields) for fields in response['accounts']]
         return PaginatedCollection(data, response['pagination'])
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a json structure containing the details of the requested account.'''
-        return Account(**self.get('/v2/accounts/' + resource_id, query=kwargs))
+        return Account(self, **self.get('/v2/accounts/' + resource_id, query=kwargs))
 
     def update(self, resource_id, **kwargs):
         '''
         Updates an existing account and returns a json structure containing the details of the
         requested account.
         '''
-        return Account(**self.post('/v2/accounts/' + resource_id, kwargs))
+        return Account(self, **self.post('/v2/accounts/' + resource_id, kwargs))

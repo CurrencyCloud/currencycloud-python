@@ -1,4 +1,5 @@
 from .resource import Resource
 
 class Payment(Resource):
-    pass
+    def client(self):
+        return self._client

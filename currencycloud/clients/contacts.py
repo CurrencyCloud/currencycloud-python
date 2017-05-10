@@ -11,13 +11,13 @@ class Contacts(Http):
         Creates a new contact which is added to the logged in account and returns a hash containing
         the details of the new contact.
         '''
-        return Contact(**self.post('/v2/contacts/create', kwargs))
+        return Contact(self, **self.post('/v2/contacts/create', kwargs))
 
     def current(self):
         '''
         Returns a json structure containing the details of the contact that is currently logged in.
         '''
-        return Contact(**self.get('/v2/contacts/current'))
+        return Contact(self, **self.get('/v2/contacts/current'))
 
     def find(self, **kwargs):
         '''
@@ -25,16 +25,16 @@ class Contacts(Http):
         search criteria for the active user.
         '''
         response = self.get('/v2/contacts/find', query=kwargs)
-        data = [Contact(**fields) for fields in response['contacts']]
+        data = [Contact(self, **fields) for fields in response['contacts']]
         return PaginatedCollection(data, response['pagination'])
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a json structure containing the details of the requested contact.'''
-        return Contact(**self.get('/v2/contacts/' + resource_id, query=kwargs))
+        return Contact(self, **self.get('/v2/contacts/' + resource_id, query=kwargs))
 
     def update(self, resource_id, **kwargs):
         '''
         Updates an existing contact and returns a hash containing the details of the requested
         contact.
         '''
-        return Contact(**self.post('/v2/contacts/' + resource_id, kwargs))
+        return Contact(self, **self.post('/v2/contacts/' + resource_id, kwargs))

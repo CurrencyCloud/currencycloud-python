@@ -12,7 +12,7 @@ class Rates(Http):
         of the currently logged in contact. If delivery date is not supplied it will default to a
         deal which settles in 2 working days.
         '''
-        return Rate(**self.get('/v2/rates/detailed', query=kwargs))
+        return Rate(self, **self.get('/v2/rates/detailed', query=kwargs))
 
     def find(self, **kwargs):
         '''

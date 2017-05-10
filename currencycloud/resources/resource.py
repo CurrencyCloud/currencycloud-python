@@ -1,5 +1,6 @@
 class Resource(object):
-    def __init__(self, **data):
+    def __init__(self, client, **data):
+        self._client = client
         self.__attributes = data
 
     def __dir__(self):

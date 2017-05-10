@@ -8,4 +8,4 @@ class Payers(Http):
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a hash containing the details of the requested payer.'''
-        return Payer(**self.get('/v2/payers/' + resource_id, query=kwargs))
+        return Payer(self, **self.get('/v2/payers/' + resource_id, query=kwargs))

@@ -22,7 +22,7 @@ class Beneficiaries(Http):
         For more detailed information please see our payment guide:
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
-        return Beneficiary(**self.post('/v2/beneficiaries/create', kwargs))
+        return Beneficiary(self, **self.post('/v2/beneficiaries/create', kwargs))
 
     def delete(self, resource_id, **kwargs):
         '''
@@ -37,12 +37,12 @@ class Beneficiaries(Http):
         criteria for the logged in user.
         '''
         response = self.get('/v2/beneficiaries/find', query=kwargs)
-        data = [Beneficiary(**fields) for fields in response['beneficiaries']]
+        data = [Beneficiary(self, **fields) for fields in response['beneficiaries']]
         return PaginatedCollection(data, response['pagination'])
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a json structure containing the details of the requested beneficiary.'''
-        return Beneficiary(**self.get('/v2/beneficiaries/' + resource_id, query=kwargs))
+        return Beneficiary(self, **self.get('/v2/beneficiaries/' + resource_id, query=kwargs))
 
     def update(self, resource_id, **kwargs):
         '''
@@ -54,7 +54,7 @@ class Beneficiaries(Http):
         For more detailed information please see our payment guide:
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
-        return Beneficiary(**self.post('/v2/beneficiaries/' + resource_id, kwargs))
+        return Beneficiary(self, **self.post('/v2/beneficiaries/' + resource_id, kwargs))
 
     def validate(self, **kwargs):
         '''
@@ -64,4 +64,4 @@ class Beneficiaries(Http):
         Please use the /v2/reference/beneficiary_required_details call to know which fields are
         required.
         '''
-        return Beneficiary(**self.post('/v2/beneficiaries/validate', kwargs))
+        return Beneficiary(self, **self.post('/v2/beneficiaries/validate', kwargs))

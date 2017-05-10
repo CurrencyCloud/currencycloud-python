@@ -8,7 +8,7 @@ class Conversions(Http):
 
     def create(self, **kwargs):
         '''Returns a json structure containing the details of the requested conversion.'''
-        return Conversion(**self.post('/v2/conversions/create', kwargs))
+        return Conversion(self, **self.post('/v2/conversions/create', kwargs))
 
     def find(self, **kwargs):
         '''
@@ -16,9 +16,9 @@ class Conversions(Http):
         search criteria for the logged in user.
         '''
         response = self.get('/v2/conversions/find', query=kwargs)
-        data = [Conversion(**fields) for fields in response['conversions']]
+        data = [Conversion(self, **fields) for fields in response['conversions']]
         return PaginatedCollection(data, response['pagination'])
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a json structure containing the details of the requested conversion.'''
-        return Conversion(**self.get('/v2/conversions/' + resource_id, query=kwargs))
+        return Conversion(self, **self.get('/v2/conversions/' + resource_id, query=kwargs))
