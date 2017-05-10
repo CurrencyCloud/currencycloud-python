@@ -1,6 +1,7 @@
 '''This module provides a class for Settlements calls to the CC API'''
 
 from ..http import Http
+from ..resources import PaginatedCollection, Settlement
 
 class Settlements(Http):
     '''This class provides an interface to the Settlements endpoints of the CC API'''
@@ -11,7 +12,7 @@ class Settlements(Http):
 
     def create(self, **kwargs):
         '''Creates a new settlement and returns the settlement object.'''
-        return self.post('/v2/settlements/create', kwargs)
+        return Settlement(**self.post('/v2/settlements/create', kwargs))
 
     def delete(self, resource_id, **kwargs):
         '''Deletes an open Settlement and returns the Settlement object in its final state.'''
@@ -19,11 +20,13 @@ class Settlements(Http):
 
     def find(self, **kwargs):
         '''Returns an array of Settlement objects for the given search criteria.'''
-        return self.get('/v2/settlements/find', query=kwargs)
+        response = self.get('/v2/settlements/find', query=kwargs)
+        data = [Settlement(**fields) for fields in response['settlements']]
+        return PaginatedCollection(data, response['pagination'])
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a Settlement object for the requested ID.'''
-        return self.get('/v2/settlements/' + resource_id, query=kwargs)
+        return Settlement(**self.get('/v2/settlements/' + resource_id, query=kwargs))
 
     def release(self, resource_id, **kwargs):
         '''Move the Settlement to state 'released', meaning it is ready to be processed.'''

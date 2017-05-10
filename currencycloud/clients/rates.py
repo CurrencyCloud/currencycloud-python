@@ -1,6 +1,7 @@
 '''This module provides a class for Rates calls to the CC API'''
 
 from ..http import Http
+from ..resources import Rate
 
 class Rates(Http):
     '''This class provides an interface to the Rates endpoints of the CC API'''
@@ -11,7 +12,7 @@ class Rates(Http):
         of the currently logged in contact. If delivery date is not supplied it will default to a
         deal which settles in 2 working days.
         '''
-        return self.get('/v2/rates/detailed', query=kwargs)
+        return Rate(**self.get('/v2/rates/detailed', query=kwargs))
 
     def find(self, **kwargs):
         '''

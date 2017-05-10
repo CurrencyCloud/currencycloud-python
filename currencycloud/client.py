@@ -1,6 +1,7 @@
 '''This module provides a the Client interface to the CC APIs'''
 
 import clients
+import resources
 from contextlib import contextmanager
 
 from .config import Config
@@ -72,7 +73,7 @@ class Client(Http):
         return self._balances_client
 
     @property
-    def beneficiearies(self):
+    def beneficiaries(self):
         '''Get the Beneficiaries client.'''
         if self._beneficiaries_client is None:
             self._beneficiaries_client = clients.Beneficiaries(self.config)

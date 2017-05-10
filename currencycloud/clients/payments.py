@@ -1,6 +1,7 @@
 '''This module provides a class for payments related calls to the CC API'''
 
 from ..http import Http
+from ..resources import PaginatedCollection, Payment
 
 class Payments(Http):
     '''This class provides an interface to the Payment endpoints of the CC API'''
@@ -16,7 +17,7 @@ class Payments(Http):
         For more detailed information please see our payment guide:
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
-        return self.post('/v2/payments/create', kwargs)
+        return Payment(**self.post('/v2/payments/create', kwargs))
 
     def delete(self, resource_id, **kwargs):
         '''
@@ -27,11 +28,13 @@ class Payments(Http):
 
     def find(self, **kwargs):
         '''Returns an Array of Payment objects matching the search criteria.'''
-        return self.get('/v2/payments/find', query=kwargs)
+        response = self.get('/v2/payments/find', query=kwargs)
+        data = [Payment(**fields) for fields in response['payments']]
+        return PaginatedCollection(data, response['pagination'])
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a hash containing the details of the requested payment.'''
-        return self.get('/v2/payments/' + resource_id, query=kwargs)
+        return Payment(**self.get('/v2/payments/' + resource_id, query=kwargs))
 
     def retrieve_submission(self, resource_id, **kwargs):
         '''
@@ -51,4 +54,4 @@ class Payments(Http):
         For more detailed information please see our payment guide:
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
-        return self.post('/v2/payments/' + resource_id, kwargs)
+        return Payment(**self.post('/v2/payments/' + resource_id, kwargs))

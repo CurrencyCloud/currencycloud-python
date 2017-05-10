@@ -1,6 +1,7 @@
 '''This module provides a class for beneficiaries calls to the CC API'''
 
 from ..http import Http
+from ..resources import PaginatedCollection, Beneficiary
 
 class Beneficiaries(Http):
     '''This class provides an interface to the Beneficiaries endpoints of the CC API'''
@@ -21,7 +22,7 @@ class Beneficiaries(Http):
         For more detailed information please see our payment guide:
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
-        return self.post('/v2/beneficiaries/create', kwargs)
+        return Beneficiary(**self.post('/v2/beneficiaries/create', kwargs))
 
     def delete(self, resource_id, **kwargs):
         '''
@@ -35,11 +36,13 @@ class Beneficiaries(Http):
         Return an array containing json structures of details of the accounts matching the search
         criteria for the logged in user.
         '''
-        return self.get('/v2/beneficiaries/find', query=kwargs)
+        response = self.get('/v2/beneficiaries/find', query=kwargs)
+        data = [Beneficiary(**fields) for fields in response['beneficiaries']]
+        return PaginatedCollection(data, response['pagination'])
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a json structure containing the details of the requested beneficiary.'''
-        return self.get('/v2/beneficiaries/' + resource_id, query=kwargs)
+        return Beneficiary(**self.get('/v2/beneficiaries/' + resource_id, query=kwargs))
 
     def update(self, resource_id, **kwargs):
         '''
@@ -51,7 +54,7 @@ class Beneficiaries(Http):
         For more detailed information please see our payment guide:
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
-        return self.post('/v2/beneficiaries/' + resource_id, kwargs)
+        return Beneficiary(**self.post('/v2/beneficiaries/' + resource_id, kwargs))
 
     def validate(self, **kwargs):
         '''
@@ -61,4 +64,4 @@ class Beneficiaries(Http):
         Please use the /v2/reference/beneficiary_required_details call to know which fields are
         required.
         '''
-        return self.post('/v2/beneficiaries/validate', kwargs)
+        return Beneficiary(**self.post('/v2/beneficiaries/validate', kwargs))
