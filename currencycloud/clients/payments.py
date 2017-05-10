@@ -17,7 +17,7 @@ class Payments(Http):
         For more detailed information please see our payment guide:
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
-        return Payment(**self.post('/v2/payments/create', kwargs))
+        return Payment(self, **self.post('/v2/payments/create', kwargs))
 
     def delete(self, resource_id, **kwargs):
         '''
@@ -34,7 +34,7 @@ class Payments(Http):
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a hash containing the details of the requested payment.'''
-        return Payment(**self.get('/v2/payments/' + resource_id, query=kwargs))
+        return Payment(self, **self.get('/v2/payments/' + resource_id, query=kwargs))
 
     def retrieve_submission(self, resource_id, **kwargs):
         '''
@@ -54,4 +54,4 @@ class Payments(Http):
         For more detailed information please see our payment guide:
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
-        return Payment(**self.post('/v2/payments/' + resource_id, kwargs))
+        return Payment(self, **self.post('/v2/payments/' + resource_id, kwargs))

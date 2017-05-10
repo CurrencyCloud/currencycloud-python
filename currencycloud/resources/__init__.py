@@ -1,3 +1,5 @@
+'''All the Domain Objects of the CC APIs'''
+
 from .account import Account
 from .balance import Balance
 from .beneficiary import Beneficiary

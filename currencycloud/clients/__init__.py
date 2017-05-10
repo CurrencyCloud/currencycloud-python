@@ -1,3 +1,5 @@
+'''All the CurrencyCloud API clients that provide interface for specific parts of the API'''
+
 from .accounts import Accounts
 from .auth import Auth
 from .balances import Balances
