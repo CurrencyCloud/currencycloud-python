@@ -1,7 +1,6 @@
 '''This module provides a the Client interface to the CC APIs'''
 
 import clients
-import resources
 from contextlib import contextmanager
 
 from .config import Config

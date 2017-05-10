@@ -6,7 +6,7 @@ class Resource(object):
         return self.__attributes.keys()
 
     def __len__(self):
-        return self.__attributes.len()
+        return len(self.__attributes)
 
     def __iter__(self):
         return iter(self.__attributes)

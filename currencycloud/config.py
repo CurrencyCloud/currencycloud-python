@@ -6,6 +6,7 @@ class Config(object):
     '''API Configuration Object. Keeps track of Credentials, Auth Token and API Environment'''
 
     _auth_token = None
+    on_behalf_of = None
 
     def __init__(self, login_id, api_key, environment='demo'):
         self.login_id = login_id

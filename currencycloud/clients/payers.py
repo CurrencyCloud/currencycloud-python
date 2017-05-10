@@ -1,7 +1,7 @@
 '''This module provides a class for Payers calls to the CC API'''
 
 from ..http import Http
-from ..resources import PaginatedCollection, Payer
+from ..resources import Payer
 
 class Payers(Http):
     '''This class provides an interface to the Payers endpoints of the CC API'''
