@@ -1,8 +1,8 @@
 '''This module provides the object representation of a CurrencyCloud Payment'''
 
 from .resource import Resource
-from .actions import UpdateMixin
+from .actions import DeleteMixin, UpdateMixin
 
-class Payment(UpdateMixin, Resource):
+class Payment(DeleteMixin, UpdateMixin, Resource):
     '''This class represents a CurrencyCloud Payment'''
     pass
