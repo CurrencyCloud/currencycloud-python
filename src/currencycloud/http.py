@@ -43,6 +43,9 @@ class Http(object):
         return self.__environment_url() + endpoint
 
     def __environment_url(self):
+        if self.config.environment not in self.ENVIRONMENT_URLS:
+            raise RuntimeError('%s is not a valid environment name' % self.config.environment)
+
         return self.ENVIRONMENT_URLS[self.config.environment]
 
     def __handle_on_behalf_of(self, data):

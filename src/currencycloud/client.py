@@ -46,7 +46,7 @@ class Client(Http):
         # Use a new client, without changing the `self` configuration to stay thread-safe.
 
         clone = Client.with_config(self.config)
-        clone.config.auth_token = self.config.auth_token
+        clone.config.auth_token = self.config._auth_token
         clone.config.on_behalf_of = uuid
 
         yield clone

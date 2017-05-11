@@ -24,6 +24,11 @@ class Config(object):
     def auth_token(self):
         '''Getter for the Auth Token. Generates one if there is None.'''
         if self._auth_token is None:
+            if self.login_id is None:
+                raise RuntimeError('login_id must be set')
+            if self.api_key is None:
+                raise RuntimeError('api_key must be set')
+
             self._auth_token = clients.Auth(self).authenticate()['auth_token']
 
         return self._auth_token
