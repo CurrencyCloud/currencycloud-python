@@ -47,7 +47,7 @@ class Config(object):
 
     @on_behalf_of.setter
     def on_behalf_of(self, value):
-        if self.__valid_uuid(value):
+        if value is None or self.__valid_uuid(value):
             self._on_behalf_of = value
             return self._on_behalf_of
         else:

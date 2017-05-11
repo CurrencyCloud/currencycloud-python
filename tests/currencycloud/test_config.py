@@ -3,7 +3,7 @@ from mock import patch
 
 import currencycloud
 
-class TestCurrencyCloud:
+class TestConfig:
     def setup_method(self, method):
         self.client = currencycloud.Client('test@example.com', 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b', currencycloud.Config.ENV_DEMONSTRATION)
 
