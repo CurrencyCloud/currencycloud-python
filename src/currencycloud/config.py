@@ -1,13 +1,14 @@
 '''This module provides a Client class for authentication related calls to the CC API'''
 
 import clients
+import uuid
 
 
 class Config(object):
     '''API Configuration Object. Keeps track of Credentials, Auth Token and API Environment'''
 
     _auth_token = None
-    on_behalf_of = None
+    _on_behalf_of = None
 
     ENV_PRODUCTION = 'production'
     ENV_DEMONSTRATION = 'demonstration'
@@ -38,3 +39,23 @@ class Config(object):
         '''Getter for the Auth Token. Generates one if there is None.'''
         self._auth_token = value
         return self._auth_token
+
+    @property
+    def on_behalf_of(self):
+        '''Getter for the on_behalf_of token.'''
+        return self._on_behalf_of
+
+    @on_behalf_of.setter
+    def on_behalf_of(self, value):
+        if self.__valid_uuid(value):
+            self._on_behalf_of = value
+            return self._on_behalf_of
+        else:
+            raise ValueError('Invalid UUIDv4 for on_behalf_of contact_id.')
+
+    def __valid_uuid(self, value):
+        try:
+            val = uuid.UUID(value, version=4)
+        except ValueError:
+            return False
+        return str(val) == value

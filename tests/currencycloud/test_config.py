@@ -59,3 +59,10 @@ class TestCurrencyCloud:
             assert behalf_client.config.on_behalf_of == 'c6ece846-6df1-461d-acaa-b42a6aa74045'
 
         assert self.client.config.on_behalf_of is None
+
+    def test_session_on_behalf_invalid_contact_id(self):
+        with pytest.raises(ValueError) as excinfo:
+            with self.client.on_behalf_of('SomeoneElse'):
+                raise Exception('Should raise exception')
+
+        assert 'Invalid UUIDv4' in str(excinfo.value)
