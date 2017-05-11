@@ -1,6 +1,6 @@
 '''This module provides a Client class for authentication related calls to the CC API'''
 
-from currencycloud.clients import Auth
+import clients
 
 
 class Config(object):
@@ -8,6 +8,10 @@ class Config(object):
 
     _auth_token = None
     on_behalf_of = None
+
+    ENV_PRODUCTION = 'production'
+    ENV_DEMONSTRATION = 'demonstration'
+    ENV_UAT = 'uat'
 
     def __init__(self, login_id, api_key, environment='demo'):
         self.login_id = login_id
@@ -20,7 +24,7 @@ class Config(object):
     def auth_token(self):
         '''Getter for the Auth Token. Generates one if there is None.'''
         if self._auth_token is None:
-            self._auth_token = Auth(self).authenticate()['auth_token']
+            self._auth_token = clients.Auth(self).authenticate()['auth_token']
 
         return self._auth_token
 

@@ -1,6 +1,7 @@
 '''This module provides a Mixin to generate http requests to the CC API endpoints'''
 
 import requests
+from .config import Config
 
 
 class Http(object):
@@ -33,9 +34,9 @@ class Http(object):
         return response.json()
 
     ENVIRONMENT_URLS = {
-        'production': 'https://api.thecurrencycloud.com',
-        'demo': 'https://devapi.thecurrencycloud.com',
-        'uat': 'https://api-uat1.ccycloud.com',
+        Config.ENV_PRODUCTION: 'https://api.thecurrencycloud.com',
+        Config.ENV_DEMONSTRATION: 'https://devapi.thecurrencycloud.com',
+        Config.ENV_UAT: 'https://api-uat1.ccycloud.com',
     }
 
     def __build_url(self, endpoint):

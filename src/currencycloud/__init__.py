@@ -5,6 +5,7 @@ support, please contact our sales team at sales@currencycloud.com.
 '''
 
 from .client import Client
+from .config import Config
 
 __title__ = 'currencycloud'
 __version__ = '0.9.0'
