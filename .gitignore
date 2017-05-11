@@ -3,6 +3,8 @@
 .DS_Store
 /build
 /dist
-/*.egg-info
 /.cache
+/.tox
 __pycache__
+*.egg-info
+.python-version
