@@ -1,0 +1,10 @@
+[[source]]
+url = 'https://pypi.python.org/simple'
+verify_ssl = true
+
+[packages]
+requests = '>2.10.0'
+
+[dev-packages]
+pytest = '>3.0.0'
+
