@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import PaginatedCollection, Transaction
 
+
 class Transactions(Http):
     '''This class provides an interface to the Transactions endpoints of the CC API'''
 

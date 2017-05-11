@@ -2,6 +2,7 @@
 
 from .resource import Resource
 
+
 class Transfer(Resource):
     '''This class represents a CurrencyCloud Transfer'''
     pass

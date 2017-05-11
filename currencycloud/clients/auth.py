@@ -2,6 +2,7 @@
 
 from ..http import Http
 
+
 class Auth(Http):
     '''This class provides an interface to the Authentication endpoints of the CC API'''
 

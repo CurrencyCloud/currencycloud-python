@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import PaginatedCollection, Beneficiary
 
+
 class Beneficiaries(Http):
     '''This class provides an interface to the Beneficiaries endpoints of the CC API'''
 

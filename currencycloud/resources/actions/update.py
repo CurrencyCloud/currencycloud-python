@@ -1,5 +1,6 @@
 '''This module provides the Update Mixin'''
 
+
 class UpdateMixin(object):
     '''This mixin allows a Resource to be changed on the CurrencyCloud servers'''
 

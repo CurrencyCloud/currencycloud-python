@@ -2,6 +2,7 @@
 
 import requests
 
+
 class Http(object):
     '''
     Mixin for other Client classes. Provides abstract get/post methods that will add authentication

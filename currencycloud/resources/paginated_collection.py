@@ -1,5 +1,6 @@
 '''This module the PaginatedCollection class'''
 
+
 class PaginatedCollection(list):
     '''Provides a wrapper around an array of Resources with additional pagination details'''
     def __init__(self, collection, pagination):

@@ -2,6 +2,7 @@
 
 from ..http import Http
 
+
 class Reference(Http):
     '''This class provides an interface to the Reference endpoints of the CC API'''
 

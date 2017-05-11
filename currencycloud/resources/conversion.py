@@ -2,6 +2,7 @@
 
 from .resource import Resource
 
+
 class Conversion(Resource):
     '''This class represents a CurrencyCloud Conversion'''
     pass

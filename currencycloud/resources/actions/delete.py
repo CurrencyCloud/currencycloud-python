@@ -1,5 +1,6 @@
 '''This module provides the Delete Mixin'''
 
+
 class DeleteMixin(object):
     '''This mixin allows a Resource to be delete from CurrencyCloud servers'''
 

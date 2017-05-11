@@ -1,5 +1,6 @@
 '''This module provides the abstract Resource class'''
 
+
 class Resource(object):
     '''
     An abstract CurrencyCloud resource. Maintains all the attributes and provides a common set of

@@ -2,6 +2,7 @@
 
 from .resource import Resource
 
+
 class Transaction(Resource):
     '''This class represents a CurrencyCloud Transaction'''
     pass

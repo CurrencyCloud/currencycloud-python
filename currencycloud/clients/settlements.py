@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import PaginatedCollection, Settlement
 
+
 class Settlements(Http):
     '''This class provides an interface to the Settlements endpoints of the CC API'''
 

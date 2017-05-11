@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import PaginatedCollection, Balance
 
+
 class Balances(Http):
     '''This class provides an interface to the Balances endpoints of the CC API'''
 

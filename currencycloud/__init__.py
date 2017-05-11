@@ -4,9 +4,9 @@ API endpoint can be found at connect.currencycloud.com. If you have any queries 
 support, please contact our sales team at sales@currencycloud.com.
 '''
 
+from .client import Client
+
 __title__ = 'currencycloud'
 __version__ = '0.9.0'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2017 CurrencyCloud'
-
-from .client import Client

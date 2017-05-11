@@ -2,6 +2,7 @@
 
 from .resource import Resource
 
+
 class Balance(Resource):
     '''This class represents a CurrencyCloud Balance'''
     pass

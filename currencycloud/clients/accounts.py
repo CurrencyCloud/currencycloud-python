@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import PaginatedCollection, Account
 
+
 class Accounts(Http):
     '''This class provides an interface to the Accounts endpoints of the CC API'''
 

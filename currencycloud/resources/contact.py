@@ -3,6 +3,7 @@
 from .resource import Resource
 from .actions import UpdateMixin
 
+
 class Contact(UpdateMixin, Resource):
     '''This class represents a CurrencyCloud Contact'''
     pass

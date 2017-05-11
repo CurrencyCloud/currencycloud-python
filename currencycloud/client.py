@@ -6,6 +6,7 @@ from contextlib import contextmanager
 from .config import Config
 from .http import Http
 
+
 class Client(Http):
     '''The Client interfacing to the CC APIs'''
 

@@ -2,6 +2,7 @@
 
 from currencycloud.clients import Auth
 
+
 class Config(object):
     '''API Configuration Object. Keeps track of Credentials, Auth Token and API Environment'''
 

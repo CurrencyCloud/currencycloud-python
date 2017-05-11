@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import PaginatedCollection, Conversion
 
+
 class Conversions(Http):
     '''This class provides an interface to the Conversions endpoints of the CC API'''
 

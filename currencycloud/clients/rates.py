@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import Rate
 
+
 class Rates(Http):
     '''This class provides an interface to the Rates endpoints of the CC API'''
 

@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import Payer
 
+
 class Payers(Http):
     '''This class provides an interface to the Payers endpoints of the CC API'''
 

@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import PaginatedCollection, Contact
 
+
 class Contacts(Http):
     '''This class provides an interface to the Contacts endpoints of the CC API'''
 

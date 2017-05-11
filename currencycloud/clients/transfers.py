@@ -3,6 +3,7 @@
 from ..http import Http
 from ..resources import PaginatedCollection, Transfer
 
+
 class Transfers(Http):
     '''This class provides an interface to the Transfers endpoints of the CC API'''
 
