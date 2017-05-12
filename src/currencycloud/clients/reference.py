@@ -1,7 +1,7 @@
 '''This module provides a class for Reference calls to the CC API'''
 
-from ..http import Http
-from ..resources import BeneficiaryRequiredDetails, ConversionDates, Currency, SettlementAccount
+from currencycloud.http import Http
+from currencycloud.resources import BeneficiaryRequiredDetails, ConversionDates, Currency, SettlementAccount
 
 
 class Reference(Http):

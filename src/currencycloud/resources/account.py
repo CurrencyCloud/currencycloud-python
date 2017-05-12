@@ -1,7 +1,7 @@
 '''This module provides the object representation of a CurrencyCloud Account'''
 
-from .resource import Resource
-from .actions import UpdateMixin
+from currencycloud.resources.resource import Resource
+from currencycloud.resources.actions import UpdateMixin
 
 
 class Account(UpdateMixin, Resource):

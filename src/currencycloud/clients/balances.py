@@ -1,7 +1,7 @@
 '''This module provides a class for Balances calls to the CC API'''
 
-from ..http import Http
-from ..resources import PaginatedCollection, Balance
+from currencycloud.http import Http
+from currencycloud.resources import PaginatedCollection, Balance
 
 
 class Balances(Http):

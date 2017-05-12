@@ -1,7 +1,7 @@
 '''This module provides a class for Settlements calls to the CC API'''
 
-from ..http import Http
-from ..resources import PaginatedCollection, Settlement
+from currencycloud.http import Http
+from currencycloud.resources import PaginatedCollection, Settlement
 
 
 class Settlements(Http):

@@ -1,4 +1,4 @@
-from .resource import Resource
+from currencycloud.resources.resource import Resource
 
 
 class Currency(Resource):

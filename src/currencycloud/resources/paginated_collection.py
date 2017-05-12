@@ -1,6 +1,6 @@
 '''This module the PaginatedCollection class'''
 
-from .pagination import Pagination
+from currencycloud.resources.pagination import Pagination
 
 
 class PaginatedCollection(list):

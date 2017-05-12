@@ -1,6 +1,6 @@
 '''This module provides the object representation of a CurrencyCloud Transfer'''
 
-from .resource import Resource
+from currencycloud.resources.resource import Resource
 
 
 class Transfer(Resource):

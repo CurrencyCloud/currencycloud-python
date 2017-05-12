@@ -1,7 +1,7 @@
 '''This module provides a class for Contacts calls to the CC API'''
 
-from ..http import Http
-from ..resources import PaginatedCollection, Contact
+from currencycloud.http import Http
+from currencycloud.resources import PaginatedCollection, Contact
 
 
 class Contacts(Http):

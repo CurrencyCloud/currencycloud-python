@@ -1,7 +1,7 @@
 '''This module provides a class for Transfers calls to the CC API'''
 
-from ..http import Http
-from ..resources import PaginatedCollection, Transfer
+from currencycloud.http import Http
+from currencycloud.resources import PaginatedCollection, Transfer
 
 
 class Transfers(Http):

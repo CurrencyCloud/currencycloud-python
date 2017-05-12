@@ -1,6 +1,6 @@
 '''This module provides a class for authentication related calls to the CC API'''
 
-from ..http import Http
+from currencycloud.http import Http
 
 
 class Auth(Http):

@@ -1,7 +1,7 @@
 '''This module provides the object representation of a CurrencyCloud Settlement'''
 
-from .resource import Resource
-from .actions import DeleteMixin
+from currencycloud.resources.resource import Resource
+from currencycloud.resources.actions import DeleteMixin
 
 
 class Settlement(DeleteMixin, Resource):

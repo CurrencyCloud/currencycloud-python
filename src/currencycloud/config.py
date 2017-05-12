@@ -1,6 +1,6 @@
 '''This module provides a Client class for authentication related calls to the CC API'''
 
-import clients
+from currencycloud.clients.auth import Auth
 import uuid
 import requests
 
@@ -14,6 +14,12 @@ class Config(object):
     ENV_PRODUCTION = 'production'
     ENV_DEMONSTRATION = 'demonstration'
     ENV_UAT = 'uat'
+
+    ENVIRONMENT_URLS = {
+        ENV_PRODUCTION: 'https://api.thecurrencycloud.com',
+        ENV_DEMONSTRATION: 'https://devapi.thecurrencycloud.com',
+        ENV_UAT: 'https://api-uat1.ccycloud.com',
+    }
 
     def __init__(self, login_id, api_key, environment='demo'):
         self.login_id = login_id
@@ -32,7 +38,7 @@ class Config(object):
             if self.api_key is None:
                 raise RuntimeError('api_key must be set')
 
-            self._auth_token = clients.Auth(self).authenticate()['auth_token']
+            self._auth_token = Auth(self).authenticate()['auth_token']
 
         return self._auth_token
 
@@ -63,7 +69,7 @@ class Config(object):
         if self.api_key is None:
             raise RuntimeError('api_key must be set')
 
-        self._auth_token = clients.Auth(self).authenticate()['auth_token']
+        self._auth_token = Auth(self).authenticate()['auth_token']
 
     def __valid_uuid(self, value):
         try:
@@ -71,3 +77,9 @@ class Config(object):
         except ValueError:
             return False
         return str(val) == value
+
+    def environment_url(self):
+        if self.environment not in self.ENVIRONMENT_URLS:
+            raise RuntimeError('%s is not a valid environment name' % self.environment)
+
+        return self.ENVIRONMENT_URLS[self.environment]

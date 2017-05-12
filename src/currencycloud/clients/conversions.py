@@ -1,7 +1,7 @@
 '''This module provides a class for Conversions calls to the CC API'''
 
-from ..http import Http
-from ..resources import PaginatedCollection, Conversion
+from currencycloud.http import Http
+from currencycloud.resources import PaginatedCollection, Conversion
 
 
 class Conversions(Http):

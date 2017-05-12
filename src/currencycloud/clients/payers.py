@@ -1,7 +1,7 @@
 '''This module provides a class for Payers calls to the CC API'''
 
-from ..http import Http
-from ..resources import Payer
+from currencycloud.http import Http
+from currencycloud.resources import Payer
 
 
 class Payers(Http):

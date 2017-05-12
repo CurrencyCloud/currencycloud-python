@@ -1,7 +1,7 @@
 '''This module provides a class for Rates calls to the CC API'''
 
-from ..http import Http
-from .. import resources
+from currencycloud.http import Http
+from currencycloud import resources
 
 
 class Rates(Http):

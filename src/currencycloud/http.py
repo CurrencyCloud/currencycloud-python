@@ -1,7 +1,6 @@
 '''This module provides a Mixin to generate http requests to the CC API endpoints'''
 
-from .config import Config
-import errors
+from currencycloud.errors import *
 
 
 class Http(object):
@@ -52,20 +51,11 @@ class Http(object):
 
         return self.__handle_errors('post', url, data, response)
 
-    ENVIRONMENT_URLS = {
-        Config.ENV_PRODUCTION: 'https://api.thecurrencycloud.com',
-        Config.ENV_DEMONSTRATION: 'https://devapi.thecurrencycloud.com',
-        Config.ENV_UAT: 'https://api-uat1.ccycloud.com',
-    }
-
     def __build_url(self, endpoint):
         return self.__environment_url() + endpoint
 
     def __environment_url(self):
-        if self.config.environment not in self.ENVIRONMENT_URLS:
-            raise RuntimeError('%s is not a valid environment name' % self.config.environment)
-
-        return self.ENVIRONMENT_URLS[self.config.environment]
+        return self.config.environment_url()
 
     def __handle_on_behalf_of(self, data):
         if self.config.on_behalf_of is not None:
@@ -98,19 +88,19 @@ class Http(object):
         return headers
 
     HTTP_CODE_TO_ERROR = {
-        400: errors.BadRequestError,
-        401: errors.AuthenticationError,
-        403: errors.ForbiddenError,
-        404: errors.NotFoundError,
-        429: errors.TooManyRequestsError,
-        500: errors.InternalApplicationError
+        400: BadRequestError,
+        401: AuthenticationError,
+        403: ForbiddenError,
+        404: NotFoundError,
+        429: TooManyRequestsError,
+        500: InternalApplicationError
     }
 
     def __handle_errors(self, verb, url, params, response):
         if int(response.status_code / 100) == 2:
             return response.json()
         else:
-            klass = Http.HTTP_CODE_TO_ERROR.get(response.status_code, errors.ApiError)
+            klass = Http.HTTP_CODE_TO_ERROR.get(response.status_code, ApiError)
             raise klass(verb, url, params, response)
 
     def __handle_authentication_errors(self, execute_request, retry, url, headers, data, authenticated):

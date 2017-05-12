@@ -1,7 +1,7 @@
 '''This module provides a class for beneficiaries calls to the CC API'''
 
-from ..http import Http
-from ..resources import PaginatedCollection, Beneficiary
+from currencycloud.http import Http
+from currencycloud.resources import PaginatedCollection, Beneficiary
 
 
 class Beneficiaries(Http):

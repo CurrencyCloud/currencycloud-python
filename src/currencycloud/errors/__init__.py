@@ -1,2 +1,2 @@
-from .api import ApiError, BadRequestError, AuthenticationError, ForbiddenError
-from .api import TooManyRequestsError, InternalApplicationError, NotFoundError
+from currencycloud.errors.api import ApiError, BadRequestError, AuthenticationError, ForbiddenError
+from currencycloud.errors.api import TooManyRequestsError, InternalApplicationError, NotFoundError
