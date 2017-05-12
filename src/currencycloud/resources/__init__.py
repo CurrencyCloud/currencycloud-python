@@ -9,6 +9,7 @@ from .paginated_collection import PaginatedCollection
 from .payer import Payer
 from .payment import Payment
 from .rate import Rate
+from .reference import Currency, ConversionDates, SettlementAccount, BeneficiaryRequiredDetails
 from .settlement import Settlement
 from .transaction import Transaction
 from .transfer import Transfer

@@ -1,6 +1,7 @@
 '''This module provides a class for Reference calls to the CC API'''
 
 from ..http import Http
+from ..resources import BeneficiaryRequiredDetails, ConversionDates, Currency, SettlementAccount
 
 
 class Reference(Http):
@@ -8,15 +9,17 @@ class Reference(Http):
 
     def beneficiary_required_details(self, **kwargs):
         '''Returns required beneficiary details and their basic validation formats.'''
-        return self.get('/v2/reference/beneficiary_required_details', query=kwargs)
+        response = self.get('/v2/reference/beneficiary_required_details', query=kwargs)['details']
+        return [BeneficiaryRequiredDetails(self, **c) for c in response]
 
     def conversion_dates(self, **kwargs):
         '''Returns dates for which dates this currency pair can not be traded.'''
-        return self.get('/v2/reference/conversion_dates', query=kwargs)
+        return ConversionDates(self, **self.get('/v2/reference/conversion_dates', query=kwargs))
 
     def currencies(self):
         '''Returns a list of all the currencies that are tradeable.'''
-        return self.get('/v2/reference/currencies')
+        response = self.get('/v2/reference/currencies')['currencies']
+        return [Currency(self, **c) for c in response]
 
     def payment_dates(self, **kwargs):
         '''
@@ -27,4 +30,5 @@ class Reference(Http):
 
     def settlement_accounts(self, **kwargs):
         '''Returns settlement account information, detailing where funds need to be sent to.'''
-        return self.get('/v2/reference/settlement_accounts', query=kwargs)
+        response = self.get('/v2/reference/settlement_accounts', query=kwargs)['settlement_accounts']
+        return [SettlementAccount(self, **c) for c in response]
