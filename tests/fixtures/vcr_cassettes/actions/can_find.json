@@ -1,0 +1,92 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-12T12:22:31",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "104",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "python-requests/2.14.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjJJMUw1MkgyNTM3NjJINjU0MU00NzZPSks1MUo2NUq0UKoFAAAA//8DAB53qXIxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd58033ecc6a97-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 12:22:31 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=d1cbd05c915ee5568fc94e3cb7dc0f78b1494591749; expires=Sat, 12-May-18 12:22:29 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314172271014781936"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2017-05-12T12:22:31",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Cookie": "__cfduid=d1cbd05c915ee5568fc94e3cb7dc0f78b1494591749",
+          "User-Agent": "python-requests/2.14.2",
+          "X-Auth-Token": "4d1e20b567320c5145a737bfe42c52a8"
+        },
+        "method": "GET",
+        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test+User"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA+yaXU/cOBSG/0rk240rx3EcO3d8jFq0dKhgSldaoej4I2A1JCPHwxYh/vsqYQZmRpQdWPUCNXf2Oa+Pj4/tR0mUO6RsYyunHXhnO1T8fYecQQUSUqY2oSmmMmeYGcKwTA3FiRXSGKYJF4BipKD5XoLW7aIJ5VVbG+vLBq4tKtDMdiH62lmPYrRtiqZOf0cxstfgalQ0i7qO0Rxur20TynA7HzK5iNeSuy3BGG+73oH2HpoRo2hLNCTib1GBPu6jTZdtggu3Q3RUINcYd+PMAmq0HeF6Ds3tchUPma37K+e7sFrjof+wNbyGJ++3q3Y7uAt9brMrGx24AMZuzz5vu6Bb049mlFG25e4CBFu2vpz79sY1+tkMzaCpSuV8uHpO4Exfi8ppCK5tlhX5T9kN1IsnXb/v28XubculfzrbP4j296Z/Rl+OD7bPyfqEeuG9bfRDkC8oRitRs7hW1vd1SEQWsTSnKEa+XQTXXJZ9iYYwZbIKtOEacv2JbxhGUYG61ofBhJ4d3UsYIXlK+vydLrt/XBVWIZ2CZtU2toJFHcq14qECVVB3fWjtLYTWl7ptAuhQDtdLMyNSYQVOOM0wY5pjkJXCqVRaJZVNs9Q8lu3p4GfRN3etamvaJvrk6jo67VWPNhSj47bpGxfLea0pIaACUZJkmHBM2SxhBUkLwv8gpCD92hZz85IwfxRu3KYfwfoG6tLbyvY7uNzR+3gFkIpxLkiKhdAEs4oJrKjg2HJtKs1AM2lGgIwAGQHyDgGSZEUqdgHIpvBVADGSpEZrgytKJWZGVhhynmHLTJpnKeNSJCNARoCMAHmPAOEFlTsBhBcpeRtASGWoFMCxTqTFjGrAkqsUC5ISTWxCuclGgIwAGQHyPgHC6I4AYekbn0BYniiwChOhGGb924uopMYZAZtXeUUypUaAjAAZAfI2gBBNdCIJ5qAyzFSisMilxsASkhtT0Qx+AUByTOgs4UX/dYO8BJB1YfLGbyCUSZ5yibMsVZgZDVhxlWNLcskBjAFrfzFA0Ny71vdXLkbeXi5q8GiEyvuFymxyNnuAynTv8+T/U2V8KhkO/lNZ9w4PTydnZyhG0fRkFn09O5p+jCZ/zSan073j6Gxyen500Nc9OpycT45PvnyeTGfRZHp+dHoy7dsfnuNOjkmGEzpLaJHkL3Hnp8LXcYcIZiSXGHIwmJFKYgVMYG0MoRmA0JaM3Bm5M3LnN+KOKKjYiTsbwte9MFWZFQm3WJKcY8YzipVWHNPc8FyCBSHEyJ2ROyN3fh/uUFrQfBfubAp34s5Ff/8vXTOcK1TcodAGqPsL+vAzi4iXljlc9v1kdUrCYBkMc+uXHZrFaO7tjWsX3dKEkxg19kdY67beDIdpbclLYwmdLo3tNCoQdBrd3/8LAAD//wMAyrGQ614jAAA=",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd580c9bdb6a97-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 12:22:31 GMT",
+          "Server": "cloudflare-nginx",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314172283634074249"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test+User"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}

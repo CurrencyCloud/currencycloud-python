@@ -1,0 +1,93 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-12T12:22:35",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "104",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "python-requests/2.14.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjIzTTI2N040TjYzNDdPMjQxtTQyMjFKTTUwSjI3TDJJVqoFAAAA//8DAHrzPtcxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd581c390134e2-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 12:22:35 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=db1a46383508d96a762411cb9b6e6be6b1494591753; expires=Sat, 12-May-18 12:22:33 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314172304619890695"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2017-05-12T12:22:35",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "0",
+          "Cookie": "__cfduid=db1a46383508d96a762411cb9b6e6be6b1494591753",
+          "User-Agent": "python-requests/2.14.2",
+          "X-Auth-Token": "65b373a3c6177b14592242ee02b71b4c"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/df5e816e-9076-4652-bcb6-27d679aea888/delete"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA4RT227bMAz9FYOvswtbvsZvaWMUxVq3SNxuwDAIskQ3Qh3ZkOVuwbB/H+Q2TWp02xtBHh6Sh+QvkAJyEE2MWZCgt/DTxIuSmHg1rxOPpCJJFwxZlmXgQs3UE2Wcd6MydNu1AjVVbIeQQ4WDcUq2Q4eAC6fO+wG1U0r+BC7gjskWcjW2rQs92+9QGWr2PQ6Qf4Ney05LswcXND6OLdPw3YUaFTaSS6b3lAmhcZjAyxfTicgcNLWn95DD5Tm8D6Ey0uynipCDVEI+SzGyFuYMu56p/etsL92exhupB3OYfKXPZuktO0a/bLs5uZ0wh2qLzoU0TOC8et8NhnfCZkckItEsPBhmkHaa9rp7lop/2KGYMA2tpTbbjwBSWC0ayZmRnXpV5L+wZ9aOR5y9hrnY1nfYfrGpnPNl+dkplzfF/HxOK/JRa1T8heUOXDiA1LirUVshgiyOwtTelu5GI9UjtRJNLDQ48LwLTb3+JTalEchh6LSZXPBhtoVEvp+Gvm1fcjr8kI05UMqaqYMtsGFja+iJeJBDw9rBUnONzHSa8k4Zxg2dno5HIgszzLwgIbEXRTzx2KKpvXBR8zpoMIxD8aba8fCPsi5Xq3Wx2YALTnlbOfebq/LSKb5WxbpcXjubYv1wdWF1d1bFQ3F9e3dTlJVTlA9X69vS2mf2c6bWUFBmIAfiB6nnx15AqoDkhOQk/eT7uW/HH3vxD2AYvwHfPdxPg1qxlmps0O74dee//wAAAP//AwC3j/U8eQQAAA==",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd58258db934e2-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 12:22:35 GMT",
+          "Server": "cloudflare-nginx",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314172317146664600"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/df5e816e-9076-4652-bcb6-27d679aea888/delete"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}

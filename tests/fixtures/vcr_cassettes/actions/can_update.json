@@ -1,0 +1,94 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-12T12:22:33",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "104",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "python-requests/2.14.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUrI0tzBINjQxNjRMM0w2tjA0TUo2SElOtjA2M001TDJKVqoFAAAA//8DANf+JDsxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd580fc8ef358a-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 12:22:33 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=db477a74ab6a6ab809051a92bef34c1881494591751; expires=Sat, 12-May-18 12:22:31 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314172287862109842"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2017-05-12T12:22:33",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "bank_account_holder_name=Test+Name+2"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "36",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Cookie": "__cfduid=db477a74ab6a6ab809051a92bef34c1881494591751",
+          "User-Agent": "python-requests/2.14.2",
+          "X-Auth-Token": "9780c14311f1c3815bc0dcc8365e1b2c"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/df5e816e-9076-4652-bcb6-27d679aea888"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA4RTUW+bQAz+K8ivgwoOAoS3tEFVtZZWCe0mTdPpuDPNqeRAx9ENTfvv09GmSVG3vVn258/2Z/sXSAEZiHqBaRCjt/ST2IviBfEqXsUeSUScLBmyNE3BhYqpJ8o4bwdl6K5tBGqq2B4hgxJ74xRsjw4BF06d9z1qp5D8CVzAPZMNZGpoGhc6Nu5RGWrGDnvIvkGnZaulGcEFjY9DwzR8d6FChbXkkumRMiE09hN49WI6EZmDpvb0CBlcnsP7ECojzThVhAykEvJZioE1MGfYd0yNr7O9dHsar6XuzWHytT6bpTfsGP2ya+fkdsIMyh06F9IwgfPqXdsb3gqbHZGIRLNwb5hB2mra6fZZKv5hh2LC1LSS2uw+AkhhtaglZ0a26lWR/8KeWTMccfYa5mJb32H7+bZ0zlfFZ6dY3eTz8zmtyAetUfEXljtw4QBSw75CbYUI0kUUJva2dDsYqR6plWhiocGB511o6vUvsSmNQAZ9q83kgg+zLSTy/ST0bfuS0/6HrM2BUlZMHWyBNRsaQ0/Egwxq1vSWmmtkptWUt8owbuj0dDwSaZhi6gUxWXhRxGOPLevKC5cVr4Iaw0Uo3lQ7Hv5R1tV6vcm3W3DBKW5L5357VVw6+dcy3xSra2ebbx6uLqzuzjp/yK9v727yonTy4uFqc1tY+8x+ztQaCsoMZED8IPH8hReQMiAZIRlJPvl+5tvxh078AxiGb8B3D/fToFasoRprtDt+3fnvPwAAAP//AwCospKQeQQAAA==",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd58196d70358a-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 12:22:33 GMT",
+          "Server": "cloudflare-nginx",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314172300802665476"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/df5e816e-9076-4652-bcb6-27d679aea888"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}

@@ -29,6 +29,10 @@ class Contacts(Http):
         data = [Contact(self, **fields) for fields in response['contacts']]
         return PaginatedCollection(data, response['pagination'])
 
+    def first(self, **params):
+        params['per_page'] = 1
+        return self.find(**params)[0]
+
     def retrieve(self, resource_id, **kwargs):
         '''Returns a json structure containing the details of the requested contact.'''
         return Contact(self, **self.get('/v2/contacts/' + resource_id, query=kwargs))

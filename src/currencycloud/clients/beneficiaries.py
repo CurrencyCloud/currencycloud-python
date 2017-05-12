@@ -30,7 +30,7 @@ class Beneficiaries(Http):
         Delete a previously created beneficiary and returns a hash containing the details of the
         deleted beneficiary.
         '''
-        return self.post('/v2/beneficiaries/' + resource_id + '/delete', kwargs)
+        return Beneficiary(self, **self.post('/v2/beneficiaries/' + resource_id + '/delete', kwargs))
 
     def find(self, **kwargs):
         '''
@@ -40,6 +40,10 @@ class Beneficiaries(Http):
         response = self.get('/v2/beneficiaries/find', query=kwargs)
         data = [Beneficiary(self, **fields) for fields in response['beneficiaries']]
         return PaginatedCollection(data, response['pagination'])
+
+    def first(self, **params):
+        params['per_page'] = 1
+        return self.find(**params)[0]
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a json structure containing the details of the requested beneficiary.'''

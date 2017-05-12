@@ -20,6 +20,10 @@ class Transfers(Http):
         data = [Transfer(self, **fields) for fields in response['transfers']]
         return PaginatedCollection(data, response['pagination'])
 
+    def first(self, **params):
+        params['per_page'] = 1
+        return self.find(**params)[0]
+
     def retrieve(self, resource_id, **kwargs):
         '''Returns an array of Transfer objects for the given search criteria.'''
         return Transfer(self, **self.get('/v2/transfers/' + resource_id, query=kwargs))

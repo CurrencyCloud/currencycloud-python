@@ -17,13 +17,17 @@ class Settlements(Http):
 
     def delete(self, resource_id, **kwargs):
         '''Deletes an open Settlement and returns the Settlement object in its final state.'''
-        return self.post('/v2/settlements/' + resource_id + '/delete', kwargs)
+        return Settlement(self, **self.post('/v2/settlements/' + resource_id + '/delete', kwargs))
 
     def find(self, **kwargs):
         '''Returns an array of Settlement objects for the given search criteria.'''
         response = self.get('/v2/settlements/find', query=kwargs)
         data = [Settlement(self, **fields) for fields in response['settlements']]
         return PaginatedCollection(data, response['pagination'])
+
+    def first(self, **params):
+        params['per_page'] = 1
+        return self.find(**params)[0]
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a Settlement object for the requested ID.'''

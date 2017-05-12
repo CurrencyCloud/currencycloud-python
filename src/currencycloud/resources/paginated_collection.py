@@ -1,11 +1,13 @@
 '''This module the PaginatedCollection class'''
 
+from .pagination import Pagination
+
 
 class PaginatedCollection(list):
     '''Provides a wrapper around an array of Resources with additional pagination details'''
     def __init__(self, collection, pagination):
         super(PaginatedCollection, self).__init__(collection)
-        self.__pagination = pagination
+        self.__pagination = Pagination(None, **pagination)
 
     @property
     def pagination(self):

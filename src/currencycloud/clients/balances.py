@@ -21,3 +21,7 @@ class Balances(Http):
         response = self.get('/v2/balances/find', query=kwargs)
         data = [Balance(self, **fields) for fields in response['balances']]
         return PaginatedCollection(data, response['pagination'])
+
+    def first(self, **params):
+        params['per_page'] = 1
+        return self.find(**params)[0]

@@ -1,0 +1,92 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-12T12:33:21",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0&login_id=rjnienaber%40gmail.com"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "104",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "python-requests/2.14.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjIyTE4xMTI3MEk1MLI0MjRIMTdISjU0MEpLNkk1NzUyVqoFAAAA//8DACn6foQxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd67e48a626a4f-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 12:33:21 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=de78c85c5809773ca3cc58550601a77d31494592400; expires=Sat, 12-May-18 12:33:20 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314177727401959567"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2017-05-12T12:33:21",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Cookie": "__cfduid=de78c85c5809773ca3cc58550601a77d31494592400",
+          "User-Agent": "python-requests/2.14.2",
+          "X-Auth-Token": "21cd42704e029210d70be102fc4e7523"
+        },
+        "method": "GET",
+        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test+User&per_page=1"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA4RUXW/bMAz8KwZfZw/+UBJbb00GrMCKotg69GEoBFmiG6GKZEhy1qDofx/kOG1qdNubfDyejhTpZ2jRYKeE4k6hB/rrGZQECnXTVFiUVVY2K5IRmZOsqWSZFVg3UhKRL2sOKbTcPDIuhB1MYFurJTpm+A6Bwi36kPz06CCFOZRcK/EIKeCOKw3UDFqn0PPDDk1g4dCPTu7TM3MHxqV06GMALo7HhJQwI41G3AEofF3D+xCaoMJhVAcKyki1V3LgGuYKu56bw1TF0dl5vFPOh1ONX9znWbrmb9G7rZ2LqxC93W4x2ajAJc5v760PwsqYTUpSklnYBx6QWcd6Z/fKiA8dypHTsVa5sP2IoGTsRacED8qaqSP/pe25Ht548d3nzY7YVPrlj/UmWV9cf0turjbzOTm/UAzOoRFHkRtI4UQyw65FF/tQ1IuEVKsSUnB2CMo8sNiiUYYVJ6F3odHrX2JjWgkUvHVhhODD7Egheb6q8uhfCeZ/qy6cJFXLzeksseODDuyseUCh49pHaeGQB+uYsCZwEdi4XoLIuqqxzoplucgIEcuMN12bVU0r2qLDalHJ17a9Df4iuVO7VqO0JrlUWiffI+sVgxSurImH++lelIwHoFDmxSLLl1lJbgtC84rmy095TvNY29DLfxFXr8R32/QU0BmumcMO4wtOL/pyHxf5QZlxaIA+Q7CB67h9xx/MKp2Qnj9M38cZCCMCtEihR3f24XCv7OAnJCtSMPh0YpcpWCfHQTkreAIZ94JJ9AIocC/g5eUPAAAA//8DAJpGa2zwBAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd67edff006a4f-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 12:33:21 GMT",
+          "Server": "cloudflare-nginx",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314177740043266194"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test+User&per_page=1"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}

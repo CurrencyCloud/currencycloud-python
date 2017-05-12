@@ -25,13 +25,17 @@ class Payments(Http):
         Delete a prevoiusly created payment and returns a hash containing the details of the
         deleted payment.
         '''
-        return self.post('/v2/payments/' + resource_id + '/delete', kwargs)
+        return Payment(self, **self.post('/v2/payments/' + resource_id + '/delete', kwargs))
 
     def find(self, **kwargs):
         '''Returns an Array of Payment objects matching the search criteria.'''
         response = self.get('/v2/payments/find', query=kwargs)
         data = [Payment(self, **fields) for fields in response['payments']]
         return PaginatedCollection(data, response['pagination'])
+
+    def first(self, **params):
+        params['per_page'] = 1
+        return self.find(**params)[0]
 
     def retrieve(self, resource_id, **kwargs):
         '''Returns a hash containing the details of the requested payment.'''

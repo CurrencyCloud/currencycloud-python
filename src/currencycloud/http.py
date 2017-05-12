@@ -18,7 +18,7 @@ class Http(object):
         '''Executes a GET request.'''
 
         url = self.__build_url(endpoint)
-        query = self.__handle_on_behalf_of(query)
+        query = self.__encode_arrays(self.__handle_on_behalf_of(query))
         headers = self.__build_headers(authenticated)
 
         def execute_request(url, headers, data):
@@ -37,7 +37,7 @@ class Http(object):
         '''Executes a POST request.'''
 
         url = self.__build_url(endpoint)
-        data = self.__handle_on_behalf_of(data)
+        data = self.__encode_arrays(self.__handle_on_behalf_of(data))
         headers = self.__build_headers(authenticated)
 
         def execute_request(url, headers, data):
@@ -75,6 +75,19 @@ class Http(object):
                 data['on_behalf_of'] = self.config.on_behalf_of
 
         return data
+
+    def __encode_arrays(self, data):
+        if data is not None:
+            new_data = {}
+
+            for k in data:
+                if isinstance(data[k], list):
+                    new_data[k + '[]'] = data[k]
+                else:
+                    new_data[k] = data[k]
+
+            return new_data
+
 
     def __build_headers(self, authenticated):
         if authenticated:
