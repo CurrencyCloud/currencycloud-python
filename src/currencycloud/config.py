@@ -2,6 +2,7 @@
 
 import clients
 import uuid
+import requests
 
 
 class Config(object):
@@ -18,6 +19,7 @@ class Config(object):
         self.login_id = login_id
         self.api_key = api_key
         self.environment = environment
+        self.session = requests.Session()
 
         super(Config, self).__init__()
 

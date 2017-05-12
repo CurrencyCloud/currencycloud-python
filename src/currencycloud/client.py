@@ -39,6 +39,11 @@ class Client(Http):
         response = self.auth.authenticate()
         self.config.auth_token = response['auth_token']
 
+    def close_session(self):
+        self.auth.close_session()
+        self.config.auth_token = None
+        return True
+
     @contextmanager
     def on_behalf_of(self, uuid):
         '''Yields a new client object with an on_behalf_of setting.'''

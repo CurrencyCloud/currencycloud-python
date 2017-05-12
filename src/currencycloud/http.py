@@ -12,7 +12,7 @@ class Http(object):
 
     def __init__(self, config):
         self.config = config
-        self.session = requests.Session()
+        self.session = self.config.session
 
     def get(self, endpoint, query=None, authenticated=True):
         '''Executes a GET request.'''

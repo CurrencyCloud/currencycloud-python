@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2622d5b1e7d245353970194aa013a081370ff7367a9752ee0fcb0e2280e45bf2"
+            "sha256": "330ddea05ba67e9635d12fbc324e502b99ee4371b7cca4c30a580668f4f7d289"
         },
         "requires": {},
         "sources": [
@@ -25,6 +25,10 @@
         "betamax": {
             "hash": "sha256:91d5f6ca6b03901df93f9c0c2ac7fe1a0ff557bd6f30124ec73cefae00fc14a2",
             "version": "==0.8.0"
+        },
+        "betamax-serializers": {
+            "hash": "sha256:c7c4bd96f71d763debbec21e09bea932613cf651c2055514e6fd889358a46e3e",
+            "version": "==0.2.0"
         },
         "funcsigs": {
             "hash": "sha256:330cc27ccbf7f1e992e69fef78261dc7c6569012cf397db8d3de0234e6c937ca",
