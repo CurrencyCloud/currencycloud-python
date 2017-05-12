@@ -1,6 +1,5 @@
 '''This module provides a Mixin to generate http requests to the CC API endpoints'''
 
-import requests
 from .config import Config
 
 
@@ -21,7 +20,15 @@ class Http(object):
         query = self.__handle_on_behalf_of(query)
         headers = self.__build_headers(authenticated)
 
-        response = self.session.get(url, headers=headers, params=query)
+        def execute_request(url, headers, data):
+            return self.session.get(url, headers=headers, params=data)
+
+        response = self.__handle_authentication_errors(execute_request,
+                                                       url,
+                                                       headers,
+                                                       query,
+                                                       authenticated)
+
         return response.json()
 
     def post(self, endpoint, data, authenticated=True):
@@ -31,7 +38,15 @@ class Http(object):
         data = self.__handle_on_behalf_of(data)
         headers = self.__build_headers(authenticated)
 
-        response = self.session.post(url, headers=headers, data=data)
+        def execute_request(url, headers, data):
+            return self.session.post(url, headers=headers, data=data)
+
+        response = self.__handle_authentication_errors(execute_request,
+                                                       url,
+                                                       headers,
+                                                       data,
+                                                       authenticated)
+
         return response.json()
 
     ENVIRONMENT_URLS = {
@@ -65,3 +80,16 @@ class Http(object):
             headers = {}
 
         return headers
+
+    def __handle_authentication_errors(self, execute_request, url, headers, data, authenticated):
+        retry_count = 3
+
+        while retry_count:
+            retry_count -= 1
+            response = execute_request(url, headers, data)
+
+            if response.status_code != 401:
+                return response
+
+            self.config.reauthenticate()
+            headers = self.__build_headers(authenticated)

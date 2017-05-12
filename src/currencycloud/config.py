@@ -55,6 +55,16 @@ class Config(object):
         else:
             raise ValueError('Invalid UUIDv4 for on_behalf_of contact_id.')
 
+    def reauthenticate(self):
+        '''Force generation of a new auth token'''
+
+        if self.login_id is None:
+            raise RuntimeError('login_id must be set')
+        if self.api_key is None:
+            raise RuntimeError('api_key must be set')
+
+        self._auth_token = clients.Auth(self).authenticate()['auth_token']
+
     def __valid_uuid(self, value):
         try:
             val = uuid.UUID(value, version=4)

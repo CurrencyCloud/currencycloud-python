@@ -38,3 +38,14 @@ class TestAuthentication:
             assert self.client.config.auth_token is not None
             assert self.client.close_session() is True
             assert self.client.config._auth_token is None
+
+    def test_authentication_handles_session_timeout(self):
+        # Set the token to an invalid one
+        self.client.config.auth_token = '1234abcd1234abcd1234abcd1234abcd'
+
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('authentication/handles_session_timeout', match_requests_on=['uri', 'method', 'headers'])
+
+            response = self.client.beneficiaries.find()
+
+            assert response is not None

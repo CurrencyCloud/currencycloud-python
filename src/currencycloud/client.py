@@ -40,6 +40,7 @@ class Client(Http):
         self.config.auth_token = response['auth_token']
 
     def close_session(self):
+        '''Terminate the Auth Token validity'''
         self.auth.close_session()
         self.config.auth_token = None
         return True
