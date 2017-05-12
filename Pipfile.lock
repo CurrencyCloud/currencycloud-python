@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "330ddea05ba67e9635d12fbc324e502b99ee4371b7cca4c30a580668f4f7d289"
+            "sha256": "0c979039652bcb6ed790d573454be9f0b5191306dcaed054bb5fd0be0be70839"
         },
         "requires": {},
         "sources": [
@@ -12,6 +12,10 @@
         ]
     },
     "default": {
+        "PyYAML": {
+            "hash": "sha256:592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab",
+            "version": "==3.12"
+        },
         "requests": {
             "hash": "sha256:3b39cde35be51762885631cf586f4dc2284951b44d479a4454020758d767cc2f",
             "version": "==2.14.2"

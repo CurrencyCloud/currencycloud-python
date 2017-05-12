@@ -4,6 +4,7 @@ verify_ssl = true
 
 [packages]
 requests = ">2.10.0"
+PyYAML = ">=3.12.0"
 
 [dev-packages]
 pytest = ">3.0.0"
