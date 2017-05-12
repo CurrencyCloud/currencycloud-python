@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9ffbd6a738aa769ebeba15993446eeba6c502f856f3975b186d97d7b2bebdc53"
+            "sha256": "2622d5b1e7d245353970194aa013a081370ff7367a9752ee0fcb0e2280e45bf2"
         },
         "requires": {},
         "sources": [
@@ -21,6 +21,10 @@
         "appdirs": {
             "hash": "sha256:d8b24664561d0d34ddfaec54636d502d7cea6e29c3eaf68f3df6180863e2166e",
             "version": "==1.4.3"
+        },
+        "betamax": {
+            "hash": "sha256:91d5f6ca6b03901df93f9c0c2ac7fe1a0ff557bd6f30124ec73cefae00fc14a2",
+            "version": "==0.8.0"
         },
         "funcsigs": {
             "hash": "sha256:330cc27ccbf7f1e992e69fef78261dc7c6569012cf397db8d3de0234e6c937ca",

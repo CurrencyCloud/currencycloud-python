@@ -12,6 +12,7 @@ class Http(object):
 
     def __init__(self, config):
         self.config = config
+        self.session = requests.Session()
 
     def get(self, endpoint, query=None, authenticated=True):
         '''Executes a GET request.'''
@@ -20,7 +21,7 @@ class Http(object):
         query = self.__handle_on_behalf_of(query)
         headers = self.__build_headers(authenticated)
 
-        response = requests.get(url, headers=headers, params=query)
+        response = self.session.get(url, headers=headers, params=query)
         return response.json()
 
     def post(self, endpoint, data, authenticated=True):
@@ -30,7 +31,7 @@ class Http(object):
         data = self.__handle_on_behalf_of(data)
         headers = self.__build_headers(authenticated)
 
-        response = requests.post(url, headers=headers, data=data)
+        response = self.session.post(url, headers=headers, data=data)
         return response.json()
 
     ENVIRONMENT_URLS = {
