@@ -1,7 +1,7 @@
 '''This module provides a class for Rates calls to the CC API'''
 
 from ..http import Http
-from ..resources import Rate
+from .. import resources
 
 
 class Rates(Http):
@@ -13,11 +13,22 @@ class Rates(Http):
         of the currently logged in contact. If delivery date is not supplied it will default to a
         deal which settles in 2 working days.
         '''
-        return Rate(self, **self.get('/v2/rates/detailed', query=kwargs))
+        return resources.Rate(self, **self.get('/v2/rates/detailed', query=kwargs))
 
     def find(self, **kwargs):
         '''
         Returns core rate information for multiple pairs. The first number in each pair in the
         response is the bid rate and the second is the offer rate.
         '''
-        return self.get('/v2/rates/find', query=kwargs)
+        response = self.get('/v2/rates/find', query=kwargs)
+
+        rates = []
+        for currency_pair, bid_offer in response['rates'].items():
+            rate = {
+                'currency_pair': currency_pair,
+                'bid': bid_offer[0],
+                'offer': bid_offer[1]
+            }
+            rates.append(resources.Rate(self, **rate))
+
+        return resources.Rates(self, currencies=rates, unavailable=response['unavailable'])

@@ -1,0 +1,92 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-12T11:57:31",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0&login_id=rjnienaber%40gmail.com"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "104",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "python-requests/2.14.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjIwSE02TTO2SEpLTUxMM0myNDc1NbVMNU8yTLJMTjEzV6oFAAAA//8DALWg5YwxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd336819263614-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 11:57:31 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=dd4106c9b9e0edbe8d72654ffe809f1a61494590250; expires=Sat, 12-May-18 11:57:30 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314159693365416510"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2017-05-12T11:57:31",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Cookie": "__cfduid=dd4106c9b9e0edbe8d72654ffe809f1a61494590250",
+          "User-Agent": "python-requests/2.14.2",
+          "X-Auth-Token": "00ec5f38bfeaaf4b975559e7b1b9cd67"
+        },
+        "method": "GET",
+        "uri": "https://devapi.thecurrencycloud.com/v2/rates/detailed?buy_currency=GBP&sell_currency=USD&amount=10000&fixed_side=buy"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA2SPwU7DMBBE/2XPabSGUlofERJXJODCZeXGG8mq7YT1WiJC/DuKCiRqr/NmRjNfUFg1cuKs1FWloe9JQ2KwcIPmfoN3G7N7NbcW0SK+QwNdFeHcTTS6IGDh6eH57eVxBjHMLcc60Z/njBdWOMY1vAq6NNSsYMEgIraIF9mFb3F/OPM+fLKnEvw8+lgnaCAFT8nJiZXE6aybdov73dK2lg/QwOhEM8uvnmuMDXSD8JXR8ziUoCT8UYOwB9u7WHgB/xOxxZX/4vX3DwAAAP//AwCDrRF0egEAAA==",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35dd33719d9e3614-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 11:57:31 GMT",
+          "Server": "cloudflare-nginx",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314159706146686892"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/rates/detailed?buy_currency=GBP&sell_currency=USD&amount=10000&fixed_side=buy"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
