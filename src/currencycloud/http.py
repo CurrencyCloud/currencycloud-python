@@ -1,6 +1,7 @@
 '''This module provides a Mixin to generate http requests to the CC API endpoints'''
 
 from .config import Config
+import errors
 
 
 class Http(object):
@@ -13,7 +14,7 @@ class Http(object):
         self.config = config
         self.session = self.config.session
 
-    def get(self, endpoint, query=None, authenticated=True):
+    def get(self, endpoint, query=None, authenticated=True, retry=True):
         '''Executes a GET request.'''
 
         url = self.__build_url(endpoint)
@@ -24,14 +25,15 @@ class Http(object):
             return self.session.get(url, headers=headers, params=data)
 
         response = self.__handle_authentication_errors(execute_request,
+                                                       retry,
                                                        url,
                                                        headers,
                                                        query,
                                                        authenticated)
 
-        return response.json()
+        return self.__handle_errors('get', url, query, response)
 
-    def post(self, endpoint, data, authenticated=True):
+    def post(self, endpoint, data, authenticated=True, retry=True):
         '''Executes a POST request.'''
 
         url = self.__build_url(endpoint)
@@ -42,12 +44,13 @@ class Http(object):
             return self.session.post(url, headers=headers, data=data)
 
         response = self.__handle_authentication_errors(execute_request,
+                                                       retry,
                                                        url,
                                                        headers,
                                                        data,
                                                        authenticated)
 
-        return response.json()
+        return self.__handle_errors('post', url, data, response)
 
     ENVIRONMENT_URLS = {
         Config.ENV_PRODUCTION: 'https://api.thecurrencycloud.com',
@@ -81,8 +84,24 @@ class Http(object):
 
         return headers
 
-    def __handle_authentication_errors(self, execute_request, url, headers, data, authenticated):
-        retry_count = 3
+    HTTP_CODE_TO_ERROR = {
+        400: errors.BadRequestError,
+        401: errors.AuthenticationError,
+        403: errors.ForbiddenError,
+        404: errors.NotFoundError,
+        429: errors.TooManyRequestsError,
+        500: errors.InternalApplicationError
+    }
+
+    def __handle_errors(self, verb, url, params, response):
+        if int(response.status_code / 100) == 2:
+            return response.json()
+        else:
+            klass = Http.HTTP_CODE_TO_ERROR.get(response.status_code, errors.ApiError)
+            raise klass(verb, url, params, response)
+
+    def __handle_authentication_errors(self, execute_request, retry, url, headers, data, authenticated):
+        retry_count = 3 if retry else 1
 
         while retry_count:
             retry_count -= 1
@@ -91,5 +110,8 @@ class Http(object):
             if response.status_code != 401:
                 return response
 
-            self.config.reauthenticate()
-            headers = self.__build_headers(authenticated)
+            if retry:
+                self.config.reauthenticate()
+                headers = self.__build_headers(authenticated)
+
+        return response

@@ -11,7 +11,7 @@ class Auth(Http):
         return self.post('/v2/authenticate/api', {
             'login_id': self.config.login_id,
             'api_key': self.config.api_key
-        }, authenticated=False)
+        }, authenticated=False, retry=False)
 
     def close_session(self):
         '''Invalidate the Auth Token'''

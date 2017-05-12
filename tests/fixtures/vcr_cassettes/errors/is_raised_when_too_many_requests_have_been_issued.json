@@ -1,0 +1,45 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-12T11:18:28",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "104",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "python-requests/2.14.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api",
+         "body": {
+           "encoding": "utf-8",
+           "string": "{\"error_code\":\"too_many_requests\",\"error_messages\":{\"base\":[{\"code\":\"too_many_requests\",\"message\":\"Too many requests have been made to the api. Please refer to the Developer Center for more information\",\"params\":{}}]}}"
+         },
+         "headers": {
+           "x-request-id": "2771875643610572878",
+           "connection": "close",
+           "content-type": "application/json;charset=utf-8",
+           "content-length": "429",
+           "server": "nginx",
+           "x-content-type-options": "nosniff",
+           "date": "Tue, 23 Jun 2015 12:40:25 GMT"
+         },
+         "status": {
+           "code": 429,
+           "message": "Too Many Requests"
+         },
+         "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}

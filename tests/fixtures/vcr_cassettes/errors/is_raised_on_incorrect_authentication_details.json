@@ -1,0 +1,47 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-12T11:07:00",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=non-existent-login-id&api_key=efb5ae2af84978b7a37f18dd61c8bbe139b403009faea83484405a3dcb64c4d8"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "103",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "python-requests/2.14.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"error_code\":\"auth_failed\",\"error_messages\":{\"username\":[{\"code\":\"invalid_supplied_credentials\",\"message\":\"Authentication failed with the supplied credentials\",\"params\":{}}]}}"
+        },
+        "headers": {
+          "CF-RAY": "35dce970cbf73494-LHR",
+          "Connection": "keep-alive",
+          "Content-Length": "176",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Fri, 12 May 2017 11:07:00 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=d3a60d35d8a1930ceac951df64a2d3f0f1494587220; expires=Sat, 12-May-18 11:07:00 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3314134278911388774"
+        },
+        "status": {
+          "code": 401,
+          "message": "Unauthorized"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
