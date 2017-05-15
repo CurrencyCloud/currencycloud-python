@@ -1,0 +1,92 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-15T10:49:54",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=api.test.user1%40currencycloud.com&api_key=0a14256abc393cdc238672b2d42d54f5581937f3ee23b76d5cfa842f63f8364d"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "116",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "python-requests/2.14.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUkpJNTYxNzE1TjYxtzA1Nk8xNDdPSTY2MklMTrJMMzOwUKoFAAAA//8DAJzxSjYxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35f5887b6d710cd1-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Mon, 15 May 2017 10:49:54 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=dedc72875aeb44d2e92cb69ce9524149e1494845393; expires=Tue, 15-May-18 10:49:53 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3316299987430390315"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2017-05-15T10:49:54",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Cookie": "__cfduid=dedc72875aeb44d2e92cb69ce9524149e1494845393",
+          "User-Agent": "python-requests/2.14.2",
+          "X-Auth-Token": "de347453c478537d177dc324acb9f608"
+        },
+        "method": "GET",
+        "uri": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA5ySP2/cMAzFv0rBtVYh2ZIteUyDZO2QXaAl+mLAkS76U+BQ9LsX8vWuGToUXfmox8cf9QM2DzNovix6QscmoQYmETXTvTFMoZkWZ5SWnkMH+BZrKDCD4Jx/4a20UKB1cxumiz2skC++95Nmw9gLJl1vmBn6leFg/LgM0iuaoANXU6LgLjDD88M36CDRSq1CMMML5bKF06czXt4olHzImGP4u5YLlpphbk3+Yku0mYJvQxJhicm6GAq6cg0oRjWqXiomllExOUpiuK7IlB7EIEy/KLlCB7/9bbmc6bA+1R3TB8FjaULPxcS4YkJBByVhyCulRN5iA9Wg1fIa05axbDHYXOicbaL3uiVqcRrEHXOx9dwc/y9sfo2p2I8IxcSVUOz569Pj4xPnotGI4Tul3FI071D3vYMVt70msne+1w0pXec7g16u2jFp5MKkxpFpvQi2OqcHZ4zUA95feCq47dnmWNMR4ijf7nBD8gfYi+CzNLMSnzmfj990ZfAPjbcjnFKs5w/r1LC9Vzr4Ui534ecvAAAA//8DAN2etIDoAgAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35f588852a6b0cd1-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Mon, 15 May 2017 10:49:54 GMT",
+          "Server": "cloudflare-nginx",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3316300000397070898"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
