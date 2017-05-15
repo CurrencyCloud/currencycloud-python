@@ -26,7 +26,7 @@ class TestAccounts:
             assert account.id == "8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8"
             assert account.account_name == "Currency Cloud"
 
-    def test_actions_can_find(self):
+    def test_accounts_can_find(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('accounts/find')
 
@@ -42,7 +42,7 @@ class TestAccounts:
 
             assert account.brand == "currencycloud"
 
-    def test_actions_can_retrieve(self):
+    def test_accounts_can_retrieve(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('accounts/retrieve')
 
@@ -53,7 +53,7 @@ class TestAccounts:
 
             assert account.id == "8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8"
 
-    def test_actions_can_create(self):
+    def test_accounts_can_create(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('accounts/create')
 
@@ -69,7 +69,7 @@ class TestAccounts:
             assert account.id is not None
             assert account.account_name == "Currency Cloud Testing Environment"
 
-    def test_actions_can_update(self):
+    def test_accounts_can_update(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('accounts/update')
 
