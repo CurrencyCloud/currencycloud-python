@@ -30,8 +30,6 @@ class TestTransactions:
             assert isinstance(transaction, Transaction)
             assert transaction.currency == "GBP"
 
-            print transaction.id
-
     def test_transactions_can_retrieve(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('transactions/can_retrieve')
