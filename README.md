@@ -35,7 +35,7 @@ follows:
 When pip is available, the distribution can be downloaded from PyPi and
 installed in one step:
 
-    pip install currencycloud
+    pip install currency_cloud
 
 This command will download the latest released version of the library
 from the Python Cheese Shop and install it to your system.
