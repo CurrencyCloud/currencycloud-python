@@ -9,8 +9,8 @@ from setuptools import find_packages
 from setuptools import setup
 
 setup(
-    name='currencycloud',
-    version='2.0.0',
+    name='currency_cloud',
+    version='1.0.0',
     license='MIT',
     description="Python SDK for the Currency Cloud API.",
     long_description='',
