@@ -16,7 +16,7 @@ The full source code, tests and examples can be always found on
 
 ## Installation
 
-We supports installation using standard Python "distutils" or
+We support installation using standard Python "distutils" or
 "setuptools" methodologies. An overview of potential setups is as
 follows:
 
@@ -50,7 +50,7 @@ script:
 ## Supported Python versions
 
 This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
-the following Python implementations:
+under the following Python implementations:
 
 -  CPython 2.6
 -  CPython 2.7
@@ -117,7 +117,10 @@ Alternatively, you can just add ``on_behalf_of`` to the call parameters,
 for example:
 
 ```python
-    client.accounts.create(account_name='My Test User', on_behalf_of='c6ece846-6df1-461d-acaa-b42a6aa74045')
+client.accounts.create(
+    account_name='My Test User',
+    on_behalf_of='c6ece846-6df1-461d-acaa-b42a6aa74045'
+)
 ```
 
 Each of the above transactions will be executed in scope of the permissions
