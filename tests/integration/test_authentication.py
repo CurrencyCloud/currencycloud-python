@@ -44,7 +44,7 @@ class TestAuthentication:
         self.client.config.auth_token = '1234abcd1234abcd1234abcd1234abcd'
 
         with Betamax(self.client.config.session) as betamax:
-            betamax.use_cassette('authentication/handles_session_timeout', match_requests_on=['uri', 'method', 'headers'])
+            betamax.use_cassette('authentication/handles_session_timeout', match_requests_on=['uri', 'method'])
 
             response = self.client.beneficiaries.find()
 

@@ -1,7 +1,7 @@
 '''This module provides a Mixin to generate http requests to the CC API endpoints'''
 
 from currencycloud.errors import *
-
+from currencycloud.version import VERSION
 
 class Http(object):
     '''
@@ -80,10 +80,11 @@ class Http(object):
 
 
     def __build_headers(self, authenticated):
+        headers = {}
+        headers['User-Agent'] = "CurrencyCloud/2.0 Python/" + VERSION
+
         if authenticated:
             headers = {'X-Auth-Token': self.config.auth_token}
-        else:
-            headers = {}
 
         return headers
 

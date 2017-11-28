@@ -7,8 +7,9 @@ support, please contact our sales team at sales@currencycloud.com.
 from currencycloud.client import Client
 from currencycloud.config import Config
 from currencycloud.http import Http
+from currencycloud.version import VERSION
 
 __title__ = 'currencycloud'
-__version__ = '0.9.0'
+__version__ = VERSION
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2017 CurrencyCloud'
