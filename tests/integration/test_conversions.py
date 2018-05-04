@@ -59,3 +59,34 @@ class TestConversions:
 
             assert conversion.id == "a26ffc86-c0f6-45d8-8c1c-6a3e579ce974"
             assert conversion.client_buy_amount == "1000.00"
+
+    def test_actions_can_cancel(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('conversions/cancel')
+
+            response = self.client.conversions.cancel("84033366-2135-4fc9-8016-41a7adba463e")
+
+            assert response is not None
+            assert response.conversion_id == "84033366-2135-4fc9-8016-41a7adba463e"
+
+    def test_actions_can_date_change(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('conversions/date_change')
+
+            response = self.client.conversions.date_change("d3c7d733-7c2f-443d-a082-4c728157b99f",
+                                                           new_settlement_date="2019-04-02T13:00:00+00:00")
+
+            assert response is not None
+            assert response.conversion_id == "d3c7d733-7c2f-443d-a082-4c728157b99f"
+            assert response.new_settlement_date == "2019-04-02T13:00:00+00:00"
+
+    def test_actions_can_split(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('conversions/split')
+
+            response = self.client.conversions.split("d3c7d733-7c2f-443d-a082-4c728157b99f",
+                                                           amount="100")
+
+            assert response is not None
+            assert response.parent_conversion.get("id") == "d3c7d733-7c2f-443d-a082-4c728157b99f"
+            assert response.child_conversion.get("id") is not None
