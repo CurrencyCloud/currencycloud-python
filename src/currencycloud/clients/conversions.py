@@ -27,3 +27,15 @@ class Conversions(Http):
     def retrieve(self, resource_id, **kwargs):
         '''Returns a json structure containing the details of the requested conversion.'''
         return Conversion(self, **self.get('/v2/conversions/' + resource_id, query=kwargs))
+
+    def cancel(self, resource_id, **kwargs):
+        '''Returns a json structure containing the details of the conversion cancellation.'''
+        return Conversion(self, **self.post('/v2/conversions/' + resource_id + '/cancel', kwargs))
+
+    def date_change(self, resource_id, **kwargs):
+        '''Returns a json structure containing the details of the conversion date change rate.'''
+        return Conversion(self, **self.post('/v2/conversions/' + resource_id + '/date_change', kwargs))
+
+    def split(self, resource_id, **kwargs):
+        '''Returns a json structure containing split results as parent and child conversions.'''
+        return Conversion(self, **self.post('/v2/conversions/' + resource_id + '/split', kwargs))
