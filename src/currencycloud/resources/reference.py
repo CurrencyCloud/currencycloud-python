@@ -15,3 +15,7 @@ class SettlementAccount(Resource):
 
 class BeneficiaryRequiredDetails(Resource):
     pass
+
+
+class PayerRequiredDetails(Resource):
+    pass
