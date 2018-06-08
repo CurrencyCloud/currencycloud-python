@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "api_key=0a14256abc393cdc238672b2d42d54f5581937f3ee23b76d5cfa842f63f8364d&login_id=api.test.user1%40currencycloud.com"
+          "string": "api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef&login_id=development%40currencycloud.com"
         },
         "headers": {
           "Accept": "*/*",
@@ -13,10 +13,10 @@
           "Connection": "keep-alive",
           "Content-Length": "116",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "python-requests/2.14.2"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
       },
       "response": {
         "body": {
@@ -41,7 +41,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
       }
     },
     {
@@ -58,11 +58,11 @@
           "Content-Length": "51",
           "Content-Type": "application/x-www-form-urlencoded",
           "Cookie": "__cfduid=d9a80ac0ac7b3b44870940aff193994b61494843200",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "b9a29b354ebc729e93c1cc60d1de7bed"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/validate"
+        "uri": "https://devapi.currencycloud.com/v2/beneficiaries/validate"
       },
       "response": {
         "body": {
@@ -84,7 +84,7 @@
           "code": 400,
           "message": "Bad Request"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/validate"
+        "url": "https://devapi.currencycloud.com/v2/beneficiaries/validate"
       }
     }
   ],

@@ -10,9 +10,11 @@ from currencycloud.resources import *
 
 class TestContacts:
     def setup_method(self, method):
-        login_id = 'api.test.user1@currencycloud.com'
-        api_key = '0a14256abc393cdc238672b2d42d54f5581937f3ee23b76d5cfa842f63f8364d'
-        environment = Config.ENV_DEMONSTRATION
+        # TODO: To run against real server please delete ../fixtures/vcr_cassettes/* and replace
+        # login_id and api_key with valid credentials before running the tests
+        login_id = 'development@currencycloud.com'
+        api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+        environment = Config.ENV_DEMO
 
         self.client = Client(login_id, api_key, environment)
 

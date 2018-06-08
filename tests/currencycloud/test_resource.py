@@ -19,7 +19,7 @@ class TestResource:
         pass
 
     def setup_method(self):
-        self.config = Config(None, None, Config.ENV_DEMONSTRATION)
+        self.config = Config(None, None, Config.ENV_DEMO)
         self.client = TestResource.PersonClient(self.config)
 
     def test_resource_save_only_updates_changed_records(self):

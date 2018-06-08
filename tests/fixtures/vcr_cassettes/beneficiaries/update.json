@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "login_id=api.test.user1%40currencycloud.com&api_key=0a14256abc393cdc238672b2d42d54f5581937f3ee23b76d5cfa842f63f8364d"
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
         },
         "headers": {
           "Accept": "*/*",
@@ -13,10 +13,10 @@
           "Connection": "keep-alive",
           "Content-Length": "116",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "python-requests/2.14.2"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
       },
       "response": {
         "body": {
@@ -41,7 +41,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
       }
     },
     {
@@ -56,11 +56,11 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=dbc1e268037e6b83c9d580f70990f6cd61494842868",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "1e7fa64918afc862183d13ca7bf90c8a"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
+        "uri": "https://devapi.currencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
       },
       "response": {
         "body": {
@@ -84,7 +84,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
+        "url": "https://devapi.currencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
       }
     },
     {
@@ -101,11 +101,11 @@
           "Content-Length": "23",
           "Content-Type": "application/x-www-form-urlencoded",
           "Cookie": "__cfduid=dbc1e268037e6b83c9d580f70990f6cd61494842868",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "1e7fa64918afc862183d13ca7bf90c8a"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
+        "uri": "https://devapi.currencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
       },
       "response": {
         "body": {
@@ -129,7 +129,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
+        "url": "https://devapi.currencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
       }
     },
     {
@@ -144,11 +144,11 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=dbc1e268037e6b83c9d580f70990f6cd61494842868",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "1e7fa64918afc862183d13ca7bf90c8a"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
+        "uri": "https://devapi.currencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
       },
       "response": {
         "body": {
@@ -172,7 +172,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
+        "url": "https://devapi.currencycloud.com/v2/beneficiaries/a0bd2d78-3621-4c29-932f-a39d6b34d5e7"
       }
     }
   ],

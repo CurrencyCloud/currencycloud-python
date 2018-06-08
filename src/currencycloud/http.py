@@ -78,7 +78,6 @@ class Http(object):
 
             return new_data
 
-
     def __build_headers(self, authenticated):
         headers = {}
         headers['User-Agent'] = "CurrencyCloudSDK/2.0 Python/" + VERSION
