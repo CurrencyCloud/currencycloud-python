@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2017-05-12T11:15:30",
+      "recorded_at": "2018-05-11T11:15:30",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0"
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
         },
         "headers": {
           "Accept": "*/*",
@@ -13,10 +13,10 @@
           "Connection": "keep-alive",
           "Content-Length": "104",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "python-requests/2.14.2"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
       },
       "response": {
         "body": {
@@ -29,9 +29,9 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json;charset=utf-8",
-          "Date": "Fri, 12 May 2017 11:15:30 GMT",
+          "Date": "Fri, 11 May 2018 11:15:30 GMT",
           "Server": "cloudflare-nginx",
-          "Set-Cookie": "__cfduid=dc2e8183e074052b2850783f59e34d60a1494587728; expires=Sat, 12-May-18 11:15:28 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Set-Cookie": "__cfduid=dc2e8183e074052b2850783f59e34d60a1494587728; expires=Sat, 12-May-19 11:15:29 GMT; path=/; domain=.currencycloud.com; HttpOnly",
           "Transfer-Encoding": "chunked",
           "Vary": "Origin",
           "X-Content-Type-Options": "nosniff",
@@ -41,7 +41,45 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "request": {
+        "uri": "https://devapi.currencycloud.com/v2/transfers/find",
+        "method": "GET",
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "User-Agent": "python-requests/2.7.0 CPython/2.7.6 Darwin/14.4.0",
+          "X-Auth-Token": "d309d718f1a0e949308653258e24c219"
+        },
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        }
+      },
+      "recorded_at": "2018-05-11T11:15:30",
+      "response": {
+        "status": {
+          "code": 403,
+          "message": "Forbidden"
+        },
+        "url": "https://devapi.currencycloud.com/v2/transfers/find",
+        "headers": {
+          "connection": "keep-alive",
+          "x-content-type-options": "nosniff",
+          "date": "Fri, 11 May 2018 11:15:30 GMT",
+          "content-length": "184",
+          "server": "nginx",
+          "x-request-id": "2815456303127647695",
+          "content-type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"error_code\":\"permission_denied\",\"error_messages\":{\"base\":[{\"code\":\"permission_denied\",\"message\":\"You do not have permission 'transfer_read' to perform this operation\",\"params\":{}}]}}"
+        }
       }
     }
   ],

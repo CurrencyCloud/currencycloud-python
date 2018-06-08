@@ -6,21 +6,23 @@ import re
 
 from currencycloud import Client, Config
 from currencycloud.errors import ApiError, AuthenticationError, BadRequestError, ForbiddenError, NotFoundError, TooManyRequestsError
-from currencycloud.resources import Beneficiary
+from currencycloud.resources import Transfer
 
 
 class TestError:
     def setup_method(self, method):
-        login_id = 'rjnienaber@gmail.com'
-        api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
-        environment = Config.ENV_DEMONSTRATION
+        # TODO: To run against real server please delete ../fixtures/vcr_cassettes/* and replace
+        # login_id and api_key with valid credentials before running the tests
+        login_id = 'development@currencycloud.com'
+        api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+        environment = Config.ENV_DEMO
 
         self.client = Client(login_id, api_key, environment)
 
     def test_error_contains_full_details_for_api_error(self):
         login_id = 'non-existent-login-id'
-        api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb57528f0'
-        tmp_client = Client(login_id, api_key, Config.ENV_DEMONSTRATION)
+        api_key = 'deadbeefdeadbeefdeadbeefdeadbeef'
+        tmp_client = Client(login_id, api_key, Config.ENV_DEMO)
 
         with Betamax(tmp_client.config.session) as betamax:
             betamax.use_cassette('errors/contains_full_details_for_api_error')
@@ -38,7 +40,7 @@ class TestError:
             "login_id: non-existent-login-id",
             "api_key: " + api_key,
             "verb: post",
-            "url: https://devapi.thecurrencycloud.com/v2/authenticate/api",
+            "url: https://devapi.currencycloud.com/v2/authenticate/api",
             "status_code: 400",
             "date:",
             "request_id:",
@@ -59,8 +61,8 @@ class TestError:
 
     def test_error_is_raised_on_incorrect_authentication_details(self):
         login_id = 'non-existent-login-id'
-        api_key = 'efb5ae2af84978b7a37f18dd61c8bbe139b403009faea83484405a3dcb64c4d8'
-        tmp_client = Client(login_id, api_key, Config.ENV_DEMONSTRATION)
+        api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+        tmp_client = Client(login_id, api_key, Config.ENV_DEMO)
 
         with Betamax(tmp_client.config.session) as betamax:
             betamax.use_cassette('errors/is_raised_on_incorrect_authentication_details')
@@ -125,4 +127,25 @@ class TestError:
             assert error_message.field == 'base'
             assert error_message.code == 'too_many_requests'
             assert error_message.message == 'Too many requests have been made to the api. Please refer to the Developer Center for more information'  # noqa
+            assert not error_message.params
+
+    def test_error_is_raised_on_forbidden_request(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('errors/is_raised_on_forbidden_request')
+
+            error = None
+            try:
+                self.client.transfers.find()
+                raise Exception("Should have failed")
+            except ForbiddenError as e:
+                error = e
+
+            assert error.code == 'permission_denied'
+            assert error.raw_response is not None
+            assert error.status_code == 403
+            assert len(error.messages) == 1
+
+            error_message = error.messages[0]
+            assert error_message.code == 'permission_denied'
+            assert error_message.message == "You do not have permission 'transfer_read' to perform this operation"
             assert not error_message.params
