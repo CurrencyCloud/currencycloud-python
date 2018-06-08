@@ -47,7 +47,6 @@ script:
 This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
 under the following Python implementations:
 -  CPython 2.7
--  CPython 3.3
 -  CPython 3.4
 -  CPython 3.5
 -  CPython 3.6
@@ -216,6 +215,10 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
   (No features are currently being deprecated)
 ```
+
+# Release History
+* [2.2.0] - Update project and dependencies to latest versions; add PayerRequiredDetails; add HTTP 403 test; update environment constants (breaking change), url and sample credentials; Add Virtual Accounts and IBANs
+* [1.0.0] - Make the SDK thread safe
 
 # Support
 We actively support the latest version of the SDK. We support the immediate previous version on best-efforts basis. All other versions are no longer supported nor maintained.
