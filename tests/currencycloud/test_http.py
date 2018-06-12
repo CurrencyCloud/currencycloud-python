@@ -1,5 +1,3 @@
-import pytest
-from mock import patch
 import requests_mock
 
 import currencycloud

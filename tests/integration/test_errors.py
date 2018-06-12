@@ -1,12 +1,7 @@
-import pytest
 from betamax import Betamax
-from mock import patch
-import requests_mock
-import re
 
 from currencycloud import Client, Config
-from currencycloud.errors import ApiError, AuthenticationError, BadRequestError, ForbiddenError, NotFoundError, TooManyRequestsError
-from currencycloud.resources import Transfer
+from currencycloud.errors import AuthenticationError, BadRequestError, ForbiddenError, NotFoundError, TooManyRequestsError
 
 
 class TestError:

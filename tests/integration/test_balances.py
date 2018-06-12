@@ -1,8 +1,4 @@
-import pytest
 from betamax import Betamax
-from mock import patch
-import requests_mock
-import re
 
 from currencycloud import Client, Config
 from currencycloud.resources import *

@@ -217,7 +217,7 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
-* [2.2.0] - Update project and dependencies to latest versions; add PayerRequiredDetails; add HTTP 403 test; update environment constants (breaking change), url and sample credentials; Add Virtual Accounts and IBANs
+* [2.2.0] - Update project and dependencies to latest versions; add PayerRequiredDetails; add HTTP 403 test; update environment constants (breaking change), url and sample credentials; add Virtual Accounts and IBANs; remove unused imports
 * [1.0.0] - Make the SDK thread safe
 
 # Support

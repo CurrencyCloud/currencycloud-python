@@ -1,7 +1,7 @@
 import pytest
 from mock import patch
 
-from currencycloud import Client, Config
+from currencycloud import Config
 from currencycloud.http import Http
 from currencycloud.resources.resource import Resource
 from currencycloud.resources.actions import UpdateMixin, DeleteMixin

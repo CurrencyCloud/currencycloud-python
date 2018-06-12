@@ -1,9 +1,6 @@
-import pytest
 from betamax import Betamax
 
 from currencycloud import Client, Config
-from currencycloud.resources import Beneficiary
-from currencycloud.http import Http
 
 
 class TestAuthentication:
