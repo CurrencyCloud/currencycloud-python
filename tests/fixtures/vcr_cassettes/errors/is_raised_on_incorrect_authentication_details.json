@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "login_id=non-existent-login-id&api_key=efb5ae2af84978b7a37f18dd61c8bbe139b403009faea83484405a3dcb64c4d8"
+          "string": "login_id=non-existent-login-id&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
         },
         "headers": {
           "Accept": "*/*",
@@ -13,10 +13,10 @@
           "Connection": "keep-alive",
           "Content-Length": "103",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "python-requests/2.14.2"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
       },
       "response": {
         "body": {
@@ -39,7 +39,7 @@
           "code": 401,
           "message": "Unauthorized"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
       }
     }
   ],

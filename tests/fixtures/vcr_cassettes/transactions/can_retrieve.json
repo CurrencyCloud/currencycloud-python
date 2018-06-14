@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "api_key=0a14256abc393cdc238672b2d42d54f5581937f3ee23b76d5cfa842f63f8364d&login_id=api.test.user1%40currencycloud.com"
+          "string": "api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef&login_id=development%40currencycloud.com"
         },
         "headers": {
           "Accept": "*/*",
@@ -13,10 +13,10 @@
           "Connection": "keep-alive",
           "Content-Length": "116",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "python-requests/2.14.2"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
       },
       "response": {
         "body": {
@@ -41,7 +41,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
       }
     },
     {
@@ -56,11 +56,11 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=d8aa57d19460ff55b9b56c9ac2eefa3af1494845860",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "05c54d63f368d683bc59ea3c3ba87ab1"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/transactions/da45e164-620a-47e7-80a6-2e66d5919276"
+        "uri": "https://devapi.currencycloud.com/v2/transactions/da45e164-620a-47e7-80a6-2e66d5919276"
       },
       "response": {
         "body": {
@@ -84,7 +84,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/transactions/da45e164-620a-47e7-80a6-2e66d5919276"
+        "url": "https://devapi.currencycloud.com/v2/transactions/da45e164-620a-47e7-80a6-2e66d5919276"
       }
     }
   ],

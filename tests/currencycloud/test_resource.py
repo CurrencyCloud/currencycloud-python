@@ -1,7 +1,7 @@
 import pytest
 from mock import patch
 
-from currencycloud import Client, Config
+from currencycloud import Config
 from currencycloud.http import Http
 from currencycloud.resources.resource import Resource
 from currencycloud.resources.actions import UpdateMixin, DeleteMixin
@@ -19,7 +19,7 @@ class TestResource:
         pass
 
     def setup_method(self):
-        self.config = Config(None, None, Config.ENV_DEMONSTRATION)
+        self.config = Config(None, None, Config.ENV_DEMO)
         self.client = TestResource.PersonClient(self.config)
 
     def test_resource_save_only_updates_changed_records(self):

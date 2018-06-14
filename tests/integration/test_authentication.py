@@ -1,16 +1,15 @@
-import pytest
 from betamax import Betamax
 
 from currencycloud import Client, Config
-from currencycloud.resources import Beneficiary
-from currencycloud.http import Http
 
 
 class TestAuthentication:
     def setup_method(self, method):
-        login_id = 'rjnienaber@gmail.com'
-        api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
-        environment = Config.ENV_DEMONSTRATION
+        # TODO: To run against real server please delete ../fixtures/vcr_cassettes/* and replace
+        # login_id and api_key with valid credentials before running the tests
+        login_id = 'development@currencycloud.com'
+        api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+        environment = Config.ENV_DEMO
 
         self.client = Client(login_id, api_key, environment)
 
@@ -22,8 +21,8 @@ class TestAuthentication:
             assert self.client.config.auth_token is not None
 
     def test_authentication_can_reuse_an_auth_token(self):
-        special_client = Client(None, None, Config.ENV_DEMONSTRATION)
-        special_client.config.auth_token = self.client.config.auth_token
+        special_client = Client(None, None, Config.ENV_DEMO)
+        special_client.config.auth_token = "deadbeefdeadbeefdeadbeefdeadbeef"
 
         with Betamax(special_client.config.session) as betamax:
             betamax.use_cassette('authentication/can_use_just_a_token')
@@ -41,7 +40,7 @@ class TestAuthentication:
 
     def test_authentication_handles_session_timeout(self):
         # Set the token to an invalid one
-        self.client.config.auth_token = '1234abcd1234abcd1234abcd1234abcd'
+        self.client.config.auth_token = 'deadbeefdeadbeefdeadbeefdeadbeef'
 
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('authentication/handles_session_timeout', match_requests_on=['uri', 'method'])

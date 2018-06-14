@@ -1,5 +1,3 @@
-import pytest
-from mock import patch
 import requests_mock
 
 import currencycloud
@@ -7,8 +5,8 @@ import currencycloud
 
 class TestHttp:
     def setup_method(self):
-        self.client = currencycloud.Client(None, None, currencycloud.Config.ENV_DEMONSTRATION)
-        self.client.config.auth_token = '1234567890'
+        self.client = currencycloud.Client(None, None, currencycloud.Config.ENV_DEMO)
+        self.client.config.auth_token = 'deadbeef'
 
     def test_http_on_behalf_of_in_get_request(self):
         with requests_mock.Mocker() as mock:

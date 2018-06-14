@@ -11,14 +11,12 @@ class Config(object):
     _auth_token = None
     _on_behalf_of = None
 
-    ENV_PRODUCTION = 'production'
-    ENV_DEMONSTRATION = 'demonstration'
-    ENV_UAT = 'uat'
+    ENV_PROD = 'prod'
+    ENV_DEMO = 'demo'
 
     ENVIRONMENT_URLS = {
-        ENV_PRODUCTION: 'https://api.thecurrencycloud.com',
-        ENV_DEMONSTRATION: 'https://devapi.thecurrencycloud.com',
-        ENV_UAT: 'https://api-uat1.ccycloud.com',
+        ENV_PROD: 'https://api.currencycloud.com',
+        ENV_DEMO: 'https://devapi.currencycloud.com',
     }
 
     def __init__(self, login_id, api_key, environment='demo'):

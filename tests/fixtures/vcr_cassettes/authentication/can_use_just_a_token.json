@@ -11,11 +11,11 @@
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.14.2",
-          "X-Auth-Token": "98fdc07b76777caef52934f261958980"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
+          "X-Auth-Token": "deadbeefdeadbeefdeadbeefdeadbeef"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/find"
+        "uri": "https://devapi.currencycloud.com/v2/beneficiaries/find"
       },
       "response": {
         "body": {
@@ -30,7 +30,7 @@
           "Content-Type": "application/json;charset=utf-8",
           "Date": "Fri, 12 May 2017 10:13:48 GMT",
           "Server": "cloudflare-nginx",
-          "Set-Cookie": "__cfduid=d9ad78cf83e9bf0a70cbab405c778efdc1494584027; expires=Sat, 12-May-18 10:13:47 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Set-Cookie": "__cfduid=d9ad78cf83e9bf0a70cbab405c778efdc1494584027; expires=Sat, 12-May-18 10:13:47 GMT; path=/; domain=.currencycloud.com; HttpOnly",
           "Transfer-Encoding": "chunked",
           "Vary": "Origin",
           "X-Content-Type-Options": "nosniff",
@@ -40,7 +40,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/find"
+        "url": "https://devapi.currencycloud.com/v2/beneficiaries/find"
       }
     }
   ],

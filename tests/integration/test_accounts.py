@@ -1,8 +1,4 @@
-import pytest
 from betamax import Betamax
-from mock import patch
-import requests_mock
-import re
 
 from currencycloud import Client, Config
 from currencycloud.resources import *
@@ -10,9 +6,11 @@ from currencycloud.resources import *
 
 class TestAccounts:
     def setup_method(self, method):
-        login_id = 'rjnienaber@gmail.com'
-        api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
-        environment = Config.ENV_DEMONSTRATION
+        # TODO: To run against real server please delete ../fixtures/vcr_cassettes/* and replace
+        # login_id and api_key with valid credentials before running the tests
+        login_id = 'development@currencycloud.com'
+        api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+        environment = Config.ENV_DEMO
 
         self.client = Client(login_id, api_key, environment)
 

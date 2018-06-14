@@ -1,23 +1,22 @@
 import pytest
-from mock import patch
 
 import currencycloud
 
 class TestConfig:
     def setup_method(self, method):
-        self.client = currencycloud.Client('test@example.com', 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b', currencycloud.Config.ENV_DEMONSTRATION)
+        self.client = currencycloud.Client('development@currencycloud.com', 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', currencycloud.Config.ENV_DEMO)
 
     def test_environment(self):
-        self.client.config.environment = 'development'
-        assert(self.client.config.environment == 'development')
+        self.client.config.environment = 'demo'
+        assert(self.client.config.environment == 'demo')
 
     def test_login_id(self):
-        self.client.config.login_id = 'test@example.com'
-        assert(self.client.config.login_id == 'test@example.com')
+        self.client.config.login_id = 'development@currencycloud.com'
+        assert(self.client.config.login_id == 'development@currencycloud.com')
 
     def test_api_key(self):
-        self.client.config.api_key = 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'
-        assert self.client.config.api_key == 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'
+        self.client.config.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+        assert self.client.config.api_key == 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
 
     def test_session_returns_session_object(self):
         assert isinstance(self.client.config, currencycloud.Config)

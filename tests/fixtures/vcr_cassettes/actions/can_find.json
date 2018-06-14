@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0"
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
         },
         "headers": {
           "Accept": "*/*",
@@ -13,10 +13,10 @@
           "Connection": "keep-alive",
           "Content-Length": "104",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "python-requests/2.14.2"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
       },
       "response": {
         "body": {
@@ -31,7 +31,7 @@
           "Content-Type": "application/json;charset=utf-8",
           "Date": "Fri, 12 May 2017 12:22:31 GMT",
           "Server": "cloudflare-nginx",
-          "Set-Cookie": "__cfduid=d1cbd05c915ee5568fc94e3cb7dc0f78b1494591749; expires=Sat, 12-May-18 12:22:29 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Set-Cookie": "__cfduid=d1cbd05c915ee5568fc94e3cb7dc0f78b1494591749; expires=Sat, 12-May-18 12:22:29 GMT; path=/; domain=.currencycloud.com; HttpOnly",
           "Transfer-Encoding": "chunked",
           "Vary": "Origin",
           "X-Content-Type-Options": "nosniff",
@@ -41,7 +41,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
       }
     },
     {
@@ -56,11 +56,11 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=d1cbd05c915ee5568fc94e3cb7dc0f78b1494591749",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "4d1e20b567320c5145a737bfe42c52a8"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test+User"
+        "uri": "https://devapi.currencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test+User"
       },
       "response": {
         "body": {
@@ -84,7 +84,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test+User"
+        "url": "https://devapi.currencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test+User"
       }
     }
   ],

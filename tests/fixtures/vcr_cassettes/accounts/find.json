@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0"
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
         },
         "headers": {
           "Accept": "*/*",
@@ -13,10 +13,10 @@
           "Connection": "keep-alive",
           "Content-Length": "104",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "python-requests/2.14.2"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
       },
       "response": {
         "body": {
@@ -56,11 +56,11 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=d7cfc1e64f20a082985f27bc80f2cf81c1494838434",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "9a80cab6e3b509c64ed7243228ec3c47"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/accounts/find?brand=currencycloud&per_page=1"
+        "uri": "https://devapi.currencycloud.com/v2/accounts/find?brand=currencycloud&per_page=1"
       },
       "response": {
         "body": {
@@ -84,7 +84,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/accounts/find?brand=currencycloud&per_page=1"
+        "url": "https://devapi.currencycloud.com/v2/accounts/find?brand=currencycloud&per_page=1"
       }
     }
   ],

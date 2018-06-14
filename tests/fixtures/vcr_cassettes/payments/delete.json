@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "login_id=api.test.user1%40currencycloud.com&api_key=0a14256abc393cdc238672b2d42d54f5581937f3ee23b76d5cfa842f63f8364d"
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
         },
         "headers": {
           "Accept": "*/*",
@@ -13,10 +13,10 @@
           "Connection": "keep-alive",
           "Content-Length": "116",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "python-requests/2.14.2"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
       },
       "response": {
         "body": {
@@ -41,7 +41,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
       }
     },
     {
@@ -56,11 +56,11 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=dcfa84f0023ff82c6d3ce10726a509ecc1494845397",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "197ab7aceeff5118492bd2c108dc1b64"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
+        "uri": "https://devapi.currencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
       },
       "response": {
         "body": {
@@ -84,7 +84,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
+        "url": "https://devapi.currencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
       }
     },
     {
@@ -100,11 +100,11 @@
           "Connection": "keep-alive",
           "Content-Length": "0",
           "Cookie": "__cfduid=dcfa84f0023ff82c6d3ce10726a509ecc1494845397",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "197ab7aceeff5118492bd2c108dc1b64"
         },
         "method": "POST",
-        "uri": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0/delete"
+        "uri": "https://devapi.currencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0/delete"
       },
       "response": {
         "body": {
@@ -128,7 +128,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0/delete"
+        "url": "https://devapi.currencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0/delete"
       }
     },
     {
@@ -143,11 +143,11 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=dcfa84f0023ff82c6d3ce10726a509ecc1494845397",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "197ab7aceeff5118492bd2c108dc1b64"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
+        "uri": "https://devapi.currencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
       },
       "response": {
         "body": {
@@ -171,7 +171,7 @@
           "code": 404,
           "message": "Not Found"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
+        "url": "https://devapi.currencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
       }
     },
     {
@@ -186,11 +186,11 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=dcfa84f0023ff82c6d3ce10726a509ecc1494845397",
-          "User-Agent": "python-requests/2.14.2",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
           "X-Auth-Token": "197ab7aceeff5118492bd2c108dc1b64"
         },
         "method": "GET",
-        "uri": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
+        "uri": "https://devapi.currencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
       },
       "response": {
         "body": {
@@ -214,7 +214,7 @@
           "code": 404,
           "message": "Not Found"
         },
-        "url": "https://devapi.thecurrencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
+        "url": "https://devapi.currencycloud.com/v2/payments/80bb87ac-7153-4aa8-8299-5a97bc9584d0"
       }
     }
   ],

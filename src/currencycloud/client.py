@@ -10,12 +10,13 @@ from currencycloud.http import Http
 class Client(Http):
     '''The Client interfacing to the CC APIs'''
 
-    _accounts_client = None
     _auth_client = None
+    _accounts_client = None
     _balances_client = None
     _beneficiaries_client = None
     _contacts_client = None
     _conversions_client = None
+    _ibans_client = None
     _payers_client = None
     _payments_client = None
     _rates_client = None
@@ -23,6 +24,7 @@ class Client(Http):
     _settlements_client = None
     _transactions_client = None
     _transfers_client = None
+    _vans_client = None
 
     def __init__(self, login_id, api_key, environment='demo'):
         config = Config(login_id, api_key, environment)
@@ -58,18 +60,18 @@ class Client(Http):
         yield clone
 
     @property
-    def accounts(self):
-        '''Get the Accounts client.'''
-        if self._accounts_client is None:
-            self._accounts_client = Accounts(self.config)
-        return self._accounts_client
-
-    @property
     def auth(self):
         '''Get the Authentication client.'''
         if self._auth_client is None:
             self._auth_client = Auth(self.config)
         return self._auth_client
+
+    @property
+    def accounts(self):
+        '''Get the Accounts client.'''
+        if self._accounts_client is None:
+            self._accounts_client = Accounts(self.config)
+        return self._accounts_client
 
     @property
     def balances(self):
@@ -98,6 +100,13 @@ class Client(Http):
         if self._conversions_client is None:
             self._conversions_client = Conversions(self.config)
         return self._conversions_client
+
+    @property
+    def ibans(self):
+        '''Get the IBANs client.'''
+        if self._ibans_client is None:
+            self._ibans_client = Ibans(self.config)
+        return self._ibans_client
 
     @property
     def payers(self):
@@ -147,3 +156,10 @@ class Client(Http):
         if self._transfers_client is None:
             self._transfers_client = Transfers(self.config)
         return self._transfers_client
+
+    @property
+    def vans(self):
+        '''Get the VANs client.'''
+        if self._vans_client is None:
+            self._vans_client = Vans(self.config)
+        return self._vans_client
