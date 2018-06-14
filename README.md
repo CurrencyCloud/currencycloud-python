@@ -1,6 +1,6 @@
 # currencycloud-python
 [![Build Status](https://travis-ci.org/CurrencyCloud/currencycloud-python.png?branch=master)](https://travis-ci.org/CurrencyCloud/currencycloud-python)
-[![PyPi Status](https://img.shields.io/pypi/v/currencycloud.svg)](https://pypi.python.org/pypi/currencycloud)
+[![PyPi Status](https://img.shields.io/pypi/v/currency-cloud.svg)](https://pypi.python.org/pypi/currency-cloud)
 
 # Currencycloud
 This is the official Python SDK for v2 of Currencycloud's API.
