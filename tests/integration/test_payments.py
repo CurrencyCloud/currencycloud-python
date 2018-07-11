@@ -12,8 +12,9 @@ class TestPayments:
     def setup_method(self, method):
         # TODO: To run against real server please delete ../fixtures/vcr_cassettes/* and replace
         # login_id and api_key with valid credentials before running the tests
-        login_id = 'development@currencycloud.com'
+        login_id = 'development+authorisation@currencycloud.com'
         api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+
         environment = Config.ENV_DEMO
 
         self.client = Client(login_id, api_key, environment)
@@ -78,6 +79,37 @@ class TestPayments:
             payment = self.client.payments.retrieve(TestPayments.paymentId)
             assert payment is not None
             assert payment.amount == "1200.00"
+
+    def test_payments_can_authorise(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/authorise')
+
+            beneficiary = self.client.beneficiaries.create(bank_account_holder_name="Test User",
+                                                           bank_country="GB",
+                                                           currency="GBP",
+                                                           name="Test User",
+                                                           account_number="12345678",
+                                                           routing_code_type_1="sort_code",
+                                                           routing_code_value_1="123456")
+
+            payment = self.client.payments.create(currency="GBP",
+                                                  beneficiary_id=beneficiary.id,
+                                                  amount="1000",
+                                                  reason="Testing payments",
+                                                  reference="Testing payments",
+                                                  payment_type="regular")
+
+            self.client.config.login_id = 'development+authorisation2@currencycloud.com'
+            self.client.config.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+            self.client.config.reauthenticate()
+
+            payment = self.client.payments.authorise([TestPayments.paymentId])
+
+            assert payment is not None
+
+            self.client.config.login_id = 'development+authorisation@currencycloud.com'
+            self.client.config.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+            self.client.config.reauthenticate()
 
     def test_payments_can_delete(self):
         with Betamax(self.client.config.session) as betamax:
