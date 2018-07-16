@@ -103,3 +103,17 @@ class TestReference:
             assert details.required_fields[3]["validation_rule"] == '^.{1,255}'
             assert details.required_fields[4]["name"] == 'payer_identification_value'
             assert details.required_fields[4]["validation_rule"] == '^.{1,255}'
+
+    def test_reference_can_retrieve_payment_purpose_codes(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('reference/can_retrieve_payment_purpose_codes')
+
+            details = self.client.reference.payment_purpose_codes(currency='CNY')
+            assert len(details) > 0
+
+            purpose_code = details[0]
+            assert isinstance(purpose_code, PaymentPurposeCode)
+
+            assert purpose_code.currency == 'CNY'
+            assert purpose_code.entity_type == 'company'
+            assert purpose_code.purpose_code == 'current_account_payment'

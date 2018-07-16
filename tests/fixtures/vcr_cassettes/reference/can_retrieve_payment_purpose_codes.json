@@ -1,0 +1,138 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2018-07-16T22:20:04",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "117"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
+          ],
+          "User-Agent": [
+            "CurrencyCloudSDK/2.0 Python/2.2.0"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"auth_token\":\"deadbeefdeadbeefdeadbeefdeadbeef\"}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "49"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:04 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "65b8b228-79e7-4b92-a5b1-9893e03167df"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2018-07-16T22:20:06",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ],
+          "X-Auth-Token": [
+            "deadbeefdeadbeefdeadbeefdeadbeef"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/reference/payment_purpose_codes?currency=CNY"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"purpose_codes\":[{\"currency\":\"CNY\",\"entity_type\":\"company\",\"purpose_code\":\"current_account_payment\",\"purpose_description\":\"Payment to Current Account\"},{\"currency\":\"CNY\",\"entity_type\":\"company\",\"purpose_code\":\"services\",\"purpose_description\":\"Trade Settlement for Services\"},{\"currency\":\"CNY\",\"entity_type\":\"company\",\"purpose_code\":\"donations\",\"purpose_description\":\"Charity Donation\"},{\"currency\":\"CNY\",\"entity_type\":\"company\",\"purpose_code\":\"goods\",\"purpose_description\":\"Trade Settlement for Goods\"},{\"currency\":\"CNY\",\"entity_type\":\"company\",\"purpose_code\":\"capital_account_payment\",\"purpose_description\":\"Payment to Capital Account\"}]}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "640"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:06 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "eeba8364-41a5-4458-9bc4-91c4dab8f3b4"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/reference/payment_purpose_codes?currency=CNY"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
