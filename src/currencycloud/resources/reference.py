@@ -19,3 +19,7 @@ class BeneficiaryRequiredDetails(Resource):
 
 class PayerRequiredDetails(Resource):
     pass
+
+
+class PaymentPurposeCode(Resource):
+    pass

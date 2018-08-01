@@ -10,7 +10,7 @@ from currencycloud.resources.paginated_collection import PaginatedCollection
 from currencycloud.resources.payer import Payer
 from currencycloud.resources.payment import Payment
 from currencycloud.resources.rate import Rate, Rates
-from currencycloud.resources.reference import Currency, ConversionDates, SettlementAccount, BeneficiaryRequiredDetails, PayerRequiredDetails
+from currencycloud.resources.reference import Currency, ConversionDates, SettlementAccount, BeneficiaryRequiredDetails, PayerRequiredDetails, PaymentPurposeCode
 from currencycloud.resources.settlement import Settlement
 from currencycloud.resources.transaction import Transaction
 from currencycloud.resources.transfer import Transfer
