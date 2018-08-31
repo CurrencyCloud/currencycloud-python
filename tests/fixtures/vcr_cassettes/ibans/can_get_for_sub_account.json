@@ -60,7 +60,7 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=d3c60e9b6c71edc03ed19a1c2f9c6d7391528235207",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.2.0",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.3.0",
           "X-Auth-Token": "c13fea8dfb2f021446d74faa058fe6fc"
         },
         "method": "GET",
