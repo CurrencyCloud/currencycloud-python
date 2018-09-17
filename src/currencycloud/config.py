@@ -3,7 +3,12 @@
 from currencycloud.clients.auth import Auth
 import uuid
 import requests
+import os
 
+if os.environ.get('SERVER_SOFTWARE') is not None:
+    if os.environ.get('SERVER_SOFTWARE').startswith(('Development', 'Google App Engine', 'AppScaleServer')):
+        import requests_toolbelt.adapters.appengine
+        requests_toolbelt.adapters.appengine.monkeypatch()
 
 class Config(object):
     '''API Configuration Object. Keeps track of Credentials, Auth Token and API Environment'''
