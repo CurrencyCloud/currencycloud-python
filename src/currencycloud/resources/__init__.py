@@ -15,3 +15,4 @@ from currencycloud.resources.settlement import Settlement
 from currencycloud.resources.transaction import Transaction
 from currencycloud.resources.transfer import Transfer
 from currencycloud.resources.van import Van
+from currencycloud.resources.report import Report

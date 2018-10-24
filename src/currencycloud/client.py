@@ -25,6 +25,7 @@ class Client(Http):
     _transactions_client = None
     _transfers_client = None
     _vans_client = None
+    _report_client = None
 
     def __init__(self, login_id, api_key, environment='demo'):
         config = Config(login_id, api_key, environment)
@@ -163,3 +164,10 @@ class Client(Http):
         if self._vans_client is None:
             self._vans_client = Vans(self.config)
         return self._vans_client
+
+    @property
+    def report(self):
+        '''Get the Reports client.'''
+        if self._report_client is None:
+            self._report_client = Reports(self.config)
+        return self._report_client

@@ -1,0 +1,192 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2018-10-22T13:53:55",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "108"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
+          ],
+          "User-Agent": [
+            "CurrencyCloudSDK/2.0 Python/2.3.0"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjIxNTI2NDYwSDO0sLA0MjBPSk0zSrFIMUwzNDJOSklKU6oFAAAA//8DAIEh2hYxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Headers": [
+            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority"
+          ],
+          "Access-Control-Allow-Methods": [
+            "POST"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "CF-RAY": [
+            "46dc7397dc2bb6d4-KIV"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 22 Oct 2018 13:53:55 GMT"
+          ],
+          "Expect-CT": [
+            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+          ],
+          "Server": [
+            "cloudflare"
+          ],
+          "Set-Cookie": [
+            "__cfduid=d6e7a558b178505a91a6b0cad3b626d721540216421; expires=Tue, 22-Oct-19 13:53:41 GMT; path=/; domain=.currencycloud.com; HttpOnly",
+            "AWSALB=T5p9JkEhnu0cYxwFiHc9dbATEUHU6uEdvu3X2VyTxWEBlplQmRRvlUq7m38TIc+6qtNGHBZ31baYHOqviCFxn06ClMqLnyqMUm2vGVXKAPz6tFK3xbFI5fQdNsAQ; Expires=Mon, 29 Oct 2018 13:53:41 GMT; Path=/"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "1a02da59-c091-4ebe-94a9-b3c1d6432513"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2018-10-22T13:53:56",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "description=Currency+Cloud+Testing+Environment&buy_currency=EUR&sell_currency=GBP&unique_request_id=TEST_ID"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "107"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
+          ],
+          "Cookie": [
+            "__cfduid=d6e7a558b178505a91a6b0cad3b626d721540216421; AWSALB=T5p9JkEhnu0cYxwFiHc9dbATEUHU6uEdvu3X2VyTxWEBlplQmRRvlUq7m38TIc+6qtNGHBZ31baYHOqviCFxn06ClMqLnyqMUm2vGVXKAPz6tFK3xbFI5fQdNsAQ"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ],
+          "X-Auth-Token": [
+            "45231300f1889207bef2d8d1f123bdbf"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/reports/conversions/create"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA4yRS2scMRCE/8rS10ggaR4a6WhnCcGBLM7mPGh6emzBWDPWw8li/N+Dlg3kmGtRVdTX/Q5+BgsGhRjkIHire8NbKZFPOAyclklo0pNoTAMM0vMW8xhpoUgBCSw8nniv20G1hn8/PTycvgGDmRJGv2e/BbBwX2I1Xw7361bmw5lS9uHpcAxvPm7hhUKuxeQiPo+7i+4lgX2HqVxGvCXBwvHn49W1rv+qX+5OwKAE/1pojPRaKOXxynM+/jiPXz/XDG57Hbr9CvDBINJeEfLlKuIW3iimOpRByi6XBBb2uCGl5MMTMFicX0us9S5VnlDWlQH93n10lXCcXaa/8q29xBUsAAOHuJVw24SCnOr7hU+m3njuJTfoBCdtBGojtKIOWN2UHd4yDToSg1x41y+at4ua+aCajredls3UGTW19S8YyWWaR5fBghJy4FJwpc6ysV1ju+6TEFaIeqt9/h/jxx8AAAD//wMAAWw11hcCAAA=",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Headers": [
+            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority"
+          ],
+          "Access-Control-Allow-Methods": [
+            "POST"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "CF-RAY": [
+            "46dc73f18b61b6d4-KIV"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 22 Oct 2018 13:53:55 GMT"
+          ],
+          "Expect-CT": [
+            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+          ],
+          "Server": [
+            "cloudflare"
+          ],
+          "Set-Cookie": [
+            "AWSALB=Cy4rHZECBbQNA27qg+RUpcWPhuxzExe8FGB4Avg2y0PeTL6QbnpCfxZn+JCUIZNm4USzLJ3TKs5vsq7NmgIjN1mEoLoJEUeJxQ66lwe1eiU/YtUmOOrnZCRI0qY5; Expires=Mon, 29 Oct 2018 13:53:55 GMT; Path=/"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "bb4e7685-4daf-42d3-978c-c8cb67baaf00"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/reports/conversions/create"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
