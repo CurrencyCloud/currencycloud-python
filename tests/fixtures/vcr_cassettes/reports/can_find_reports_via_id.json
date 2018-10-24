@@ -1,0 +1,186 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2018-10-22T13:54:32",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "108"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
+          ],
+          "User-Agent": [
+            "CurrencyCloudSDK/2.0 Python/2.3.0"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUkpKtEy0NE0xNDYwSkk1tDA2SUszMTE0SE01sUw2M0pLUaoFAAAA//8DAOyorIMxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Headers": [
+            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority"
+          ],
+          "Access-Control-Allow-Methods": [
+            "POST"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "CF-RAY": [
+            "46dc746fdeb6b6f2-KIV"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 22 Oct 2018 13:54:31 GMT"
+          ],
+          "Expect-CT": [
+            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+          ],
+          "Server": [
+            "cloudflare"
+          ],
+          "Set-Cookie": [
+            "__cfduid=d4a2caa942ad5012bcdbbb08a19dfa0db1540216455; expires=Tue, 22-Oct-19 13:54:15 GMT; path=/; domain=.currencycloud.com; HttpOnly",
+            "AWSALB=iRZKXZ116+EWvzexoo+z/2MW4XjoVw7TDQcnebCRCKzDvbVDySb7B5lVOzQzX7+n6gGHhp7d38Fl3izGE3zUZeiAvz3K62+l3hKjUDeHAzIaJDJToSeoyusaDT0L; Expires=Mon, 29 Oct 2018 13:54:15 GMT; Path=/"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "d4ebc19b-54b0-4d08-94e9-d046f40b68f1"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2018-10-22T13:54:32",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Cookie": [
+            "__cfduid=d4a2caa942ad5012bcdbbb08a19dfa0db1540216455; AWSALB=iRZKXZ116+EWvzexoo+z/2MW4XjoVw7TDQcnebCRCKzDvbVDySb7B5lVOzQzX7+n6gGHhp7d38Fl3izGE3zUZeiAvz3K62+l3hKjUDeHAzIaJDJToSeoyusaDT0L"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ],
+          "X-Auth-Token": [
+            "ba9a95d1302de1834ff4410ee49c62fd"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/reports/report_requests/c3ae0475-ef72-46ef-8a90-c2d3c2912911"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA4xU246qSBT9FxLmZZruquJuYiaggu0VQVvxxRRFoSgXrQK8nJx/n9Dt6TlPJ5NUeFh7rVV71ybrh5DGQkcgMqZA0VWJJjqSFI0mkoFNIBEUywSZEJkQCi8CP5Ss2jGaUEYLQoWO4HsShKau6JoUbgdryxZehJhywtJzlZaF0BGWlKfFvhVTzMhhd8YM51zo/BBIzVqbu9ARXNsTXgScl3VR7RJW5kJHgACA/8CqfEItxkl5bm8vr4Xw80Vg9Nz2Vd0/wTO+57SoWlqFq5q345X5OaMVjYUXIcFpVjO6YxTztsGizrIXgd7OKcNty7sYV60NAtCQIJCQsgSg83n+/vwK3xfWLBM6wqGqzrzz9kbInWRlHUtfVS6dWRlLMc1LKJGaV2VO2bOWFvtXLr/SWrpSXknwFef4URb4yl9Jmb/9Yu++2W//Z0Fvz8mfsh1CELRTAAMCqCoAmpqpK6+EN/9sJCt/SFa2L1laHfKutQ4UaTi1elIwtJCq/fVF6DEa06JKcda1gndr7W024dgOB741DFU1EJHT+kOAkIic72lE5HBZRA6+cmXH6KWmvHoa9nFFu780Syirioy2z9qgXQHlXagjA4AnGKT7gsZDimPKePdQfjsFlNQsre7SsjzRoussSne7eW/CTfwYTBsROX841wHuT8Zj+7IMwPw0mKhr/94by5aInPoxl+Ve/XFCeBrub85jG8uj8WmRzg5DFtFbTXnauFm9vB+vI3e/qdbpOu+fPeu4zHq3cl0p61x21++NiOx9/RFxB2bb22wfqh9VyDQ0s62ZkxcisofXk+7qo2nPn3mB7c1ce24Cd1QfQYUC37jo+8gfsXt+HA+jnnEPJnv37oCViGx55OELnm0GHt82Gk5z31qcS+QnzdK7LevL2urVM9VfbMztqH9zSQ75Mt5Gg2Uwxc3wdk204Sxe4cnslJLSNPO4XSS5L/pBDBYxj3t9sLjKk4XjLz1nNoib9RTbi+v2SKeBWfLZKl9cqAdiZTTIBpG/Kk63ew8dgmvpGP3anU3yZPX10HHKD+8G2iyy9anwuG6Oh1q5VzN77pgf2dENCzafumMqIjvUPWgfHnVDQak9+vIhGzfjQ+Nn6vxIV8E9aGDSc8DVQGSecHQ89uzNZAT9jRLafEq8k2awxXhdpCJyqskxDHQN8Mnc2K7ZFBxQspBdEdkisk+0cYjNeh8fXHccNgo1R5le8Wkc5IsoMJV51Lx7y7k7S8C52AB/w06eHYrITi5HAON5k8IphuHF1ff3pTeOtsYEW4+bwkE1N2/KaVTPxtfttFLjNOrd8dE+Ifvil/FqUj8GpYhsvYfk/UqU+7/94riqGe0SgrCKsaFGEOgakY2IaApQqW6YFGuGDFWVIp2aBtIjNcbQ0CLN1BBKkCwn0DDbtCTkMy6/Uh1QjDQtkSJTMyUl1qBkEgwkqpuA6CbQEVWFF4GURYXJUyMTTIEBE0nVEl1SEhRLBpJVSVF1KEeqiSJFbjWM4orGO1z9HpVoCYwOMjuy/B2V9Tn+E1F5En/+CwAA//8DAOf2o3KJBgAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Headers": [
+            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority"
+          ],
+          "Access-Control-Allow-Methods": [
+            "GET"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "CF-RAY": [
+            "46dc74d538c9b6f2-KIV"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 22 Oct 2018 13:54:32 GMT"
+          ],
+          "Expect-CT": [
+            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+          ],
+          "Server": [
+            "cloudflare"
+          ],
+          "Set-Cookie": [
+            "AWSALB=fS+pd44pk+vh9yGd5qLyS8JvPA5NOENGTUsWoZjjEhsjjDbP1Xg0Sl2ics0OFjKn3YnU9ncpqMQ3OGq87cKUL2goMb3YB93doEeVbMUwaBhXTGV5Qf8ZlG6kxUwb; Expires=Mon, 29 Oct 2018 13:54:32 GMT; Path=/"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "2e231fb7-5a35-4b01-8c0f-70c861a7ad52"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/reports/report_requests/c3ae0475-ef72-46ef-8a90-c2d3c2912911"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
