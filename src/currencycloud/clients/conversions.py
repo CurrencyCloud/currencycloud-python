@@ -39,3 +39,11 @@ class Conversions(Http):
     def split(self, resource_id, **kwargs):
         '''Returns a json structure containing split results as parent and child conversions.'''
         return Conversion(self, **self.post('/v2/conversions/' + resource_id + '/split', kwargs))
+
+    def split_preview(self, resource_id, **kwargs):
+        '''Returns a json structure containing split results as parent and child conversions.'''
+        return Conversion(self, **self.get('/v2/conversions/' + resource_id + '/split_preview', kwargs))
+
+    def split_history(self, resource_id, **kwargs):
+        '''Returns a json structure containing split results as parent, origin and child conversions.'''
+        return Conversion(self, **self.get('/v2/conversions/' + resource_id + '/split_history', kwargs))

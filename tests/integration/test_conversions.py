@@ -88,3 +88,26 @@ class TestConversions:
             assert response is not None
             assert response.parent_conversion.get("id") == "d3c7d733-7c2f-443d-a082-4c728157b99f"
             assert response.child_conversion.get("id") is not None
+
+    def test_actions_can_split_preview(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('conversions/split_preview')
+
+            response = self.client.conversions.split_preview("c805aa35-9bd3-4afe-ade2-d341e551aa16",
+                                                             amount="100")
+
+            assert response is not None
+            assert response.parent_conversion.get("id") == "c805aa35-9bd3-4afe-ade2-d341e551aa16"
+            assert response.child_conversion.get("sell_amount") == '100.00'
+
+    def test_actions_can_split_history(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('conversions/split_history')
+
+            response = self.client.conversions.split_history("c805aa35-9bd3-4afe-ade2-d341e551aa16")
+
+            assert response is not None
+            for element in response.child_conversions:
+                assert element.get('id') is not None
+                assert element.get('sell_amount') == '100.00'
+                assert element.get('short_reference') is not None
