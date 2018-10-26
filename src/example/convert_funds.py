@@ -71,6 +71,29 @@ This conversion will settle automatically on the settlement_date as long as ther
 GBP balance to cover the client_sell_amount. Please use your Cash Manager to top up your GBP balance if necessary.
 '''
 
+try:
+    conversions = client.conversions.split_preview('c805aa35-9bd3-4afe-ade2-d341e551aa16', amount='100')
+    print(f'Your conversion after successful split preview: ')
+    print('Parent conversion ID: ' + conversions['parent_conversion'].get('id'))
+    print('Parent conversion buy currency: ' + conversions['parent_conversion'].get('buy_currency') + " amount " + conversions['parent_conversion'].get('buy_amount'))
+    print('Parent conversion sell currency: ' + conversions['parent_conversion'].get('sell_currency') + " amount " + conversions['parent_conversion'].get('sell_amount'))
+    print('Child conversion buy currency: ' + conversions['child_conversion'].get('sell_currency') + " amount " + conversions['child_conversion'].get('sell_amount'))
+    print('Child conversion sell currency: ' + conversions['child_conversion'].get('buy_currency') + " amount " + conversions['child_conversion'].get('buy_amount'))
+except ApiError as e:
+    print("Conversion encountered an error: {0} (HTTP code {1})".format(e.code, e.status_code))
+
+
+try:
+    conversions = client.conversions.split_history('c805aa35-9bd3-4afe-ade2-d341e551aa16')
+    print(f'Your conversion after successful split history: ')
+    for element in conversions['child_conversions']:
+        print('Child conversion ID: ' + element.get('id'))
+        print('Child conversion buy currency: ' + element.get('sell_currency') + " amount " + element.get('sell_amount'))
+        print('Child conversion sell currency: ' + element.get('buy_currency') + " amount " + element.get('buy_amount'))
+
+except ApiError as e:
+    print("Conversion encountered an error: {0} (HTTP code {1})".format(e.code, e.status_code))
+
 '''
 3. Logout
 It is good security practice to retire authentication tokens when they are no longer needed, rather than let them
