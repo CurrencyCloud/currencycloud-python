@@ -121,3 +121,30 @@ class TestConversions:
             assert response is not None
             assert response.conversion_id == '2b436517-619b-4abe-a591-821dd31b264f'
             assert response.new_settlement_date == '2018-10-29T16:30:00+00:00'
+
+    def test_actions_can_quote_cancellation(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('conversions/cancellation_quote')
+
+            response = self.client.conversions.cancellation_quote('63298593-bd8d-455d-8ee8-2f85dd390f2f')
+
+            assert response is not None
+            assert response.amount is not None
+            assert response.currency is not None
+            assert response.event_date_time is not None
+
+    def test_action_can_retrieve_profit_and_loss(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('conversions/profit_and_loss')
+
+            response = self.client.conversions.profit_and_loss()
+
+            assert response is not None
+            for element in response:
+                assert element.account_id is not None
+                assert element.contact_id is not None
+                assert element.conversion_id is not None
+                assert element.event_type is not None
+                assert element.amount is not None
+                assert element.currency is not None
+                assert element.event_date_time is not None
