@@ -94,6 +94,16 @@ try:
 except ApiError as e:
     print("Conversion encountered an error: {0} (HTTP code {1})".format(e.code, e.status_code))
 
+try:
+    change_date_quote = client.conversions.date_change_quote('2b436517-619b-4abe-a591-821dd31b264f',
+                                                             new_settlement_date='2018-10-29T16:30:00+00:00')
+    print(f'Data change quote for conversion with id: + {change_date_quote.conversion_id} was successful.')
+    print(f'Old settlement date: {change_date_quote.old_settlement_date}')
+    print(f'New settlement data: {change_date_quote.new_settlement_date}')
+
+except ApiError as e:
+    print("Conversion encountered an error: {0} (HTTP code {1})".format(e.code, e.status_code))
+
 '''
 3. Logout
 It is good security practice to retire authentication tokens when they are no longer needed, rather than let them

@@ -47,3 +47,6 @@ class Conversions(Http):
     def split_history(self, resource_id, **kwargs):
         '''Returns a json structure containing split results as parent, origin and child conversions.'''
         return Conversion(self, **self.get('/v2/conversions/' + resource_id + '/split_history', kwargs))
+
+    def date_change_quote(self, resource_id, **kwargs):
+        return Conversion(self, **self.get('/v2/conversions/' + resource_id + '/date_change_quote', kwargs))

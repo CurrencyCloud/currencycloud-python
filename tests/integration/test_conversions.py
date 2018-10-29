@@ -111,3 +111,13 @@ class TestConversions:
                 assert element.get('id') is not None
                 assert element.get('sell_amount') == '100.00'
                 assert element.get('short_reference') is not None
+
+    def test_actions_can_quote_date_change(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('conversions/quote_date_change')
+
+            response = self.client.conversions.date_change_quote('2b436517-619b-4abe-a591-821dd31b264f',
+                                                                 new_settlement_date='2018-10-29T16:30:00+00:00')
+            assert response is not None
+            assert response.conversion_id == '2b436517-619b-4abe-a591-821dd31b264f'
+            assert response.new_settlement_date == '2018-10-29T16:30:00+00:00'
