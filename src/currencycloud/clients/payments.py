@@ -60,3 +60,9 @@ class Payments(Http):
             http://help.currencycloud.com/world/faq/#mandatory-payment-information
         '''
         return Payment(self, **self.post('/v2/payments/' + resource_id, kwargs))
+
+    def payment_confirmation(self, resource_id, **kwargs):
+        '''
+        Get confirmation for a payment.
+        '''
+        return Payment(self, **self.get('/v2/payments/' + resource_id + '/confirmation', kwargs))
