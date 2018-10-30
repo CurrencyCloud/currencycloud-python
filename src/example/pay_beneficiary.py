@@ -152,6 +152,12 @@ try:
 except ApiError as e:
     print("Payment encountered an error: {0} (HTTP code {1})".format(e.code, e.status_code))
 
+try:
+    payment = client.payments.payment_confirmation('a739b199-8260-4ffa-a404-b4b58345332e')
+    print(f'Payment with ID: {payment.payment_id} confirmed. ID of Confirmation: {payment.id}')
+except ApiError as e:
+    print("Payment encountered an error: {0} (HTTP code {1})".format(e.code, e.status_code))
+
 '''
 If the payment is successfully queued, the response payload will contain all the information about the payment as
 recorded in your Currencycloud account. This does not mean that the payment was made. It just means that it is ready
