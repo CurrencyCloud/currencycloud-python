@@ -93,3 +93,28 @@ class TestPayments:
                 raise Exception('Should raise exception')
 
             assert True
+
+    def test_payments_can_authorise(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/authorise')
+            beneficiary = self.client.beneficiaries.create(bank_account_holder_name="Test User",
+                                                           bank_country="GB",
+                                                           currency="GBP",
+                                                           name="Test User",
+                                                           account_number="12345678",
+                                                           routing_code_type_1="sort_code",
+                                                           routing_code_value_1="123456")
+            payment = self.client.payments.create(currency="GBP",
+                                                  beneficiary_id=beneficiary.id,
+                                                  amount="1000",
+                                                  reason="Testing payments",
+                                                  reference="Testing payments",
+                                                  payment_type="regular")
+            self.client.config.login_id = 'development2@currencycloud.demo'
+            self.client.config.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+            self.client.config.reauthenticate()
+            payment = self.client.payments.authorise(payment_ids=[TestPayments.paymentId])
+            assert payment is not None
+            self.client.config.login_id = 'development@currencycloud.demo'
+            self.client.config.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+            self.client.config.reauthenticate()
