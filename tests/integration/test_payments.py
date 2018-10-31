@@ -93,7 +93,18 @@ class TestPayments:
                 raise Exception('Should raise exception')
 
             assert True
+            
+    def test_payments_can_confirm(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/payments_confirmation')
 
+            payment = self.client.payments.payment_confirmation('a739b199-8260-4ffa-a404-b4b58345332e')
+
+            assert payment is not None
+            assert payment.id is not None
+            assert payment.payment_id == 'a739b199-8260-4ffa-a404-b4b58345332e'
+            assert payment.account_id is not None
+    
     def test_payments_can_authorise(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('payments/authorise')

@@ -47,3 +47,24 @@ class Conversions(Http):
     def split_history(self, resource_id, **kwargs):
         '''Returns a json structure containing split results as parent, origin and child conversions.'''
         return Conversion(self, **self.get('/v2/conversions/' + resource_id + '/split_history', kwargs))
+
+    def date_change_quote(self, resource_id, **kwargs):
+        '''
+        Returns a JSON structure containing the quote for changing the date of the specified conversion.
+        '''
+        return Conversion(self, **self.get('/v2/conversions/' + resource_id + '/date_change_quote', kwargs))
+
+    def cancellation_quote(self, resource_id, **kwargs):
+        '''
+        Returns a JSON structure containing the quote for cancelling the specified conversion.
+        '''
+        return Conversion(self, **self.get('/v2/conversions/' + resource_id + '/cancellation_quote', kwargs))
+
+    def profit_and_loss(self, **kwargs):
+        '''
+        Return an array containing json structures of details of the conversions profit and loss matching the
+        search criteria for the logged in user.
+        '''
+        response = self.get('/v2/conversions/profit_and_loss', query=kwargs)
+        data = [Conversion(self, **fields) for fields in response['conversion_profit_and_losses']]
+        return PaginatedCollection(data, response['pagination'])

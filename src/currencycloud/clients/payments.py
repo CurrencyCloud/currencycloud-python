@@ -61,6 +61,12 @@ class Payments(Http):
         '''
         return Payment(self, **self.post('/v2/payments/' + resource_id, kwargs))
 
+    def payment_confirmation(self, resource_id, **kwargs):
+        '''
+        Get confirmation for a payment.
+        '''
+        return Payment(self, **self.get('/v2/payments/' + resource_id + '/confirmation', kwargs))
+      
     def authorise(self, **kwargs):
         '''
         Authorise pending payment(s) and returns a hash containing the details of the payment authorisation.
