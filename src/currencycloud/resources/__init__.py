@@ -16,3 +16,4 @@ from currencycloud.resources.transaction import Transaction
 from currencycloud.resources.transfer import Transfer
 from currencycloud.resources.van import Van
 from currencycloud.resources.report import Report
+from currencycloud.resources.sender import Sender
