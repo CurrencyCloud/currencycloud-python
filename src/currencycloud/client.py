@@ -26,6 +26,7 @@ class Client(Http):
     _transfers_client = None
     _vans_client = None
     _report_client = None
+    _sender_client = None
 
     def __init__(self, login_id, api_key, environment='demo'):
         config = Config(login_id, api_key, environment)
@@ -171,3 +172,10 @@ class Client(Http):
         if self._report_client is None:
             self._report_client = Reports(self.config)
         return self._report_client
+
+    @property
+    def senders(self):
+        '''Get the Senders client.'''
+        if self._sender_client is None:
+            self._sender_client = Senders(self.config)
+        return self._sender_client

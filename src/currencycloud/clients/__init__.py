@@ -16,3 +16,4 @@ from currencycloud.clients.transactions import Transactions
 from currencycloud.clients.transfers import Transfers
 from currencycloud.clients.vans import Vans
 from currencycloud.clients.reports import Reports
+from currencycloud.clients.senders import Senders
