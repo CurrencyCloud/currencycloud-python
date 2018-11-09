@@ -1,7 +1,6 @@
 from betamax import Betamax
 
 from currencycloud import Client, Config
-from currencycloud.resources import *
 
 
 class TestSenders:
