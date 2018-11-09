@@ -8,24 +8,12 @@
           "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
         },
         "headers": {
-          "Accept": [
-            "*/*"
-          ],
-          "Accept-Encoding": [
-            "gzip, deflate"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Content-Length": [
-            "108"
-          ],
-          "Content-Type": [
-            "application/x-www-form-urlencoded"
-          ],
-          "User-Agent": [
-            "CurrencyCloudSDK/2.0 Python/2.3.0"
-          ]
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "108",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.7.5"
         },
         "method": "POST",
         "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
@@ -37,52 +25,21 @@
           "string": ""
         },
         "headers": {
-          "Access-Control-Allow-Headers": [
-            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority"
-          ],
-          "Access-Control-Allow-Methods": [
-            "POST"
-          ],
-          "Access-Control-Allow-Origin": [
-            "*"
-          ],
-          "CF-RAY": [
-            "46f4f8a26b18b6d4-KIV"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Content-Encoding": [
-            "gzip"
-          ],
-          "Content-Type": [
-            "application/json;charset=utf-8"
-          ],
-          "Date": [
-            "Thu, 25 Oct 2018 13:18:56 GMT"
-          ],
-          "Expect-CT": [
-            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-          ],
-          "Server": [
-            "cloudflare"
-          ],
-          "Set-Cookie": [
-            "__cfduid=db830a687c8c0b145ced1226c877c2c5e1540473528; expires=Fri, 25-Oct-19 13:18:48 GMT; path=/; domain=.currencycloud.com; HttpOnly",
-            "AWSALB=EsWVb7QyI+fWSWvr1b5PB4NnjMGYgXC2ardNLZkuWs0uPoG1ijwdZlQh5jB2gp6GTq8/srkoZXTsKYZgv/mHz7WSMEUTxMMdQfLjZ/TWWPs5X5sUqN3ncORhJsXV; Expires=Thu, 01 Nov 2018 13:18:49 GMT; Path=/"
-          ],
-          "Transfer-Encoding": [
-            "chunked"
-          ],
-          "Vary": [
-            "Origin"
-          ],
-          "X-Content-Type-Options": [
-            "nosniff"
-          ],
-          "X-Request-Id": [
-            "cf0b7485-350e-4db7-98cb-f6f55aa21d5a"
-          ]
+          "Access-Control-Allow-Headers": "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority",
+          "Access-Control-Allow-Methods": "POST",
+          "Access-Control-Allow-Origin": "*",
+          "CF-RAY": "46f4f8a26b18b6d4-KIV",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Thu, 25 Oct 2018 13:18:56 GMT",
+          "Expect-CT": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+          "Server": "cloudflare",
+          "Set-Cookie": "__cfduid=db830a687c8c0b145ced1226c877c2c5e1540473528; expires=Fri, 25-Oct-19 13:18:48 GMT; path=/; domain=.currencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "cf0b7485-350e-4db7-98cb-f6f55aa21d5a"
         },
         "status": {
           "code": 200,
@@ -99,24 +56,12 @@
           "string": ""
         },
         "headers": {
-          "Accept": [
-            "*/*"
-          ],
-          "Accept-Encoding": [
-            "gzip, deflate"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Cookie": [
-            "__cfduid=db830a687c8c0b145ced1226c877c2c5e1540473528; AWSALB=EsWVb7QyI+fWSWvr1b5PB4NnjMGYgXC2ardNLZkuWs0uPoG1ijwdZlQh5jB2gp6GTq8/srkoZXTsKYZgv/mHz7WSMEUTxMMdQfLjZ/TWWPs5X5sUqN3ncORhJsXV"
-          ],
-          "User-Agent": [
-            "python-requests/2.19.1"
-          ],
-          "X-Auth-Token": [
-            "edb26849b21f8e8ad36d7378c9949819"
-          ]
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Cookie": "__cfduid=db830a687c8c0b145ced1226c877c2c5e1540473528; AWSALB=EsWVb7QyI+fWSWvr1b5PB4NnjMGYgXC2ardNLZkuWs0uPoG1ijwdZlQh5jB2gp6GTq8/srkoZXTsKYZgv/mHz7WSMEUTxMMdQfLjZ/TWWPs5X5sUqN3ncORhJsXV",
+          "User-Agent": "python-requests/2.19.1",
+          "X-Auth-Token": "edb26849b21f8e8ad36d7378c9949819"
         },
         "method": "GET",
         "uri": "https://devapi.currencycloud.com/v2/conversions/c805aa35-9bd3-4afe-ade2-d341e551aa16/split_preview?amount=100"
@@ -128,51 +73,21 @@
           "string": ""
         },
         "headers": {
-          "Access-Control-Allow-Headers": [
-            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority"
-          ],
-          "Access-Control-Allow-Methods": [
-            "GET"
-          ],
-          "Access-Control-Allow-Origin": [
-            "*"
-          ],
-          "CF-RAY": [
-            "46f4f8d1db1db6d4-KIV"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Content-Encoding": [
-            "gzip"
-          ],
-          "Content-Type": [
-            "application/json;charset=utf-8"
-          ],
-          "Date": [
-            "Thu, 25 Oct 2018 13:18:56 GMT"
-          ],
-          "Expect-CT": [
-            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-          ],
-          "Server": [
-            "cloudflare"
-          ],
-          "Set-Cookie": [
-            "AWSALB=8pCSLVQlruqQYEuJcFa32UyCjVOf9KCqnImluwfDuvonCnM9hLaTXJ4NfkU3I/OVIJWOn38InLkwku9BAJtIBJVZr5FZXflsr6vnJ/mqYXP7YqzA3RHQ3kblNhx3; Expires=Thu, 01 Nov 2018 13:18:56 GMT; Path=/"
-          ],
-          "Transfer-Encoding": [
-            "chunked"
-          ],
-          "Vary": [
-            "Origin"
-          ],
-          "X-Content-Type-Options": [
-            "nosniff"
-          ],
-          "X-Request-Id": [
-            "a37a7689-9359-42ea-9cf7-2bad7f7302e6"
-          ]
+          "Access-Control-Allow-Headers": "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority",
+          "Access-Control-Allow-Methods": "GET",
+          "Access-Control-Allow-Origin": "*",
+          "CF-RAY": "46f4f8d1db1db6d4-KIV",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Thu, 25 Oct 2018 13:18:56 GMT",
+          "Expect-CT": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+          "Server": "cloudflare",
+          "Set-Cookie": "AWSALB=8pCSLVQlruqQYEuJcFa32UyCjVOf9KCqnImluwfDuvonCnM9hLaTXJ4NfkU3I/OVIJWOn38InLkwku9BAJtIBJVZr5FZXflsr6vnJ/mqYXP7YqzA3RHQ3kblNhx3; Expires=Thu, 01 Nov 2018 13:18:56 GMT; Path=/",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "a37a7689-9359-42ea-9cf7-2bad7f7302e6"
         },
         "status": {
           "code": 200,
