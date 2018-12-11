@@ -1,0 +1,74 @@
+{
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "account_name": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "your_reference": {
+      "type": "null"
+    },
+    "status": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state_or_province": {
+      "type": "null"
+    },
+    "country": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "spread_table": {
+      "type": "string"
+    },
+    "legal_entity_type": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "identification_type": {
+      "type": "string"
+    },
+    "identification_value": {
+      "type": "string"
+    },
+    "short_reference": {
+      "type": "string"
+    },
+    "api_trading": {
+      "type": "boolean"
+    },
+    "online_trading": {
+      "type": "boolean"
+    },
+    "phone_trading": {
+      "type": "boolean"
+    },
+    "process_third_party_funds": {
+      "type": "boolean"
+    },
+    "settlement_type": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id", "account_name"
+  ]
+}
