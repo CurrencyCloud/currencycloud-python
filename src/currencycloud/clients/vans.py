@@ -2,6 +2,7 @@
 
 from currencycloud.http import Http
 from currencycloud.resources import PaginatedCollection, Van
+import deprecation
 
 
 class Vans(Http):
@@ -17,12 +18,18 @@ class Vans(Http):
         params['per_page'] = 1
         return self.find(**params)[0]
 
+    @deprecation.deprecated(deprecated_in="2.7.5", removed_in=None,
+                            current_version=None,
+                            details="Use the generic find function instead")
     def retrieve_subaccounts(self, resource_id, **kwargs):
         '''Get a list of VANs attached to a sub-account.'''
         response = self.get('/v2/virtual_accounts/subaccounts/' + resource_id, query=kwargs)
         data = [Van(self, **fields) for fields in response['virtual_accounts']]
         return PaginatedCollection(data, response['pagination'])
 
+    @deprecation.deprecated(deprecated_in="2.7.5", removed_in=None,
+                            current_version=None,
+                            details="Use the generic find function instead")
     def find_subaccounts(self, **kwargs):
         '''Get a list of VANS for all sub-accounts.'''
         response = self.get('/v2/virtual_accounts/subaccounts/find', query=kwargs)

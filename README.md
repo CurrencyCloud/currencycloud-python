@@ -50,6 +50,7 @@ under the following Python implementations:
 -  CPython 3.4
 -  CPython 3.5
 -  CPython 3.6
+-  CPython 3.7
 
 ## Usage
 ```python
@@ -213,10 +214,17 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 
 ### List of features being deprecated
 ```
-  (No features are currently being deprecated)
+As of 2.7.5:
+------------
+Ibans.first
+Ibans.retrieve_subaccounts
+Ibans.find_subaccounts
+Vans.retrieve_subaccounts
+Vans.find_subaccounts
 ```
 
 # Release History
+* [2.7.5] - Add new Sender and Reporting endpoints; add Conversion Cancel, Conversion Split and Conversion Date Change; add Payment Submission, Payment Confirmation and Payment Authorization; fix minor bugs; deprecate obsolete endpoints and add support for Python 3.7
 * [2.2.0] - Update project and dependencies to latest versions; add PayerRequiredDetails; add HTTP 403 test; update environment constants (breaking change), url and sample credentials; add Virtual Accounts and IBANs; remove unused imports
 * [1.0.0] - Make the SDK thread safe
 
