@@ -40,44 +40,44 @@ class TestAccounts:
 
             assert account.brand == "currencycloud"
 
-# def test_accounts_can_retrieve(self):
-#     with Betamax(self.client.config.session) as betamax:
-#         betamax.use_cassette('accounts/retrieve')
-#
-#         account = self.client.accounts.retrieve("8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8")
-#
-#         assert account is not None
-#         assert isinstance(account, Account)
-#
-#         assert account.id == "8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8"
-#
-# def test_accounts_can_create(self):
-#     with Betamax(self.client.config.session) as betamax:
-#         betamax.use_cassette('accounts/create')
-#
-#         account = self.client.accounts.create(account_name="Currency Cloud Testing Environment",
-#                                               country="GB",
-#                                               brand="currencycloud",
-#                                               spread_table="no_markup",
-#                                               legal_entity_type="company")
-#
-#         assert account is not None
-#         assert isinstance(account, Account)
-#
-#         assert account.id is not None
-#         assert account.account_name == "Currency Cloud Testing Environment"
-#
-# def test_accounts_can_update(self):
-#     with Betamax(self.client.config.session) as betamax:
-#         betamax.use_cassette('accounts/update')
-#
-#         account = self.client.accounts.retrieve("8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8")
-#         assert account is not None
-#
-#         account.city = "Manchester"
-#         account.update()
-#         assert account.city == "Manchester"
-#
-#         account = self.client.accounts.retrieve("8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8")
-#         assert account is not None
-#         assert account.city == "Manchester"
+def test_accounts_can_retrieve(self):
+    with Betamax(self.client.config.session) as betamax:
+        betamax.use_cassette('accounts/retrieve')
+
+        account = self.client.accounts.retrieve("8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8")
+
+        assert account is not None
+        assert isinstance(account, Account)
+
+        assert account.id == "8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8"
+
+def test_accounts_can_create(self):
+    with Betamax(self.client.config.session) as betamax:
+        betamax.use_cassette('accounts/create')
+
+        account = self.client.accounts.create(account_name="Currency Cloud Testing Environment",
+                                              country="GB",
+                                              brand="currencycloud",
+                                              spread_table="no_markup",
+                                              legal_entity_type="company")
+
+        assert account is not None
+        assert isinstance(account, Account)
+
+        assert account.id is not None
+        assert account.account_name == "Currency Cloud Testing Environment"
+
+def test_accounts_can_update(self):
+    with Betamax(self.client.config.session) as betamax:
+        betamax.use_cassette('accounts/update')
+
+        account = self.client.accounts.retrieve("8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8")
+        assert account is not None
+
+        account.city = "Manchester"
+        account.update()
+        assert account.city == "Manchester"
+
+        account = self.client.accounts.retrieve("8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8")
+        assert account is not None
+        assert account.city == "Manchester"
