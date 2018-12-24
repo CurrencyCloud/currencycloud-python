@@ -26,7 +26,19 @@ class TestTransfers:
             assert transfer is not None
 
             assert isinstance(transfer, Transfer)
+            assert transfer.id is not None
+            assert transfer.short_reference is not None
+            assert transfer.source_account_id == 'd0ad035e-b699-4fcd-a73c-13fb0910a884'
+            assert transfer.destination_account_id == 'e54a5e86-80ad-4434-90fe-0c8c751666de'
             assert transfer.currency == "GBP"
+            assert transfer.amount == '1000.00'
+            assert transfer.status is not None
+            assert transfer.reason is None
+            assert transfer.created_at is not None
+            assert transfer.updated_at is not None
+            assert transfer.completed_at is not None
+            assert transfer.creator_account_id is not None
+            assert transfer.creator_contact_id is not None
 
     def test_transfers_can_find(self):
         with Betamax(self.client.config.session) as betamax:
@@ -40,7 +52,19 @@ class TestTransfers:
             assert transfer is not None
 
             assert isinstance(transfer, Transfer)
+            assert transfer.id is not None
+            assert transfer.short_reference is not None
+            assert transfer.source_account_id == 'd0ad035e-b699-4fcd-a73c-13fb0910a884'
+            assert transfer.destination_account_id == 'e54a5e86-80ad-4434-90fe-0c8c751666de'
             assert transfer.currency == "GBP"
+            assert transfer.amount == '1000.00'
+            assert transfer.status is not None
+            assert transfer.reason == ''
+            assert transfer.created_at is not None
+            assert transfer.updated_at is not None
+            assert transfer.completed_at is not None
+            assert transfer.creator_account_id is not None
+            assert transfer.creator_contact_id is not None
 
     def test_transfers_can_retrieve(self):
         with Betamax(self.client.config.session) as betamax:
@@ -48,4 +72,16 @@ class TestTransfers:
 
             transfer = self.client.transfers.retrieve("f4bf00d7-1672-463d-96b0-9e9643793978")
             assert transfer is not None
+            assert transfer.id == 'f4bf00d7-1672-463d-96b0-9e9643793978'
+            assert transfer.short_reference is not None
+            assert transfer.source_account_id == 'd0ad035e-b699-4fcd-a73c-13fb0910a884'
+            assert transfer.destination_account_id == 'e54a5e86-80ad-4434-90fe-0c8c751666de'
             assert transfer.currency == "GBP"
+            assert transfer.amount == '1000.00'
+            assert transfer.status is not None
+            assert transfer.reason == ''
+            assert transfer.created_at is not None
+            assert transfer.updated_at is not None
+            assert transfer.completed_at is not None
+            assert transfer.creator_account_id is not None
+            assert transfer.creator_contact_id is not None

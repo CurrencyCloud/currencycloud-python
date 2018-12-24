@@ -26,8 +26,17 @@ class TestReports:
 			assert isinstance(report, Report)
 
 			assert report.id is not None
-			assert report.short_reference != 0
+			assert report.short_reference is not None
+			assert report.description == 'Currency Cloud Testing Environment'
+			assert report.report_type == 'conversion'
 			assert report.status == 'processing'
+			assert report.failure_reason is None
+			assert report.expiration_date is None
+			assert report.report_url is not None
+			assert report.account_id is not None
+			assert report.contact_id is not None
+			assert report.created_at is not None
+			assert report.updated_at is not None
 
 	def test_report_payments_can_create(self):
 		with Betamax(self.client.config.session) as betamax:
@@ -42,11 +51,17 @@ class TestReports:
 
 			assert report.id is not None
 			assert report.short_reference is not None
+			assert report.description == 'Currency Cloud Testing Environment'
 			assert report.search_params['currency'] == 'GBP'
 			assert report.report_type == 'payment'
 			assert report.status == 'processing'
+			assert report.failure_reason is None
+			assert report.expiration_date is None
+			assert report.report_url is not None
 			assert report.account_id is not None
 			assert report.contact_id is not None
+			assert report.created_at is not None
+			assert report.updated_at is not None
 
 	def test_reports_can_find(self):
 		with Betamax(self.client.config.session) as betamax:
@@ -59,11 +74,14 @@ class TestReports:
 			for element in report:
 				assert element.id
 				assert element.short_reference is not None
+				assert element.description is None
 				assert element.report_type is not None
 				assert element.status == 'completed'
 				assert element.report_url is not None
 				assert element.account_id is not None
 				assert element.contact_id is not None
+				assert element.created_at is not None
+				assert element.updated_at is not None
 
 	def test_reports_can_find_via_id(self):
 		with Betamax(self.client.config.session) as betamax:
@@ -80,3 +98,5 @@ class TestReports:
 			assert report.report_url is not None
 			assert report.account_id is not None
 			assert report.contact_id is not None
+			assert report.created_at is not None
+			assert report.updated_at is not None

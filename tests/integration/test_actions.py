@@ -1,5 +1,6 @@
-from betamax import Betamax
 import sys
+
+from betamax import Betamax
 
 from currencycloud import Client, Config
 from currencycloud.resources import *
