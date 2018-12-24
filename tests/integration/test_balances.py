@@ -23,7 +23,12 @@ class TestBalances:
             assert balance is not None
             assert isinstance(balance, Balance)
 
+            assert balance.id is not None
+            assert balance.account_id is not None
             assert balance.currency == "GBP"
+            assert balance.amount is not None
+            assert balance.created_at is not None
+            assert balance.updated_at is not None
 
     def test_balances_can_find(self):
         with Betamax(self.client.config.session) as betamax:
@@ -36,3 +41,9 @@ class TestBalances:
 
             balance = balances[0]
             assert isinstance(balance, Balance)
+            assert balance.id is not None
+            assert balance.account_id is not None
+            assert balance.currency is not None
+            assert balance.amount is not None
+            assert balance.created_at is not None
+            assert balance.updated_at is not None

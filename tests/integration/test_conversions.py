@@ -28,7 +28,35 @@ class TestConversions:
             assert isinstance(conversion, Conversion)
 
             assert conversion.id is not None
+            assert conversion.settlement_date is not None
+            assert conversion.conversion_date is not None
+            assert conversion.short_reference is not None
+            assert conversion.creator_contact_id is not None
+            assert conversion.account_id is not None
+            assert conversion.currency_pair is not None
+            assert conversion.status is not None
+            assert conversion.buy_currency == 'EUR'
+            assert conversion.sell_currency == 'GBP'
             assert conversion.client_buy_amount == "1000.00"
+            assert conversion.client_sell_amount is not None
+            assert conversion.fixed_side == 'buy'
+            assert conversion.core_rate is not None
+            assert conversion.partner_rate is not None
+            assert conversion.partner_status is not None
+            assert conversion.partner_buy_amount is not None
+            assert conversion.partner_sell_amount is not None
+            assert conversion.client_rate is not None
+            assert conversion.deposit_required is not None
+            assert conversion.deposit_amount is not None
+            assert conversion.deposit_currency is not None
+            assert conversion.deposit_status is not None
+            assert conversion.deposit_required_at is not None
+            assert conversion.payment_ids is not None
+            assert conversion.unallocated_funds is not None
+            assert conversion.unique_request_id is None
+            assert conversion.created_at is not None
+            assert conversion.updated_at is not None
+            assert conversion.mid_market_rate is not None
 
     def test_actions_can_find(self):
         with Betamax(self.client.config.session) as betamax:
@@ -44,7 +72,36 @@ class TestConversions:
             assert conversion is not None
             assert isinstance(conversion, Conversion)
 
+            assert conversion.id is not None
+            assert conversion.settlement_date is not None
+            assert conversion.conversion_date is not None
+            assert conversion.short_reference is not None
+            assert conversion.creator_contact_id is not None
+            assert conversion.account_id is not None
+            assert conversion.currency_pair is not None
+            assert conversion.status is not None
+            assert conversion.buy_currency == 'EUR'
+            assert conversion.sell_currency == 'GBP'
             assert conversion.client_buy_amount == "1000.00"
+            assert conversion.client_sell_amount is not None
+            assert conversion.fixed_side == 'buy'
+            assert conversion.core_rate is not None
+            assert conversion.partner_rate is not None
+            assert conversion.partner_status is not None
+            assert conversion.partner_buy_amount is not None
+            assert conversion.partner_sell_amount is not None
+            assert conversion.client_rate is not None
+            assert conversion.deposit_required is not None
+            assert conversion.deposit_amount is not None
+            assert conversion.deposit_currency is not None
+            assert conversion.deposit_status is not None
+            assert conversion.deposit_required_at is not None
+            assert conversion.payment_ids is not None
+            assert conversion.unallocated_funds is not None
+            assert conversion.unique_request_id is None
+            assert conversion.created_at is not None
+            assert conversion.updated_at is not None
+            assert conversion.mid_market_rate is not None
 
     def test_actions_can_retrieve(self):
         with Betamax(self.client.config.session) as betamax:
@@ -55,8 +112,36 @@ class TestConversions:
             assert conversion is not None
             assert isinstance(conversion, Conversion)
 
-            assert conversion.id == "a26ffc86-c0f6-45d8-8c1c-6a3e579ce974"
+            assert conversion.id == 'a26ffc86-c0f6-45d8-8c1c-6a3e579ce974'
+            assert conversion.settlement_date is not None
+            assert conversion.conversion_date is not None
+            assert conversion.short_reference is not None
+            assert conversion.creator_contact_id is not None
+            assert conversion.account_id is not None
+            assert conversion.currency_pair is not None
+            assert conversion.status is not None
+            assert conversion.buy_currency == 'EUR'
+            assert conversion.sell_currency == 'GBP'
             assert conversion.client_buy_amount == "1000.00"
+            assert conversion.client_sell_amount is not None
+            assert conversion.fixed_side == 'buy'
+            assert conversion.core_rate is not None
+            assert conversion.partner_rate is not None
+            assert conversion.partner_status is not None
+            assert conversion.partner_buy_amount is not None
+            assert conversion.partner_sell_amount is not None
+            assert conversion.client_rate is not None
+            assert conversion.deposit_required is not None
+            assert conversion.deposit_amount is not None
+            assert conversion.deposit_currency is not None
+            assert conversion.deposit_status is not None
+            assert conversion.deposit_required_at is not None
+            assert conversion.payment_ids is not None
+            assert conversion.unallocated_funds is not None
+            assert conversion.unique_request_id is None
+            assert conversion.created_at is not None
+            assert conversion.updated_at is not None
+            assert conversion.mid_market_rate is not None
 
     def test_actions_can_cancel(self):
         with Betamax(self.client.config.session) as betamax:
@@ -64,8 +149,19 @@ class TestConversions:
 
             response = self.client.conversions.cancel("84033366-2135-4fc9-8016-41a7adba463e")
 
+            assert isinstance(response, Conversion)
             assert response is not None
+
+            assert response.account_id is not None
+            assert response.contact_id is not None
+            assert response.event_account_id is not None
+            assert response.event_contact_id is not None
             assert response.conversion_id == "84033366-2135-4fc9-8016-41a7adba463e"
+            assert response.event_type is not None
+            assert response.amount is not None
+            assert response.currency is not None
+            assert response.notes is not None
+            assert response.event_date_time is not None
 
     def test_actions_can_date_change(self):
         with Betamax(self.client.config.session) as betamax:
@@ -74,9 +170,17 @@ class TestConversions:
             response = self.client.conversions.date_change("d3c7d733-7c2f-443d-a082-4c728157b99f",
                                                            new_settlement_date="2019-04-02T13:00:00+00:00")
 
+            assert isinstance(response, Conversion)
             assert response is not None
+
             assert response.conversion_id == "d3c7d733-7c2f-443d-a082-4c728157b99f"
+            assert response.amount is not None
+            assert response.currency is not None
+            assert response.new_conversion_date is not None
             assert response.new_settlement_date == "2019-04-02T13:00:00+00:00"
+            assert response.old_conversion_date is not None
+            assert response.old_settlement_date is not None
+            assert response.event_date_time is not None
 
     def test_actions_can_split(self):
         with Betamax(self.client.config.session) as betamax:
@@ -86,8 +190,28 @@ class TestConversions:
                                                            amount="100")
 
             assert response is not None
+
             assert response.parent_conversion.get("id") == "d3c7d733-7c2f-443d-a082-4c728157b99f"
+            assert response.parent_conversion.get("short_reference") is not None
+            assert response.parent_conversion.get("sell_amount") is not None
+            assert response.parent_conversion.get("sell_currency") is not None
+            assert response.parent_conversion.get("buy_amount") is not None
+            assert response.parent_conversion.get("buy_currency") is not None
+            assert response.parent_conversion.get("settlement_date") is not None
+            assert response.parent_conversion.get("conversion_date") is not None
+            assert response.parent_conversion.get("status") is not None
+
             assert response.child_conversion.get("id") is not None
+            assert response.child_conversion.get("short_reference") is not None
+            assert response.child_conversion.get("sell_amount") is not None
+            assert response.child_conversion.get("sell_currency") is not None
+            assert response.child_conversion.get("buy_amount") is not None
+            assert response.child_conversion.get("buy_currency") is not None
+            assert response.child_conversion.get("settlement_date") is not None
+            assert response.child_conversion.get("conversion_date") is not None
+            assert response.child_conversion.get("status") is not None
+
+
 
     def test_actions_can_split_preview(self):
         with Betamax(self.client.config.session) as betamax:
@@ -97,8 +221,26 @@ class TestConversions:
                                                              amount="100")
 
             assert response is not None
+
             assert response.parent_conversion.get("id") == "c805aa35-9bd3-4afe-ade2-d341e551aa16"
+            assert response.parent_conversion.get("short_reference") is not None
+            assert response.parent_conversion.get("sell_amount") is not None
+            assert response.parent_conversion.get("sell_currency") is not None
+            assert response.parent_conversion.get("buy_amount") is not None
+            assert response.parent_conversion.get("buy_currency") is not None
+            assert response.parent_conversion.get("settlement_date") is not None
+            assert response.parent_conversion.get("conversion_date") is not None
+            assert response.parent_conversion.get("status") is not None
+
+            assert response.child_conversion.get("id") is None
+            assert response.child_conversion.get("short_reference") is None
             assert response.child_conversion.get("sell_amount") == '100.00'
+            assert response.child_conversion.get("sell_currency") is not None
+            assert response.child_conversion.get("buy_amount") is not None
+            assert response.child_conversion.get("buy_currency") is not None
+            assert response.child_conversion.get("settlement_date") is not None
+            assert response.child_conversion.get("conversion_date") is not None
+            assert response.child_conversion.get("status") is not None
 
     def test_actions_can_split_history(self):
         with Betamax(self.client.config.session) as betamax:
@@ -109,8 +251,14 @@ class TestConversions:
             assert response is not None
             for element in response.child_conversions:
                 assert element.get('id') is not None
-                assert element.get('sell_amount') == '100.00'
                 assert element.get('short_reference') is not None
+                assert element.get('sell_amount') == '100.00'
+                assert element.get('sell_currency') is not None
+                assert element.get('buy_amount') is not None
+                assert element.get('buy_currency') is not None
+                assert element.get('settlement_date') is not None
+                assert element.get('conversion_date') is not None
+                assert element.get('status') is not None
 
     def test_actions_can_quote_date_change(self):
         with Betamax(self.client.config.session) as betamax:
@@ -143,8 +291,11 @@ class TestConversions:
             for element in response:
                 assert element.account_id is not None
                 assert element.contact_id is not None
+                assert element.event_account_id is None
+                assert element.event_contact_id is None
                 assert element.conversion_id is not None
                 assert element.event_type is not None
                 assert element.amount is not None
                 assert element.currency is not None
+                assert element.notes == ''
                 assert element.event_date_time is not None
