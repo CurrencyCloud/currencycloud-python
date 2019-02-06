@@ -64,7 +64,7 @@
           "X-Auth-Token": "34524ae7db886fb519c0a86187146c96"
         },
         "method": "GET",
-        "uri": "https://devapi.currencycloud.com/v2/virtual_accounts/subaccounts/00d272ee-fae5-4f97-b425-993a2d6e3a46"
+        "uri": "https://devapi.currencycloud.com/v2/virtual_accounts?per_page=1"
       },
       "response": {
         "body": {
@@ -93,7 +93,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.currencycloud.com/v2/virtual_accounts/subaccounts/00d272ee-fae5-4f97-b425-993a2d6e3a46"
+        "url": "https://devapi.currencycloud.com/v2/virtual_accounts?per_page=1"
       }
     }
   ],
