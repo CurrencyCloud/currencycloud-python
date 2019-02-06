@@ -206,24 +206,19 @@ Technology evolves quickly and we are always looking for better ways to serve ou
 
 Deprecation means that we discourage the use of a feature, design or practice because it has been superseded or is no longer considered efficient or safe but instead of removing it immediately, we mark it as **@deprecated** to provide backwards compatibility and time for you to update your projects. While the deprecated feature remains in the SDK for a period of time, we advise that you replace it with the recommended alternative which is explained in the relevant section of the code.
 
-We remove deprecated features after **six months** from the time of announcement.
+We remove deprecated features after **three months** from the time of announcement.
 
-The security of our customers' assets is of paramount importance to us and sometimes we have to deprecate features because they may pose a security threat or because new, more secure, ways are available. On such occasions we reserve the right to set a different deprecation period which may range from **immediate removal** to the standard **six months**. 
+The security of our customers' assets is of paramount importance to us and sometimes we have to deprecate features because they may pose a security threat or because new, more secure, ways are available. On such occasions we reserve the right to set a different deprecation period which may range from **immediate removal** to the standard **three months**. 
 
 Once a feature has been marked as deprecated, we no longer develop the code or implement bug fixes. We only do security fixes.
 
 ### List of features being deprecated
 ```
-As of 2.7.5:
-------------
-Ibans.first
-Ibans.retrieve_subaccounts
-Ibans.find_subaccounts
-Vans.retrieve_subaccounts
-Vans.find_subaccounts
+(No features are currently being deprecated)
 ```
 
 # Release History
+* [3.0.0] -   Remove deprecated functions, update unit tests, update dependencies and update copyright
 * [2.7.5] - Add new Sender and Reporting endpoints; add Conversion Cancel, Conversion Split and Conversion Date Change; add Payment Submission, Payment Confirmation and Payment Authorization; fix minor bugs; deprecate obsolete endpoints and add support for Python 3.7
 * [2.2.0] - Update project and dependencies to latest versions; add PayerRequiredDetails; add HTTP 403 test; update environment constants (breaking change), url and sample credentials; add Virtual Accounts and IBANs; remove unused imports
 * [1.0.0] - Make the SDK thread safe
