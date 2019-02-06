@@ -13,7 +13,7 @@
           "Connection": "keep-alive",
           "Content-Length": "108",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/2.7.5"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/3.0.0"
         },
         "method": "POST",
         "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
