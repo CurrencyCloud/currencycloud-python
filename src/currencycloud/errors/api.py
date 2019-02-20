@@ -64,10 +64,7 @@ class ApiError(Exception):
             'response': {
                 'status_code': self.status_code,
                 'date': self.raw_response.headers['Date'],
-                'request_id': int(
-                    self.raw_response.headers.get(
-                        'x-request-id',
-                        0)),
+                'request_id': self.raw_response.headers.get('x-request-id')
             },
             'errors': [
                 m.to_h() for m in self.messages],
