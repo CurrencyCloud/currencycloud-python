@@ -218,7 +218,8 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
-* [3.0.0] -   Remove deprecated functions, update unit tests, update dependencies and update copyright
+* [3.0.1] - Minor bug fixes
+* [3.0.0] - Remove deprecated functions, update unit tests, update dependencies and update copyright
 * [2.7.5] - Add new Sender and Reporting endpoints; add Conversion Cancel, Conversion Split and Conversion Date Change; add Payment Submission, Payment Confirmation and Payment Authorization; fix minor bugs; deprecate obsolete endpoints and add support for Python 3.7
 * [2.2.0] - Update project and dependencies to latest versions; add PayerRequiredDetails; add HTTP 403 test; update environment constants (breaking change), url and sample credentials; add Virtual Accounts and IBANs; remove unused imports
 * [1.0.0] - Make the SDK thread safe
