@@ -46,36 +46,3 @@ class TestVans:
             assert pagination.next_page == 2
             assert pagination.order == 'created_at'
             assert pagination.order_asc_desc == 'asc'
-
-    def test_vans_can_retrieve(self):
-        with Betamax(self.client.config.session) as betamax:
-            betamax.use_cassette('vans/can_retrieve')
-
-            vans = self.client.vans.retrieve(per_page=1)
-            assert vans
-            assert len(vans) == 1
-
-            van = vans[0]
-
-            assert van is not None
-            assert isinstance(van, Van)
-
-            assert van.id == "00d272ee-fae5-4f97-b425-993a2d6e3a46"
-            assert van.account_id == "2090939e-b2f7-3f2b-1363-4d235b3f58af"
-            assert van.virtual_account_number == "8303723297"
-            assert van.account_holder_name == "Account-ZXOANNAMKPRQ"
-            assert van.bank_institution_name == "Community Federal Savings Bank"
-            assert van.bank_institution_address == "Seventh Avenue, New York, NY 10019, US"
-            assert van.bank_institution_country == "United States"
-            assert van.routing_code == "026073150"
-
-            pagination = vans.pagination
-
-            assert pagination.total_entries == 1
-            assert pagination.total_pages == 1
-            assert pagination.current_page == 1
-            assert pagination.per_page == 25
-            assert pagination.previous_page == -1
-            assert pagination.next_page == 2
-            assert pagination.order == 'created_at'
-            assert pagination.order_asc_desc == 'asc'
