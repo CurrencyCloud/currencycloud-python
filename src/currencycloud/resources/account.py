@@ -7,3 +7,7 @@ from currencycloud.resources.actions import UpdateMixin
 class Account(UpdateMixin, Resource):
     '''This class represents a CurrencyCloud Account'''
     pass
+
+
+class PaymentChargesSettings(Resource):
+    pass

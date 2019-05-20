@@ -81,3 +81,30 @@ class TestAccounts:
             account = self.client.accounts.retrieve("8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8")
             assert account is not None
             assert account.city == "Manchester"
+
+    def test_accounts_can_get_payment_charges_setting(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('accounts/can_get_payment_charges_setting')
+
+            settings = self.client.accounts.retrieve_payment_charges_settings('e277c9f9-679f-454f-8367-274b3ff977ff')
+
+            assert settings is not None
+            assert isinstance(settings[0], PaymentChargesSettings)
+            assert settings[0].charge_settings_id == "18f3f814-fef0-4211-a028-fe22c4b69818"
+            assert settings[1].charge_settings_id == "734bd817-0ab0-49ae-9e96-1f623a809f11"
+
+    def test_accounts_can_manage_payment_charges_setting(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('accounts/can_manage_payment_charges_setting')
+
+            settings = self.client.accounts.payment_charges_settings('e277c9f9-679f-454f-8367-274b3ff977ff',
+                                                                     '18f3f814-fef0-4211-a028-fe22c4b69818',
+                                                                     enabled='true',
+                                                                     default='true')
+            assert settings is not None
+            assert isinstance(settings, PaymentChargesSettings)
+            assert settings.charge_settings_id == "18f3f814-fef0-4211-a028-fe22c4b69818"
+            assert settings.account_id == "e277c9f9-679f-454f-8367-274b3ff977ff"
+            assert settings.charge_type == "ours"
+            assert settings.enabled is True
+            assert settings.default is True
