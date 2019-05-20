@@ -24,7 +24,7 @@ matrix:
 
   allow_failures:
     - env: TOXENV=py33
-    - env: TOXENV=py37
+    - env: TOXENV=py34
 
 install:
   - pip install virtualenv
