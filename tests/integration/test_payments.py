@@ -93,7 +93,7 @@ class TestPayments:
                 raise Exception('Should raise exception')
 
             assert True
-            
+
     def test_payments_can_confirm(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('payments/payments_confirmation')
@@ -104,7 +104,7 @@ class TestPayments:
             assert payment.id is not None
             assert payment.payment_id == 'a739b199-8260-4ffa-a404-b4b58345332e'
             assert payment.account_id is not None
-    
+
     def test_payments_can_authorise(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('payments/authorise')
@@ -129,3 +129,13 @@ class TestPayments:
             self.client.config.login_id = 'development@currencycloud.demo'
             self.client.config.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
             self.client.config.reauthenticate()
+
+    def test_payments_delivery_date(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/delivery_date')
+
+            payment = self.client.payments.payment_delivery_date(payment_date='2018-01-01', payment_type='regular', currency='EUR', bank_country='IT')
+
+            assert payment is not None
+            assert isinstance(payment, Payment)
+
