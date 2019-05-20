@@ -8,7 +8,7 @@ Many people have helped us along the way and we are sincerely grateful to all of
 
 |Name|Link/e-mail|
 |--|--|
-|||
+|cjstudioz|https://github.com/cjstudioz|
 
  In our book, they have reached [**honorificabilitudinitatibus**][sesqui] :-)
 
