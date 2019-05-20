@@ -3,14 +3,14 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [packages]
-requests = "==2.21.0"
-PyYAML = "==3.13"
+requests = "==2.22.0"
+PyYAML = "==5.1"
 deprecation = "== 2.0.6"
 
 [dev-packages]
-pytest = "==4.2.0"
-mock = "==2.0.0"
-tox = "==3.7.0"
-requests-mock = "==1.5.2"
+pytest = "==4.5.0"
+mock = "==3.0.5"
+tox = "==3.11.1"
+requests-mock = "==1.6.0"
 betamax = "==0.8.1"
 betamax-serializers = "==0.2.0"
