@@ -229,5 +229,5 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 We actively support the latest version of the SDK. We support the immediate previous version on best-efforts basis. All other versions are no longer supported nor maintained.
 
 ## Copyright
-Copyright (c) 2015-2018 Currencycloud. See [LICENSE](LICENSE.md) for
+Copyright (c) 2015-2019 Currencycloud. See [LICENSE](LICENSE.md) for
 details.
