@@ -12,4 +12,4 @@ from currencycloud.version import VERSION
 __title__ = 'currencycloud'
 __version__ = VERSION
 __license__ = 'MIT'
-__copyright__ = 'Copyright 2015-2018 Currencycloud'
+__copyright__ = 'Copyright 2015-2019 Currencycloud'

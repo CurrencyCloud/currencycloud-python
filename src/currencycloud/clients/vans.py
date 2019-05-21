@@ -14,12 +14,6 @@ class Vans(Http):
         data = [Van(self, **fields) for fields in response['virtual_accounts']]
         return PaginatedCollection(data, response['pagination'])
 
-    def retrieve(self, **kwargs):
-        '''Search for VANs that meet a number of criteria and receive a paged response.'''
-        response = self.get('/v2/virtual_accounts', query=kwargs)
-        data = [Van(self, **fields) for fields in response['virtual_accounts']]
-        return PaginatedCollection(data, response['pagination'])
-
     def first(self, **params):
         params['per_page'] = 1
         return self.find(**params)[0]
