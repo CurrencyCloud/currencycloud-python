@@ -1,0 +1,96 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2019-07-12T15:15:01",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "113"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
+          ],
+          "User-Agent": [
+            "CurrencyCloudSDK/2.0 Python/4.0.3"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjJLNE0yMTAyNTJIMkxJNDVMTjFPTEkyMEg0S7I0MzAwUKoFAAAA//8DAMBx/wwxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Headers": [
+            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority"
+          ],
+          "Access-Control-Allow-Methods": [
+            "POST"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "CF-RAY": [
+            "4f53f85698dc3540-LHR"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Fri, 12 Jul 2019 15:15:01 GMT"
+          ],
+          "Expect-CT": [
+            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+          ],
+          "Server": [
+            "cloudflare"
+          ],
+          "Set-Cookie": [
+            "__cfduid=db4aa3d62973ffa495fdd2f0da77117b81562944500; expires=Sat, 11-Jul-20 15:15:00 GMT; path=/; domain=.currencycloud.com; HttpOnly",
+            "AWSALB=j01ZfgbialnWL3YI0uJWZ1ng6FMN6xGJC07HbUilqUe6xzZV1FNcUPUAgxEm4tz/MZ/mq2Mgtowo2DxfLiy0kwfy2+M2DaeLsJHIThbVBrbExXiYn5ltBSVW4HfY; Expires=Fri, 19 Jul 2019 15:15:00 GMT; Path=/"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=2592000; includeSubDomains"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "81209fbd-1eb8-4940-8968-f4c7b5cac178"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK",
+        },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
