@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-07-12T15:15:01",
+      "recorded_at": "2018-07-16T22:20:04",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -18,7 +18,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "113"
+            "117"
           ],
           "Content-Type": [
             "application/x-www-form-urlencoded"
@@ -32,47 +32,24 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjJLNE0yMTAyNTJIMkxJNDVMTjFPTEkyMEg0S7I0MzAwUKoFAAAA//8DAMBx/wwxAAAA",
           "encoding": "utf-8",
-          "string": ""
+          "string": "{\"auth_token\":\"deadbeefdeadbeefdeadbeefdeadbeef\"}"
         },
         "headers": {
-          "Access-Control-Allow-Headers": [
-            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority"
-          ],
-          "Access-Control-Allow-Methods": [
-            "POST"
-          ],
-          "Access-Control-Allow-Origin": [
-            "*"
-          ],
-          "CF-RAY": [
-            "4f53f85698dc3540-LHR"
-          ],
           "Connection": [
             "keep-alive"
+          ],
+          "Content-Length": [
+            "49"
           ],
           "Content-Type": [
             "application/json;charset=utf-8"
           ],
           "Date": [
-            "Fri, 12 Jul 2019 15:15:01 GMT"
-          ],
-          "Expect-CT": [
-            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+            "Mon, 16 Jul 2018 22:20:04 GMT"
           ],
           "Server": [
-            "cloudflare"
-          ],
-          "Set-Cookie": [
-            "__cfduid=db4aa3d62973ffa495fdd2f0da77117b81562944500; expires=Sat, 11-Jul-20 15:15:00 GMT; path=/; domain=.currencycloud.com; HttpOnly",
-            "AWSALB=j01ZfgbialnWL3YI0uJWZ1ng6FMN6xGJC07HbUilqUe6xzZV1FNcUPUAgxEm4tz/MZ/mq2Mgtowo2DxfLiy0kwfy2+M2DaeLsJHIThbVBrbExXiYn5ltBSVW4HfY; Expires=Fri, 19 Jul 2019 15:15:00 GMT; Path=/"
-          ],
-          "Strict-Transport-Security": [
-            "max-age=2592000; includeSubDomains"
-          ],
-          "Transfer-Encoding": [
-            "chunked"
+            "nginx"
           ],
           "Vary": [
             "Origin"
@@ -81,14 +58,79 @@
             "nosniff"
           ],
           "X-Request-Id": [
-            "81209fbd-1eb8-4940-8968-f4c7b5cac178"
+            "65b8b228-79e7-4b92-a5b1-9893e03167df"
           ]
         },
         "status": {
           "code": 200,
-          "message": "OK",
+          "message": "OK"
         },
         "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2018-07-16T22:20:06",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ],
+          "X-Auth-Token": [
+            "deadbeefdeadbeefdeadbeefdeadbeef"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/reference/bank_details?identifier_type=iban&identifier_value=GB19TCCL00997901654515"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"identifier_value\":\"GB19TCCL00997901654515\",\"identifier_type\":\"iban\",\"account_number\":\"GB19TCCL00997901654515\",\"bic_swift\":\"TCCLGB22XXX\",\"bank_name\":\"THE CURRENCY CLOUD LIMITED\",\"bank_branch\":\"\",\"bank_address\":\"12 STEWARD STREET  THE STEWARD BUILDING FLOOR 0\",\"bank_city\":\"LONDON\",\"bank_state\":\"LONDON\",\"bank_post_code\":\"E1 6FQ\",\"bank_country\":\"UNITED KINGDOM\",\"bank_country_ISO\":\"GB\",\"currency\":null}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "640"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:06 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "eeba8364-41a5-4458-9bc4-91c4dab8f3b4"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/reference/bank_details?identifier_type=iban&identifier_value=GB19TCCL00997901654515"
       }
     }
   ],
