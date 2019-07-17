@@ -5,7 +5,8 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjJLNE0yMTAyNTJIMkxJNDVMTjFPTEkyMEg0S7I0MzAwUKoFAAAA//8DAMBx/wwxAAAA",
+          "string": ""
         },
         "headers": {
           "Accept": [
@@ -97,8 +98,9 @@
       },
       "response": {
         "body": {
+          "base64_string": "eyJpZGVudGlmaWVyX3ZhbHVlIjoiR0IxOVRDQ0wwMDk5NzkwMTY1NDUxNSIsImlkZW50aWZpZXJfdHlwZSI6ImliYW4iLCJhY2NvdW50X251bWJlciI6IkdCMTlUQ0NMMDA5OTc5MDE2NTQ1MTUiLCJiaWNfc3dpZnQiOiJUQ0NMR0IyMlhYWCIsImJhbmtfbmFtZSI6IlRIRSBDVVJSRU5DWSBDTE9VRCBMSU1JVEVEIiwiYmFua19icmFuY2giOiIiLCJiYW5rX2FkZHJlc3MiOiIxMiBTVEVXQVJEIFNUUkVFVCAgVEhFIFNURVdBUkQgQlVJTERJTkcgRkxPT1IgMCIsImJhbmtfY2l0eSI6IkxPTkRPTiIsImJhbmtfc3RhdGUiOiJMT05ET04iLCJiYW5rX3Bvc3RfY29kZSI6IkUxIDZGUSIsImJhbmtfY291bnRyeSI6IlVOSVRFRCBLSU5HRE9NIiwiYmFua19jb3VudHJ5X0lTTyI6IkdCIiwiY3VycmVuY3kiOm51bGx9",
           "encoding": "utf-8",
-          "string": "{\"identifier_value\":\"GB19TCCL00997901654515\",\"identifier_type\":\"iban\",\"account_number\":\"GB19TCCL00997901654515\",\"bic_swift\":\"TCCLGB22XXX\",\"bank_name\":\"THE CURRENCY CLOUD LIMITED\",\"bank_branch\":\"\",\"bank_address\":\"12 STEWARD STREET  THE STEWARD BUILDING FLOOR 0\",\"bank_city\":\"LONDON\",\"bank_state\":\"LONDON\",\"bank_post_code\":\"E1 6FQ\",\"bank_country\":\"UNITED KINGDOM\",\"bank_country_ISO\":\"GB\",\"currency\":null}"
+          "string": ""
         },
         "headers": {
           "Connection": [
