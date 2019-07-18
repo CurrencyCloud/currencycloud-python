@@ -1,7 +1,7 @@
 '''This module provides a class for Reference calls to the CC API'''
 
 from currencycloud.http import Http
-from currencycloud.resources import BeneficiaryRequiredDetails, ConversionDates, Currency, SettlementAccount, PayerRequiredDetails, PaymentPurposeCode
+from currencycloud.resources import BeneficiaryRequiredDetails, ConversionDates, Currency, SettlementAccount, PayerRequiredDetails, PaymentPurposeCode, BankDetails
 
 
 class Reference(Http):
@@ -42,3 +42,8 @@ class Reference(Http):
         '''Returns a list of valid purpose codes for the specified currency.'''
         response = self.get('/v2/reference/payment_purpose_codes', query=kwargs)['purpose_codes']
         return [PaymentPurposeCode(self, **c) for c in response]
+
+    def bank_details(self, **kwargs):
+        '''Returns the details of the bank related to the specified identifier.'''
+        response = self.get('/v2/reference/bank_details', query=kwargs)
+        return BankDetails(self, **response)

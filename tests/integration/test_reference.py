@@ -117,3 +117,25 @@ class TestReference:
             assert purpose_code.currency == 'CNY'
             assert purpose_code.entity_type == 'company'
             assert purpose_code.purpose_code == 'current_account_payment'
+
+    def test_reference_can_retrieve_bank_details(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('reference/can_retrieve_bank_details')
+
+            details = self.client.reference.bank_details(identifier_type="iban", identifier_value="GB19TCCL00997901654515")
+
+            assert isinstance(details, BankDetails)
+
+            assert details.account_number == "GB19TCCL00997901654515"
+            assert details.bank_address == "12 STEWARD STREET  THE STEWARD BUILDING FLOOR 0"
+            assert details.bank_branch == ""
+            assert details.bank_city == "LONDON"
+            assert details.bank_country == "UNITED KINGDOM"
+            assert details.bank_country_ISO == "GB"
+            assert details.bank_name == "THE CURRENCY CLOUD LIMITED"
+            assert details.bank_post_code == "E1 6FQ"
+            assert details.bank_state == "LONDON"
+            assert details.bic_swift == "TCCLGB22XXX"
+            assert details.currency is None
+            assert details.identifier_type == "iban"
+            assert details.identifier_value == "GB19TCCL00997901654515"
