@@ -218,6 +218,7 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [4.1.0] - Add Bank Details endpoint
 * [4.0.3] - Add Account Payment Charges Settings and Payment Delivery Date endpoints; remove deprecated VAN endpoint; update dependencies
 * [3.0.1] - Minor bug fixes
 * [3.0.0] - Remove deprecated functions, update unit tests, update dependencies and update copyright
