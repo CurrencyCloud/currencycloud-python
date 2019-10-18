@@ -47,3 +47,8 @@ class Reference(Http):
         '''Returns the details of the bank related to the specified identifier.'''
         response = self.get('/v2/reference/bank_details', query=kwargs)
         return BankDetails(self, **response)
+
+    def payment_fee_rules(self, **kwargs):
+        '''Returns a list of valid purpose codes for the specified currency.'''
+        response = self.get('/v2/reference/payment_fee_rules', query=kwargs)['payment_fee_rules']
+        return [PaymentFeeRule(self, **c) for c in response]
