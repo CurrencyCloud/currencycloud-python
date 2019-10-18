@@ -1,7 +1,7 @@
 '''This module provides a class for payments related calls to the CC API'''
 
 from currencycloud.http import Http
-from currencycloud.resources import PaginatedCollection, Payment
+from currencycloud.resources import PaginatedCollection, Payment, QuotePaymentFee
 
 
 class Payments(Http):
@@ -78,3 +78,9 @@ class Payments(Http):
         Retrieves Payment Delivery Date.
          '''
         return Payment(self, **self.get('/v2/payments/payment_delivery_date', query=kwargs))
+
+    def quote_payment_fee(self, **kwargs):
+        '''
+        Retrieves Quote Payment Fee.
+         '''
+        return QuotePaymentFee(self, **self.get('/v2/payments/quote_payment_fee', query=kwargs))

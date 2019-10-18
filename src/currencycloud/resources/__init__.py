@@ -8,7 +8,7 @@ from currencycloud.resources.conversion import Conversion
 from currencycloud.resources.iban import Iban
 from currencycloud.resources.paginated_collection import PaginatedCollection
 from currencycloud.resources.payer import Payer
-from currencycloud.resources.payment import Payment
+from currencycloud.resources.payment import Payment, QuotePaymentFee
 from currencycloud.resources.rate import Rate, Rates
 from currencycloud.resources.reference import Currency, ConversionDates, SettlementAccount, BeneficiaryRequiredDetails, PayerRequiredDetails, PaymentPurposeCode, BankDetails
 from currencycloud.resources.settlement import Settlement
