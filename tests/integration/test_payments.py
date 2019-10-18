@@ -153,5 +153,5 @@ class TestPayments:
             assert quote_payment_fee.payment_currency == "USD"
             assert quote_payment_fee.payment_destination_country == "US"
             assert quote_payment_fee.payment_type == "regular"
-            assert quote_payment_fee.chargeType is None
+            assert quote_payment_fee.charge_type is None
 
