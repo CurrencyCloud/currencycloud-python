@@ -1,0 +1,269 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2018-07-16T22:20:04",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "117"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
+          ],
+          "User-Agent": [
+            "CurrencyCloudSDK/2.0 Python/4.1.0"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"auth_token\":\"deadbeefdeadbeefdeadbeefdeadbeef\"}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "49"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:04 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "65b8b228-79e7-4b92-a5b1-9893e03167df"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2018-07-16T22:20:06",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ],
+          "X-Auth-Token": [
+            "deadbeefdeadbeefdeadbeefdeadbeef"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/reference/payment_fee_rules"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"payment_fee_rules\": [{\"payment_type\": \"priority\",\"charge_type\": \"shared\",\"fee_amount\": \"2.00\",\"fee_currency\": \"AED\"},{\"payment_type\": \"regular\",\"charge_type\": \"shared\",\"fee_amount\": \"12.00\",\"fee_currency\": \"USD\"},{\"payment_type\": \"priority\",\"charge_type\": \"ours\",\"fee_amount\": \"5.25\",\"fee_currency\": \"GBP\"}]}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "640"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:06 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "eeba8364-41a5-4458-9bc4-91c4dab8f3b4"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/reference/payment_fee_rules"
+      }
+    },
+    {
+      "recorded_at": "2018-07-16T22:20:06",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ],
+          "X-Auth-Token": [
+            "deadbeefdeadbeefdeadbeefdeadbeef"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/reference/payment_fee_rules?payment_type=regular"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"payment_fee_rules\": [{\"payment_type\": \"regular\",\"charge_type\": \"shared\",\"fee_amount\": \"12.00\",\"fee_currency\": \"USD\"}]}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "640"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:06 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "eeba8364-41a5-4458-9bc4-91c4dab8f3b4"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/reference/payment_fee_rules?payment_type=regular"
+      }
+    },
+    {
+      "recorded_at": "2018-07-16T22:20:06",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ],
+          "X-Auth-Token": [
+            "deadbeefdeadbeefdeadbeefdeadbeef"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/reference/payment_fee_rules?charge_type=ours"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"payment_fee_rules\": [{\"payment_type\": \"priority\",\"charge_type\": \"ours\",\"fee_amount\": \"5.25\",\"fee_currency\": \"GBP\"}]}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "640"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:06 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "eeba8364-41a5-4458-9bc4-91c4dab8f3b4"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/reference/payment_fee_rules?charge_type=ours"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
+

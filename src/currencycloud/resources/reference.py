@@ -27,3 +27,8 @@ class PaymentPurposeCode(Resource):
 
 class BankDetails(Resource):
     pass
+
+
+class PaymentFeeRule(Resource):
+    pass
+
