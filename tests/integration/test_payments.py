@@ -139,3 +139,19 @@ class TestPayments:
             assert payment is not None
             assert isinstance(payment, Payment)
 
+    def test_quote_payment_fee(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/quote_payment_fee')
+
+            quote_payment_fee = self.client.payments.quote_payment_fee(payment_currency='USD', payment_destination_country='US', payment_type='regular')
+
+            assert quote_payment_fee is not None
+            assert isinstance(quote_payment_fee, QuotePaymentFee)
+            assert quote_payment_fee.account_id == "0534aaf2-2egg-0134-2f36-10b11cd33cfb"
+            assert quote_payment_fee.fee_amount == "10.00"
+            assert quote_payment_fee.fee_currency == "EUR"
+            assert quote_payment_fee.payment_currency == "USD"
+            assert quote_payment_fee.payment_destination_country == "US"
+            assert quote_payment_fee.payment_type == "regular"
+            assert quote_payment_fee.charge_type is None
+
