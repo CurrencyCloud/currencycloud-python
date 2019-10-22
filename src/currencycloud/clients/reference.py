@@ -49,6 +49,6 @@ class Reference(Http):
         return BankDetails(self, **response)
 
     def payment_fee_rules(self, **kwargs):
-        '''Returns a list of valid purpose codes for the specified currency.'''
+        '''Returns a list of payment fee rules.'''
         response = self.get('/v2/reference/payment_fee_rules', query=kwargs)['payment_fee_rules']
         return [PaymentFeeRule(self, **c) for c in response]
