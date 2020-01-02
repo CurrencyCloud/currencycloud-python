@@ -45,6 +45,7 @@ class TestBalances:
 
             assert top_up
             assert top_up["currency"] == "GBP"
-            assert top_up["amount"] == "450"
+            assert top_up["transferred_amount"] == "450.0"
+            assert top_up["account_id"] == "6c046c51-2387-4004-8e87-4bf97102e36d"
 
             assert isinstance(top_up, MarginBalanceTopUp)
