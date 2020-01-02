@@ -1,7 +1,7 @@
 '''This module provides a class for Balances calls to the CC API'''
 
 from currencycloud.http import Http
-from currencycloud.resources import PaginatedCollection, Balance
+from currencycloud.resources import PaginatedCollection, Balance, MarginBalanceTopUp
 
 
 class Balances(Http):
@@ -21,6 +21,12 @@ class Balances(Http):
         response = self.get('/v2/balances/find', query=kwargs)
         data = [Balance(self, **fields) for fields in response['balances']]
         return PaginatedCollection(data, response['pagination'])
+
+    def top_up_margin(self, **kwargs):
+        '''
+        Provides the balance for a currency and shows the date that the balance was last updated.
+        '''
+        return MarginBalanceTopUp(self, **self.post('/v2/balances/top_up_margin',  kwargs))
 
     def first(self, **params):
         params['per_page'] = 1

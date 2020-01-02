@@ -6,3 +6,8 @@ from currencycloud.resources.resource import Resource
 class Balance(Resource):
     '''This class represents a CurrencyCloud Balance'''
     pass
+
+
+class MarginBalanceTopUp(Resource):
+    '''This class represents a CurrencyCloud MarginBalance Top Up'''
+    pass
