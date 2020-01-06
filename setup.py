@@ -44,5 +44,8 @@ setup(
 
     keywords=[],
     install_requires=['requests', 'PyYAML', 'deprecation'],
+    tests_require=[
+        'pytest', 'mock', 'requests-mock', 'betamax', 'betamax-serializers'
+    ],
     test_suite='tests'
 )
