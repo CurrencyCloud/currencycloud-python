@@ -16,6 +16,7 @@ class Client(Http):
     _beneficiaries_client = None
     _contacts_client = None
     _conversions_client = None
+    _funding_client = None
     _ibans_client = None
     _payers_client = None
     _payments_client = None
@@ -102,6 +103,13 @@ class Client(Http):
         if self._conversions_client is None:
             self._conversions_client = Conversions(self.config)
         return self._conversions_client
+
+    @property
+    def funding(self):
+        '''Get the Funding client.'''
+        if self._funding_client is None:
+            self._funding_client = Funding(self.config)
+        return self._funding_client
 
     @property
     def ibans(self):

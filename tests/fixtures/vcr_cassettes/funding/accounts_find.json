@@ -1,0 +1,89 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-05-15T08:53:54",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "104",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/4.3.7"
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUrJMtDBITkwySzVOMjWwTDYzSU0xNzIxNjKySE02TjYxV6oFAAAA//8DAMAL33ExAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35f4de974ee86a0d-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Mon, 15 May 2017 08:53:55 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=d7cfc1e64f20a082985f27bc80f2cf81c1494838434; expires=Tue, 15-May-18 08:53:54 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3316241613227787789"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.thecurrencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2017-05-15T08:53:54",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Cookie": "__cfduid=d7cfc1e64f20a082985f27bc80f2cf81c1494838434",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/4.3.7",
+          "X-Auth-Token": "9a80cab6e3b509c64ed7243228ec3c47"
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/funding_accounts/find?currency=GBP&per_page=5"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"funding_accounts\":[{\"id\":\"b7981972-8e29-485b-8a4a-9643fc6ae3sa\",\"account_id\":\"8d98bdc8-e8e3-47dc-bd08-3dd0f4f7ea7b\",\"account_number\":\"012345678\",\"account_number_type\":\"account_number\",\"account_holder_name\":\"Jon Doe\",\"bank_name\":\"Starling\",\"bank_address\":\"3rd floor, 2 Finsbury Avenue, London, EC2M 2PP, GB\",\"bank_country\":\"UK\",\"currency\":\"GBP\",\"payment_type\":\"regular\",\"regular_routing_code\":\"010203\",\"regular_routing_code_type\":\"sort_code\",\"priority_routing_code\":\"\",\"priority_routing_code_type\":\"\",\"created_at\":\"2018-05-14T14:18:30+00:00\",\"updated_at\":\"2018-05-14T14:19:30+00:00\"}],\"pagination\":{\"total_entries\":1,\"total_pages\":1,\"current_page\":1,\"per_page\":5,\"previous_page\":-1,\"next_page\":-1,\"order\":\"created_at\",\"order_asc_desc\":\"desc\"}}"
+        },
+        "headers": {
+            "CF-RAY": "35f588852a6b0cd1-LHR",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json;charset=utf-8",
+            "Date": "Mon, 15 May 2017 10:49:54 GMT",
+            "Server": "cloudflare-nginx",
+            "Vary": "Origin",
+            "X-Content-Type-Options": "nosniff",
+            "X-Request-Id": "3316300000397070898"
+          },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/funding_accounts/find?currency=GBP&per_page=5"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
