@@ -9,6 +9,7 @@ Many people have helped us along the way and we are sincerely grateful to all of
 |Name|Link/e-mail|
 |--|--|
 |cjstudioz|https://github.com/cjstudioz|
+|Tanner Stirrat|https://github.com/tstirrat15|
 
  In our book, they have reached [**honorificabilitudinitatibus**][sesqui] :-)
 
