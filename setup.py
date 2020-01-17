@@ -15,8 +15,8 @@ setup(
     description="Python SDK for the Currencycloud API.",
     long_description='',
 
-    author='Francesco Boffa',
-    author_email='francesco.boffa@currencycloud.com',
+    author='Currencycloud',
+    author_email='sdk@currencycloud.com',
     url='https://github.com/CurrencyCloud/currencycloud-python',
 
     packages=find_packages('src'),
