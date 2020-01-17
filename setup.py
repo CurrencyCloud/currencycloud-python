@@ -17,7 +17,7 @@ setup(
 
     author='Francesco Boffa',
     author_email='francesco.boffa@currencycloud.com',
-    url='https://connect.currencycloud.com/documentation/getting-started/introduction',
+    url='https://github.com/CurrencyCloud/currencycloud-python',
 
     packages=find_packages('src'),
     package_dir={'': 'src'},
@@ -43,6 +43,9 @@ setup(
     ],
 
     keywords=[],
-    install_requires=['requests', 'PyYAML', 'deprecation', 'pytest', 'mock', 'requests-mock', 'betamax', 'betamax-serializers'],
+    install_requires=['requests', 'PyYAML', 'deprecation'],
+    tests_require=[
+        'pytest', 'mock', 'requests-mock', 'betamax', 'betamax-serializers'
+    ],
     test_suite='tests'
 )
