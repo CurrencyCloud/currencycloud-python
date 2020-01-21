@@ -38,10 +38,8 @@ class TestFunding:
             assert account.bank_country == "UK"
             assert account.currency == "GBP"
             assert account.payment_type == "regular"
-            assert account.regular_routing_code == "010203"
-            assert account.regular_routing_code_type == "sort_code"
-            assert account.priority_routing_code == ""
-            assert account.priority_routing_code_type == ""
+            assert account.routing_code == "010203"
+            assert account.routing_code_type == "sort_code"
             assert account.created_at == "2018-05-14T14:18:30+00:00"
             assert account.updated_at == "2018-05-14T14:19:30+00:00"
 
