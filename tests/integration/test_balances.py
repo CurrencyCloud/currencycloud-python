@@ -36,3 +36,16 @@ class TestBalances:
 
             balance = balances[0]
             assert isinstance(balance, Balance)
+
+    def test_margin_balances_top_up(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('balances/top_up_margin')
+
+            top_up = self.client.balances.top_up_margin(currency="GBP", amount="450")
+
+            assert top_up
+            assert top_up["currency"] == "GBP"
+            assert top_up["transferred_amount"] == "450.0"
+            assert top_up["account_id"] == "6c046c51-2387-4004-8e87-4bf97102e36d"
+
+            assert isinstance(top_up, MarginBalanceTopUp)
