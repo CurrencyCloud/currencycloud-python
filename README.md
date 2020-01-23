@@ -218,6 +218,7 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [4.4.1] - Add funding accounts endpoint
 * [4.3.7] - Update payments endpoints for payment fee parameters
 * [4.1.0] - Add Bank Details endpoint
 * [4.0.3] - Add Account Payment Charges Settings and Payment Delivery Date endpoints; remove deprecated VAN endpoint; update dependencies
