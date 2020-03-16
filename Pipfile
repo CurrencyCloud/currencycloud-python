@@ -3,7 +3,7 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [packages]
-requests = "==2.22.0"
+requests = "==2.20.0"
 PyYAML = "==5.1"
 deprecation = "== 2.0.6"
 
