@@ -56,3 +56,20 @@ class TestRates:
 
             assert isinstance(detailed_rate, Rate)
             assert isinstance(float(detailed_rate.client_sell_amount), float)
+
+    def test_rates_can_provide_detailed_rate_with_conversion_date_preference(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('rates/can_provide_detailed_rate_with_conversion_date_preference')
+
+            detailed_rate = self.client.rates.detailed(
+                buy_currency="GBP",
+                sell_currency="USD",
+                fixed_side='buy',
+                amount=10000,
+                conversion_date_preference="optimize_liquidity"
+            )
+
+            assert isinstance(detailed_rate, Rate)
+            assert detailed_rate.client_sell_amount == "14081.00"
+            assert detailed_rate.settlement_cut_off_time == "2020-05-21T14:00:00Z"
+
