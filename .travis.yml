@@ -28,8 +28,7 @@ matrix:
 
 install:
   - pip install virtualenv
-  - pip install tox-travis
-  - pip install pip
+  - pip install tox tox-travis
 
 script:
   - tox -e $TOXENV
