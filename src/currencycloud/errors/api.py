@@ -38,11 +38,17 @@ class ApiError(Exception):
             self.messages = []
 
             for field, messages in errors['error_messages'].items():
-                for message in messages:
+                if isinstance(messages, list):
+                    for message in messages:
+                        self.messages.append(
+                            ApiError.ApiErrorMessage(
+                                field,
+                                message))
+                else:
                     self.messages.append(
                         ApiError.ApiErrorMessage(
                             field,
-                            message))
+                            messages))
 
     @property
     def platform(self):
