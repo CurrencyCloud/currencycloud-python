@@ -3,7 +3,7 @@ from betamax import Betamax
 
 from currencycloud import Client, Config
 from currencycloud.resources import *
-from currencycloud.errors import NotFoundError
+from currencycloud.errors import NotFoundError, BadRequestError
 
 
 class TestPayments:
@@ -155,3 +155,14 @@ class TestPayments:
             assert quote_payment_fee.payment_type == "regular"
             assert quote_payment_fee.charge_type is None
 
+    def test_payments_delivery_date_error_response(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/delivery_date_error')
+            with pytest.raises(BadRequestError):
+                self.client.payments.payment_delivery_date(payment_date='2020-08-02', payment_type='priority', currency='USD', bank_country='CA')
+
+    def test_payments_delivery_date_error_response2(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/delivery_date_error2')
+            with pytest.raises(BadRequestError):
+                self.client.payments.payment_delivery_date(payment_date='2020-08-02', payment_type='priority', currency='USD', bank_country='abc')
