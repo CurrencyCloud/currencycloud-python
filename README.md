@@ -51,6 +51,7 @@ under the following Python implementations:
 -  CPython 3.5
 -  CPython 3.6
 -  CPython 3.7
+-  CPython 3.8
 
 ## Usage
 ```python
@@ -218,6 +219,7 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [4.5.1] - Fixes error response formatting
 * [4.5.0] - Adds top-up margin balance endpoint
 * [4.4.1] - Add funding accounts endpoint
 * [4.3.7] - Update payments endpoints for payment fee parameters
