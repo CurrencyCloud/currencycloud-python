@@ -1,0 +1,96 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2018-01-01T12:34:56",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "116",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/4.5.1"
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUkpJNTYxNzE1TjYxtzA1Nk8xNDdPSTY2MklMTrJMMzOwUKoFAAAA//8DAJzxSjYxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35f5887b6d710cd1-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Mon, 01 Jan 2018 12:34:56 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=dedc72875aeb44d2e92cb69ce9524149e1494845393; expires=Tue, 02-Jan-18 12:34:56 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3316299987430390315"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2018-01-01T12:34:56",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Cookie": "__cfduid=dedc72875aeb44d2e92cb69ce9524149e1494845393",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/4.5.1",
+          "X-Auth-Token": "de347453c478537d177dc324acb9f608"
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/payments/46ed4827-7b6f-4491-a06f-b548d5a7512d/tracking_info"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{ \"uetr\": \"46ed4827-7b6f-4491-a06f-b548d5a7512d\", \"transaction_status\": {   \"status\": \"processing\",   \"reason\": \"transferred_and_tracked\" }, \"initiation_time\": \"2019-07-09T13:20:30+00:00\", \"completion_time\": null, \"last_update_time\": \"2019-07-10T15:39:08+00:00\", \"payment_events\": [   { \"tracker_event_type\": \"customer_credit_transfer_payment_cancellation_request\", \"valid\": true, \"transaction_status\": null, \"funds_available\": null, \"forwarded_to_agent\": null, \"from\": \"BANABEBBXXX\", \"to\": \"BANAUS33XXX\", \"originator\": null, \"serial_parties\": null, \"sender_acknowledgement_receipt\": \"2019-07-10T15:39:08+00:00\", \"instructed_amount\": null, \"confirmed_amount\": null, \"interbank_settlement_amount\": null, \"interbank_settlement_date\": null, \"charge_amount\": null, \"charge_type\": null, \"foreign_exchange_details\": null, \"last_update_time\": \"2019-07-10T15:39:08+00:00\"   },   { \"tracker_event_type\": \"customer_credit_transfer_payment_cancellation_request\", \"valid\": true, \"transaction_status\": null, \"funds_available\": null, \"forwarded_to_agent\": null, \"from\": \"BANABEBBXXX\", \"to\": \"BANAUS33XXX\", \"originator\": null, \"serial_parties\": null, \"sender_acknowledgement_receipt\": \"2019-07-10T14:22:41+00:00\", \"instructed_amount\": null, \"confirmed_amount\": null, \"interbank_settlement_amount\": null, \"interbank_settlement_date\": null, \"charge_amount\": null, \"charge_type\": null, \"foreign_exchange_details\": null, \"last_update_time\": \"2019-07-10T14:22:41+00:00\"   },   { \"tracker_event_type\": \"credit_transfer_payment_cancellation_request\", \"valid\": true, \"transaction_status\": null, \"funds_available\": null, \"forwarded_to_agent\": null, \"from\": \"BANABEBBXXX\", \"to\": \"BANAUS33XXX\", \"originator\": \"BANABEBBXXX\", \"serial_parties\": null, \"sender_acknowledgement_receipt\": \"2019-07-10T14:22:41+00:00\", \"instructed_amount\": null, \"confirmed_amount\": null, \"interbank_settlement_amount\": { \"currency\": \"USD\", \"amount\": \"745437.57\" }, \"interbank_settlement_date\": \"2019-07-09T00:00:00+00:00\", \"charge_amount\": null, \"charge_type\": null, \"foreign_exchange_details\": null, \"last_update_time\": \"2019-07-10T14:22:41+00:00\"   },   { \"tracker_event_type\": \"customer_credit_transfer_payment_cancellation_request\", \"valid\": true, \"transaction_status\": null, \"funds_available\": null, \"forwarded_to_agent\": null, \"from\": \"BANABEBBXXX\", \"to\": \"BANAUS33XXX\", \"originator\": null, \"serial_parties\": null, \"sender_acknowledgement_receipt\": \"2019-07-10T14:22:41+00:00\", \"instructed_amount\": null, \"confirmed_amount\": null, \"interbank_settlement_amount\": null, \"interbank_settlement_date\": null, \"charge_amount\": null, \"charge_type\": null, \"foreign_exchange_details\": null, \"last_update_time\": \"2019-07-10T14:22:41+00:00\"   },   { \"tracker_event_type\": \"customer_credit_transfer_payment_cancellation_request\", \"valid\": true, \"transaction_status\": null, \"funds_available\": null, \"forwarded_to_agent\": null, \"from\": \"BANABEBBXXX\", \"to\": \"BANAUS33XXX\", \"originator\": null, \"serial_parties\": null, \"sender_acknowledgement_receipt\": \"2019-07-10T14:22:41+00:00\", \"instructed_amount\": null, \"confirmed_amount\": null, \"interbank_settlement_amount\": null, \"interbank_settlement_date\": null, \"charge_amount\": null, \"charge_type\": null, \"foreign_exchange_details\": null, \"last_update_time\": \"2019-07-10T14:22:41+00:00\"   },   { \"tracker_event_type\": \"credit_transfer_payment_cancellation_request\", \"valid\": true, \"transaction_status\": null, \"funds_available\": null, \"forwarded_to_agent\": null, \"from\": \"BANABEBBXXX\", \"to\": \"BANAUS33XXX\", \"originator\": null, \"serial_parties\": null, \"sender_acknowledgement_receipt\": \"2019-07-10T14:17:39+00:00\", \"instructed_amount\": null, \"confirmed_amount\": null, \"interbank_settlement_amount\": null, \"interbank_settlement_date\": null, \"charge_amount\": null, \"charge_type\": null, \"foreign_exchange_details\": null, \"last_update_time\": \"2019-07-10T14:22:41+00:00\"   },   { \"tracker_event_type\": \"customer_credit_transfer_payment\", \"valid\": true, \"transaction_status\": { \"status\": \"processing\", \"reason\": \"transferred_and_tracked\" }, \"funds_available\": null, \"forwarded_to_agent\": null, \"from\": \"BANABEBBXXX\", \"to\": \"BANAUS33XXX\", \"originator\": \"BANABEBBXXX\", \"serial_parties\": { \"debtor\": null, \"debtor_agent\": \"GPMRCH30\", \"intermediary_agent1\": null, \"instructing_reimbursement_agent\": null, \"creditor_agent\": \"GPMRQAJ0\", \"creditor\": null }, \"sender_acknowledgement_receipt\": \"2019-07-09T13:20:30+00:00\", \"instructed_amount\": { \"currency\": \"USD\", \"amount\": \"745437.57\" }, \"confirmed_amount\": null, \"interbank_settlement_amount\": { \"currency\": \"USD\", \"amount\": \"745437.57\" }, \"interbank_settlement_date\": \"2019-07-09T00:00:00+00:00\", \"charge_amount\": null, \"charge_type\": \"shared\", \"foreign_exchange_details\": null, \"last_update_time\": \"2019-07-09T13:20:50+00:00\"   } ] }"
+        },
+        "headers": {
+          "CF-RAY": "35f588852a6b0cd1-LHR",
+          "Connection": "keep-alive",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Mon, 15 May 2017 10:49:54 GMT",
+          "Server": "cloudflare-nginx",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3316300000397070898"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/payments/46ed4827-7b6f-4491-a06f-b548d5a7512d/tracking_info"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
+
+
+
+
+
+
+

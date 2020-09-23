@@ -1,7 +1,7 @@
 '''This module provides a class for payments related calls to the CC API'''
 
 from currencycloud.http import Http
-from currencycloud.resources import PaginatedCollection, Payment, QuotePaymentFee
+from currencycloud.resources import PaginatedCollection, Payment, QuotePaymentFee, PaymentTrackingInfo
 
 
 class Payments(Http):
@@ -84,3 +84,9 @@ class Payments(Http):
         Retrieves Quote Payment Fee.
          '''
         return QuotePaymentFee(self, **self.get('/v2/payments/quote_payment_fee', query=kwargs))
+
+    def tracking_info(self, resource_id, **kwargs):
+        '''
+        Retrieves Payment Tracking Info.
+         '''
+        return PaymentTrackingInfo(self, **self.get("/v2/payments/"+resource_id+"/tracking_info", query=kwargs))
