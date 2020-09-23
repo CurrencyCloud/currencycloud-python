@@ -1,0 +1,139 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2018-07-16T22:20:04",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "117"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
+          ],
+          "User-Agent": [
+            "CurrencyCloudSDK/2.0 Python/4.5.1"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"auth_token\":\"deadbeefdeadbeefdeadbeefdeadbeef\"}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "49"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:04 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "65b8b228-79e7-4b92-a5b1-9893e03167df"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2018-07-16T22:20:06",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.4"
+          ],
+          "X-Auth-Token": [
+            "deadbeefdeadbeefdeadbeefdeadbeef"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/withdrawal_accounts/find?account_id=72970a7c-7921-431c-b95f-3438724ba16f"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"withdrawal_accounts\": [  {    \"id\": \"0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2\",    \"account_name\": \"currencycloud\",    \"account_holder_name\": \"The Currency Cloud\",    \"account_holder_dob\": null,    \"routing_code\": \"123456789\",    \"account_number\": \"01234567890\",    \"currency\": \"USD\",    \"account_id\": \"72970a7c-7921-431c-b95f-3438724ba16f\"  }],\"pagination\": {  \"total_entries\": 1,  \"total_pages\": 1,  \"current_page\": 1,  \"per_page\": 25,  \"previous_page\": -1,  \"next_page\": -1,  \"order\": \"created_at\",  \"order_asc_desc\": \"asc\"}}"
+        },
+        "headers": {
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "640"
+          ],
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Date": [
+            "Mon, 16 Jul 2018 22:20:06 GMT"
+          ],
+          "Server": [
+            "nginx"
+          ],
+          "Vary": [
+            "Origin"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Request-Id": [
+            "eeba8364-41a5-4458-9bc4-91c4dab8f3b4"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/withdrawal_accounts/find?account_id=72970a7c-7921-431c-b95f-3438724ba16f"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
+
