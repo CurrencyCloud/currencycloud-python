@@ -17,5 +17,5 @@ class WithdrawalAccounts(Http):
     def pull_funds(self, resource_id, **kwargs):
         """Submits an ACH pull request from a specific withdrawal account.
            The funds will be pulled into the account the specified withdrawal account is related to"""
-        response = self.post("withdrawal_accounts/"+resource_id+"/pull_funds", kwargs)
+        response = self.post("/v2/withdrawal_accounts/"+resource_id+"/pull_funds", kwargs)
         return WithdrawalAccountFunds(self, **response)

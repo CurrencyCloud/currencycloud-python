@@ -73,7 +73,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": ""
+          "string": "reference=PullFunds1&amount=100"
         },
         "headers": {
           "Accept": [
@@ -92,13 +92,13 @@
             "deadbeefdeadbeefdeadbeefdeadbeef"
           ]
         },
-        "method": "GET",
-        "uri": "https://devapi.currencycloud.com/v2/withdrawal_accounts/find?account_id=72970a7c-7921-431c-b95f-3438724ba16f"
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/withdrawal_accounts/0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2/pull_funds"
       },
       "response": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"withdrawal_accounts\": [  {    \"id\": \"0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2\",    \"account_name\": \"currencycloud\",    \"account_holder_name\": \"The Currency Cloud\",    \"account_holder_dob\": null,    \"routing_code\": \"123456789\",    \"account_number\": \"01234567890\",    \"currency\": \"USD\",    \"account_id\": \"72970a7c-7921-431c-b95f-3438724ba16f\"  }],\"pagination\": {  \"total_entries\": 1,  \"total_pages\": 1,  \"current_page\": 1,  \"per_page\": 25,  \"previous_page\": -1,  \"next_page\": -1,  \"order\": \"created_at\",  \"order_asc_desc\": \"asc\"}}"
+          "string": "{  \"id\": \"e2e6b7aa-c9e8-4625-96a6-b97d4baab758\",   \"withdrawal_account_id\": \"0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2\",   \"reference\": \"PullFunds1\",   \"amount\": \"100.00\",   \"created_at\": \"2020-06-29T08:02:31+00:00\"}"
         },
         "headers": {
           "Connection": [
@@ -130,7 +130,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.currencycloud.com/v2/withdrawal_accounts/find?account_id=72970a7c-7921-431c-b95f-3438724ba16f"
+        "url": "https://devapi.currencycloud.com/v2/withdrawal_accounts/0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2/pull_funds"
       }
     }
   ],
