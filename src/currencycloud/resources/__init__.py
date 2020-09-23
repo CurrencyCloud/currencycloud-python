@@ -18,3 +18,4 @@ from currencycloud.resources.transfer import Transfer
 from currencycloud.resources.van import Van
 from currencycloud.resources.report import Report
 from currencycloud.resources.sender import Sender
+from currencycloud.resources.withdrawal_account import WithdrawalAccount, WithdrawalAccountFunds
