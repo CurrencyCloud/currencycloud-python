@@ -166,3 +166,15 @@ class TestPayments:
             betamax.use_cassette('payments/delivery_date_error2')
             with pytest.raises(BadRequestError):
                 self.client.payments.payment_delivery_date(payment_date='2020-08-02', payment_type='priority', currency='USD', bank_country='abc')
+
+    def test_tracking_info(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/tracking_info')
+
+            tracking_info = self.client.payments.tracking_info("46ed4827-7b6f-4491-a06f-b548d5a7512d")
+
+            assert tracking_info is not None
+            assert isinstance(tracking_info, PaymentTrackingInfo)
+            assert tracking_info.uetr == "46ed4827-7b6f-4491-a06f-b548d5a7512d"
+            assert tracking_info.transaction_status["status"] == "processing"
+            assert len(tracking_info.payment_events) == 7
