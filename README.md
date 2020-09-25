@@ -219,6 +219,9 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [4.6.0] 
+  * Adds Withdrawal Accounts APIs
+  * Adds payments tracking info API 
 * [4.5.1] - Fixes error response formatting
 * [4.5.0] - Adds top-up margin balance endpoint
 * [4.4.1] - Add funding accounts endpoint
