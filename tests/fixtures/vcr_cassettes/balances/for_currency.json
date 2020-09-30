@@ -13,7 +13,7 @@
           "Connection": "keep-alive",
           "Content-Length": "116",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/4.5.1"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/4.6.0"
         },
         "method": "POST",
         "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
@@ -56,7 +56,7 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=d5f40fcafb6462f50613e816d4651cfa91494842205",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/4.5.1",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/4.6.0",
           "X-Auth-Token": "b0f9693ce1bb332edbde0444def51b44"
         },
         "method": "GET",
