@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/CurrencyCloud/currencycloud-python.png?branch=master)](https://travis-ci.org/CurrencyCloud/currencycloud-python)
 [![PyPi Status](https://img.shields.io/pypi/v/currency-cloud.svg)](https://pypi.python.org/pypi/currency-cloud)
 
+
 # Currencycloud
 This is the official Python SDK for v2 of Currencycloud's API.
 Additional documentation for each API endpoint can be found at
@@ -11,6 +12,17 @@ development team at development@currencycloud.com
 
 The full source code, tests and examples can be always found on
 [github](https://github.com/CurrencyCloud/currencycloud-python).
+
+## Deprecation Announcement
+As of October 2020, Python 2.7, 3.3 and 3.4 are no longer supported. Please migrate to current, secure versions of Python.
+
+## Supported Python versions
+This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
+under the following Python implementations:
+-  CPython 3.5
+-  CPython 3.6
+-  CPython 3.7
+-  CPython 3.8
 
 ## Installation
 We support installation using standard Python "distutils" or
@@ -43,15 +55,7 @@ script:
   python setup.py install
 ```
 
-## Supported Python versions
-This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
-under the following Python implementations:
--  CPython 2.7
--  CPython 3.4
--  CPython 3.5
--  CPython 3.6
--  CPython 3.7
--  CPython 3.8
+
 
 ## Usage
 ```python
