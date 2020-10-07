@@ -14,7 +14,8 @@ The full source code, tests and examples can be always found on
 [github](https://github.com/CurrencyCloud/currencycloud-python).
 
 ## Deprecation Announcement
-As of October 2020, Python 2.7, 3.3 and 3.4 are no longer supported. Please migrate to current, secure versions of Python.
+October 2020: Python 2.7, 3.3 and 3.4 are deprecated, they will not be supported from January 2021. 
+Please migrate to a current, secure version of Python, listed below.
 
 ## Supported Python versions
 This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
