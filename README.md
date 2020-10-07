@@ -13,17 +13,6 @@ development team at development@currencycloud.com
 The full source code, tests and examples can be always found on
 [github](https://github.com/CurrencyCloud/currencycloud-python).
 
-## Deprecation Announcement
-October 2020: Python 2.7, 3.3 and 3.4 are deprecated, they will not be supported from January 2021. 
-Please migrate to a current, secure version of Python, listed below.
-
-## Supported Python versions
-This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
-under the following Python implementations:
--  CPython 3.5
--  CPython 3.6
--  CPython 3.7
--  CPython 3.8
 
 ## Installation
 We support installation using standard Python "distutils" or
@@ -38,6 +27,18 @@ follows:
 -  **Setuptools or Distribute** - When using
    [setuptools](https://pypi.python.org/pypi/setuptools/), the
    library can be installed via setup.py or easy_install.
+   
+## Deprecation Announcement
+October 2020: Python 2.7, 3.3 and 3.4 are now deprecated, they will not be supported from January 2021. 
+Please migrate to a current, secure version of Python, listed below.
+
+## Supported Python versions
+This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
+under the following Python implementations:
+-  CPython 3.5
+-  CPython 3.6
+-  CPython 3.7
+-  CPython 3.8
 
 ### Install via pip
 When pip is available, the distribution can be downloaded from PyPi and
