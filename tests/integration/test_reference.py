@@ -48,6 +48,8 @@ class TestReference:
             assert isinstance(dates, ConversionDates)
             assert dates.first_conversion_date
             assert dates.default_conversion_date
+            assert dates.first_conversion_cutoff_datetime
+            assert dates.optimize_liquidity_conversion_date
             assert 'No trading on Saturday' in dates.invalid_conversion_dates.values()  # noqa
 
     def test_reference_can_retrieve_currencies(self):
