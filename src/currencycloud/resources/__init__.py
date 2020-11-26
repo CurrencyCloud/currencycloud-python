@@ -12,7 +12,6 @@ from currencycloud.resources.payer import Payer
 from currencycloud.resources.payment import Payment, QuotePaymentFee, PaymentTrackingInfo
 from currencycloud.resources.rate import Rate, Rates
 from currencycloud.resources.reference import Currency, ConversionDates, SettlementAccount, BeneficiaryRequiredDetails, PayerRequiredDetails, PaymentPurposeCode, BankDetails, PaymentFeeRule
-from currencycloud.resources.settlement import Settlement
 from currencycloud.resources.transaction import Transaction
 from currencycloud.resources.transfer import Transfer
 from currencycloud.resources.van import Van

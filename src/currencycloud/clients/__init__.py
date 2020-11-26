@@ -12,7 +12,6 @@ from currencycloud.clients.payers import Payers
 from currencycloud.clients.payments import Payments
 from currencycloud.clients.rates import Rates
 from currencycloud.clients.reference import Reference
-from currencycloud.clients.settlements import Settlements
 from currencycloud.clients.transactions import Transactions
 from currencycloud.clients.transfers import Transfers
 from currencycloud.clients.vans import Vans
