@@ -148,13 +148,6 @@ class Client(Http):
         return self._reference_client
 
     @property
-    def settlements(self):
-        '''Get the Settlements client.'''
-        if self._settlements_client is None:
-            self._settlements_client = Settlements(self.config)
-        return self._settlements_client
-
-    @property
     def transactions(self):
         '''Get the Transactions client.'''
         if self._transactions_client is None:
