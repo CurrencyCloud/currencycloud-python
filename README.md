@@ -225,6 +225,8 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [5.0.1] 
+  * Removes all endpoints related to settlements
 * [4.6.0] 
   * Adds Withdrawal Accounts APIs
   * Adds payments tracking info API 
