@@ -10,7 +10,7 @@ from setuptools import setup
 
 setup(
     name='currency_cloud',
-    version='4.6.0',
+    version='5.0.1',
     license='MIT',
     description="Python SDK for the Currencycloud API.",
     long_description='',
