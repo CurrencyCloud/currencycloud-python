@@ -28,10 +28,6 @@ follows:
    [setuptools](https://pypi.python.org/pypi/setuptools/), the
    library can be installed via setup.py or easy_install.
    
-## Deprecation Announcement
-October 2020: Python 2.7, 3.3 and 3.4 are now deprecated, they will not be supported from January 2021. 
-Please migrate to a current, secure version of Python, listed below.
-
 ## Supported Python versions
 This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
 under the following Python implementations:
