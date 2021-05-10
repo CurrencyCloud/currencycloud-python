@@ -35,7 +35,6 @@ under the following Python implementations:
 -  CPython 3.7
 -  CPython 3.8
 -  CPython 3.9
--  CPython 3.10
 
 ### Install via pip
 When pip is available, the distribution can be downloaded from PyPi and
