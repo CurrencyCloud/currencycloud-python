@@ -55,7 +55,7 @@ Check how much it will cost to buy 10,000 Euros using funds from your Pound Ster
 Get Detailed Rates endpoint.
 '''
 try:
-    rate = client.rates.detailed(buy_currency='GBP', sell_currency='USD', fixed_side='buy', amount=10000)
+    rate = client.rates.detailed(buy_currency='EUR', sell_currency='GBP', fixed_side='buy', amount=10000)
     print("To buy {0} {1} you will need to sell {2} {3}. This quote will be valid until {4}".format(rate.client_buy_amount,
                                                                                                     rate.client_buy_currency,
                                                                                                     rate.client_sell_amount,
