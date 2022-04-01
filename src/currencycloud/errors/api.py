@@ -3,6 +3,35 @@ import sys
 import yaml
 
 
+def extract_error_code(errors):
+    return errors["error_code"] if "error_code" in errors else "unknown"
+
+
+def extract_error_messages(errors):
+    error_messages = []
+    if "error_messages" in errors and hasattr( errors["error_messages"], "items" ):
+        for field, messages in errors["error_messages"].items():
+            if isinstance(messages, list):
+                for message in messages:
+                    error_messages.append(
+                        ApiError.ApiErrorMessage(
+                            field,
+                            message))
+            else:
+                error_messages.append(
+                    ApiError.ApiErrorMessage(
+                        field,
+                        messages))
+    else:
+        error_messages.append(
+            ApiError.ApiErrorMessage(
+                "unknown",
+                {"code": "unknown_error",
+                 "message": "Unhandled Error occurred. Check params for details",
+                 "params": errors}))
+    return error_messages
+
+
 class ApiError(Exception):
     class ApiErrorMessage:
         def __init__(self, field, error):
@@ -34,21 +63,9 @@ class ApiError(Exception):
 
         if response is not None:
             errors = response.json()
-            self.code = errors['error_code']
-            self.messages = []
+            self.code = extract_error_code(errors)
+            self.messages = extract_error_messages(errors)
 
-            for field, messages in errors['error_messages'].items():
-                if isinstance(messages, list):
-                    for message in messages:
-                        self.messages.append(
-                            ApiError.ApiErrorMessage(
-                                field,
-                                message))
-                else:
-                    self.messages.append(
-                        ApiError.ApiErrorMessage(
-                            field,
-                            messages))
 
     @property
     def platform(self):

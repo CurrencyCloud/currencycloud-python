@@ -1,8 +1,8 @@
 from betamax import Betamax
 
 from currencycloud import Client, Config
-from currencycloud.errors import AuthenticationError, BadRequestError, ForbiddenError, NotFoundError, TooManyRequestsError
-
+from currencycloud.errors import AuthenticationError, BadRequestError, ForbiddenError, NotFoundError, TooManyRequestsError, ApiError
+from requests import JSONDecodeError
 
 class TestError:
     def setup_method(self, method):
@@ -144,3 +144,78 @@ class TestError:
             assert error_message.code == 'permission_denied'
             assert error_message.message == "You do not have permission 'transfer_read' to perform this operation"
             assert not error_message.params
+
+
+    def test_error_is_raised_on_missing_iban(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('errors/is_raised_on_missing_iban')
+
+            error = None
+            try:
+                self.client.reference.bank_details(identifier_type="iban", identifier_value="123abc456xyz")
+                raise Exception("Should have failed")
+            except BadRequestError as e:
+                error = e
+
+            assert error.code == 'invalid_iban'
+            assert error.raw_response is not None
+            assert error.status_code == 400
+            assert len(error.messages) == 1
+
+            error_message = error.messages[0]
+            assert error_message.code == 'invalid_iban'
+            assert error_message.message == "IBAN is invalid."
+            assert not error_message.params
+
+    def test_error_is_handled_non_json_format(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('errors/is_handled_invalid_error_format')
+
+            error = None
+            try:
+                self.client.beneficiaries.find()
+                raise Exception("Should have failed")
+            except JSONDecodeError as e:
+                error = e
+
+    def test_error_is_handled_different_json_format(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('errors/is_handled_json_error_message_different_format')
+
+            error = None
+            try:
+                self.client.beneficiaries.find()
+                raise Exception("Should have failed")
+            except ApiError as e:
+                error = e
+
+            assert error.code == "unknown"
+            assert error.raw_response is not None
+            assert error.status_code == 500
+            assert len(error.messages) == 1
+
+            error_message = error.messages[0]
+            assert error_message.code == "unknown_error"
+            assert error_message.message == "Unhandled Error occurred. Check params for details"
+            assert error_message.params
+
+    def test_error_is_handled_different_json_format_2(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('errors/is_handled_json_error_message_different_format_2')
+
+            error = None
+            try:
+                self.client.beneficiaries.find()
+                raise Exception("Should have failed")
+            except ApiError as e:
+                error = e
+
+            assert error.code == "test_code"
+            assert error.raw_response is not None
+            assert error.status_code == 500
+            assert len(error.messages) == 1
+
+            error_message = error.messages[0]
+            assert error_message.code == "unknown_error"
+            assert error_message.message == "Unhandled Error occurred. Check params for details"
+            assert error_message.params
