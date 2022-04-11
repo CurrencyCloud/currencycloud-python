@@ -2,7 +2,7 @@ from betamax import Betamax
 
 from currencycloud import Client, Config
 from currencycloud.errors import AuthenticationError, BadRequestError, ForbiddenError, NotFoundError, TooManyRequestsError, ApiError
-from requests import JSONDecodeError
+from json import JSONDecodeError
 
 class TestError:
     def setup_method(self, method):
