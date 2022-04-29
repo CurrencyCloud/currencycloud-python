@@ -1,12 +1,16 @@
-sudo: false
-
 language: python
 
 env:
   global:
     - PYTHONWARNINGS=always::DeprecationWarning
 
-matrix:
+python:
+  - '3.6'
+  - '3.7'
+  - '3.8'
+  - '3.9'
+  - '3.10'
+jobs:
   include:
     - python: 3.6
       env: TOXENV=py36
@@ -24,9 +28,5 @@ matrix:
     - env: TOXENV=py36
     - env: TOXENV=py310
 
-install:
-  - pip install virtualenv
-  - pip install tox-travis
 
-script:
-  - tox -e $TOXENV
+script: pytest
