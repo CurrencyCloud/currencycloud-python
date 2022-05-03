@@ -11,7 +11,7 @@
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/5.0.1",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/5.1.2",
           "X-Auth-Token": "deadbeefdeadbeefdeadbeefdeadbeef"
         },
         "method": "GET",

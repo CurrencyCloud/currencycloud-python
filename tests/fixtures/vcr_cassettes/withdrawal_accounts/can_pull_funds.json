@@ -24,7 +24,7 @@
             "application/x-www-form-urlencoded"
           ],
           "User-Agent": [
-            "CurrencyCloudSDK/2.0 Python/5.0.1"
+            "CurrencyCloudSDK/2.0 Python/5.1.2"
           ]
         },
         "method": "POST",
