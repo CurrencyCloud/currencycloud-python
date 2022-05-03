@@ -64,7 +64,7 @@
       "response": {
         "status": {
           "code": 503,
-          "message": "Forbidden"
+          "message": "Service Temporarily Unavailable"
         },
         "url": "https://devapi.currencycloud.com/v2/beneficiaries/find",
         "headers": {

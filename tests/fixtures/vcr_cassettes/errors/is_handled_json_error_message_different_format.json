@@ -64,7 +64,7 @@
       "response": {
         "status": {
           "code": 500,
-          "message": "Forbidden"
+          "message": "Internal Server Error"
         },
         "url": "https://devapi.currencycloud.com/v2/beneficiaries/find",
         "headers": {

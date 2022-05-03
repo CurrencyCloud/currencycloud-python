@@ -64,7 +64,7 @@
       "response": {
         "status": {
           "code": 400,
-          "message": "Forbidden"
+          "message": "Bad Request"
         },
         "url": "https://devapi.currencycloud.com/v2/transfers/find?identifier_type=iban&identifier_value=123abc456xyz",
         "headers": {
