@@ -79,11 +79,11 @@ class Http(object):
             return new_data
 
     def __build_headers(self, authenticated):
-        headers = {}
-        headers['User-Agent'] = "CurrencyCloudSDK/2.0 Python/" + VERSION
+
+        headers = {"User-Agent": "CurrencyCloudSDK/2.0 Python/" + VERSION}
 
         if authenticated:
-            headers = {'X-Auth-Token': self.config.auth_token}
+            headers["X-Auth-Token"] = self.config.auth_token
 
         return headers
 
