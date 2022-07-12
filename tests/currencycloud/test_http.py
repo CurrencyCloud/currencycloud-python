@@ -53,3 +53,52 @@ class TestHttp:
                 json=request_tester)
 
             self.client.post('accounts/create', {'account_name': 'Test Account'})
+
+    def test_user_agent_in_header_of_in_post_request_unauthenticated(self):
+        with requests_mock.Mocker() as mock:
+            def request_tester(request, context):
+                assert "User-Agent" in request.headers
+                assert request.headers["User-Agent"] == currencycloud.Http.USER_AGENT
+                assert "X-Auth-Token" not in request.headers
+                return {"auth_token": "abc"}
+
+            self.client.config.auth_token = None
+            self.client.config.login_id = "Test"
+            self.client.config.api_key = "Test"
+            mock.post(
+                requests_mock.ANY,
+                status_code=200,
+                json=request_tester)
+
+            self.client.authenticate()
+
+    def test_user_agent_in_header_of_in_get_request(self):
+        with requests_mock.Mocker() as mock:
+            def request_tester(request, context):
+                assert "User-Agent" in request.headers
+                assert request.headers["User-Agent"] == currencycloud.Http.USER_AGENT
+                assert "X-Auth-Token" in request.headers
+                return {}
+
+            mock.get(
+                requests_mock.ANY,
+                status_code=200,
+                json=request_tester)
+
+            self.client.get('accounts/current')
+
+    def test_user_agent_in_header_of_in_post_request(self):
+        with requests_mock.Mocker() as mock:
+            def request_tester(request, context):
+                assert "User-Agent" in request.headers
+                assert request.headers["User-Agent"] == currencycloud.Http.USER_AGENT
+                assert "X-Auth-Token" in request.headers
+                return {}
+
+            mock.post(
+                requests_mock.ANY,
+                status_code=200,
+                json=request_tester)
+
+            self.client.post('accounts/create', {'account_name': 'Test Account'})
+

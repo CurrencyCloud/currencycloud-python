@@ -9,6 +9,8 @@ class Http(object):
     headers when necessary and poin to the appropriate host for the environment.
     '''
 
+    USER_AGENT = "CurrencyCloudSDK/2.0 Python/" + VERSION
+
     def __init__(self, config):
         self.config = config
         self.session = self.config.session
@@ -79,11 +81,11 @@ class Http(object):
             return new_data
 
     def __build_headers(self, authenticated):
-        headers = {}
-        headers['User-Agent'] = "CurrencyCloudSDK/2.0 Python/" + VERSION
+
+        headers = {"User-Agent":self.USER_AGENT}
 
         if authenticated:
-            headers = {'X-Auth-Token': self.config.auth_token}
+            headers["X-Auth-Token"] = self.config.auth_token
 
         return headers
 
