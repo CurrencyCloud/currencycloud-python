@@ -49,3 +49,11 @@ class TestTransfers:
             transfer = self.client.transfers.retrieve("f4bf00d7-1672-463d-96b0-9e9643793978")
             assert transfer is not None
             assert transfer.currency == "GBP"
+
+    def test_transfers_can_cancel(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('transfers/can_cancel')
+
+            transfer = self.client.transfers.cancel("6c19f186-4c4d-4854-ad09-fdeee792ed25")
+            assert transfer is not None
+            assert transfer.status == "pending"
