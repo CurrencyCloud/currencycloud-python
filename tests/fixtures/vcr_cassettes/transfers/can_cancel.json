@@ -60,7 +60,7 @@
           "X-Auth-Token": "0eee4a26fe19d56d8fcb8a1f6cd4118d"
         },
         "method": "GET",
-        "uri": "https://devapi.currencycloud.com/v2/transfers/6c19f186-4c4d-4854-ad09-fdeee792ed25\"/cancel"
+        "uri": "https://devapi.currencycloud.com/v2/transfers/6c19f186-4c4d-4854-ad09-fdeee792ed25/cancel"
       },
       "response": {
         "body": {
@@ -71,7 +71,7 @@
         "headers": {
           "CF-RAY": "35f64bed4ebb136b-LHR",
           "Connection": "keep-alive",
-          "Content-Encoding": "gzip",
+          "Content-Encoding": "application/json;charset=utf-8",
           "Content-Type": "application/json;charset=utf-8",
           "Date": "Tue, 12 Jul; 2022 12:40:01 GMT",
           "Server": "cloudflare-nginx",
