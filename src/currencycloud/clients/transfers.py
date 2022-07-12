@@ -27,3 +27,7 @@ class Transfers(Http):
     def retrieve(self, resource_id, **kwargs):
         '''Returns an array of Transfer objects for the given search criteria.'''
         return Transfer(self, **self.get('/v2/transfers/' + resource_id, query=kwargs))
+
+    def cancel(self, resource_id, **kwargs):
+        '''Request a transfer to be cancelled. Returns the Transfer object.'''
+        return Transfer(self, **self.get('/v2/transfers/' + resource_id + "/cancel", query=kwargs))

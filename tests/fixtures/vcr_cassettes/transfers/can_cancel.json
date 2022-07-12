@@ -1,0 +1,92 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2022-07-12T11:14:00",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "116",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/5.1.2"
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUjJITU01STQyS0s1tEwxNUuxSEtOskg0TDNLTjExNLRIUaoFAAAA//8DAJs5V7cxAAAA",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35f64be3ba31136b-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Tue, 12 Jul; 2022 12:40:00 GMT",
+          "Server": "cloudflare-nginx",
+          "Set-Cookie": "__cfduid=d50310577171a3a786cbaf1e35080305b1494853397; expires=Tue, 13-Jul-22 12:14:00 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3316367129437721929"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    },
+    {
+      "recorded_at": "2022-07-12T11:14:01",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Cookie": "__cfduid=d50310577171a3a786cbaf1e35080305b1494853397",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/5.1.2",
+          "X-Auth-Token": "0eee4a26fe19d56d8fcb8a1f6cd4118d"
+        },
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/transfers/6c19f186-4c4d-4854-ad09-fdeee792ed25\"/cancel"
+      },
+      "response": {
+        "body": {
+          "base64_string": "ewogICAgImlkIjogIjZjMTlmMTg2LTRjNGQtNDg1NC1hZDA5LWZkZWVlNzkyZWQyNSIsCiAgICAic2hvcnRfcmVmZXJlbmNlIjogIkJULTIwMjIwMTE3LUhOSkdITSIsCiAgICAic291cmNlX2FjY291bnRfaWQiOiAiY2YyOGIyZDgtNWFmYS00ZDdmLTlhMjYtN2I0NWJmNjE2YTExIiwKICAgICJkZXN0aW5hdGlvbl9hY2NvdW50X2lkIjogIjIyZWQxN2I1LWI5MGMtNDI0ZS1hYTc4LWQyNDkyOGIxNzc4ZSIsCiAgICAiY3VycmVuY3kiOiAiR0JQIiwKICAgICJhbW91bnQiOiAiMTAwLjAwIiwKICAgICJzdGF0dXMiOiAicGVuZGluZyIsCiAgICAicmVhc29uIjogIiIsCiAgICAiY3JlYXRlZF9hdCI6ICIyMDIyLTAxLTE3VDE0OjA3OjMxKzAwOjAwIiwKICAgICJ1cGRhdGVkX2F0IjogIjIwMjItMDEtMTdUMTQ6MDc6MzErMDA6MDAiLAogICAgImNvbXBsZXRlZF9hdCI6ICIiLAogICAgImNyZWF0b3JfYWNjb3VudF9pZCI6ICI3Mjk3MGE3Yy03OTIxLTQzMWMtYjk1Zi0zNDM4NzI0YmExNmYiLAogICAgImNyZWF0b3JfY29udGFjdF9pZCI6ICJhNjZjYTYzZi1lNjY4LTQ3YWYtOGJiOS03NDM2MzI0MGQ3ODEiLAogICAgInVuaXF1ZV9yZXF1ZXN0X2lkIjogIiIKfQo=",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "CF-RAY": "35f64bed4ebb136b-LHR",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json;charset=utf-8",
+          "Date": "Tue, 12 Jul; 2022 12:40:01 GMT",
+          "Server": "cloudflare-nginx",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "X-Content-Type-Options": "nosniff",
+          "X-Request-Id": "3316367141708222793"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://devapi.currencycloud.com/v2/transfers/6c19f186-4c4d-4854-ad09-fdeee792ed25/cancel"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
