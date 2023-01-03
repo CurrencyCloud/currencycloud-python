@@ -57,7 +57,7 @@ try:
                                            fixed_side='buy',
                                            reason='Top up Euros balance',
                                            term_agreement='true')
-    print("Conversion Id {0} for {1} {2} created succesfully".format(conversion.id,
+    print("Conversion Id {0} for {1} {2} created successfully".format(conversion.id,
                                                                      conversion.client_buy_amount,
                                                                      conversion.buy_currency))
 except ApiError as e:

@@ -10,10 +10,10 @@ class Payment(DeleteMixin, UpdateMixin, Resource):
 
 
 class QuotePaymentFee(Resource):
-    """This class represents a the quoted fee for a CurrencyCloud Payment"""
+    """This class represents a quoted fee for a CurrencyCloud Payment"""
     pass
 
 
 class PaymentTrackingInfo(Resource):
-    """This class represents a the tracking info for a CurrencyCloud Payment"""
+    """This class represents the tracking info for a CurrencyCloud Payment"""
     pass

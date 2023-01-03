@@ -22,7 +22,7 @@ class Payments(Http):
 
     def delete(self, resource_id, **kwargs):
         """
-        Delete a prevoiusly created payment and returns a hash containing the details of the
+        Delete a previously created payment and returns a hash containing the details of the
         deleted payment.
         """
         return Payment(self, **self.post('/v2/payments/' + resource_id + '/delete', kwargs))
@@ -49,7 +49,7 @@ class Payments(Http):
 
     def update(self, resource_id, **kwargs):
         """
-        Edits a prevoiusly created payment and returns a hash containing the details of the edited
+        Edits a previously created payment and returns a hash containing the details of the edited
         payment.
 
         Information that is required for your payment depends on the payment type (local or

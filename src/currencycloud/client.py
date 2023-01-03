@@ -1,4 +1,4 @@
-'''This module provides a the Client interface to the CC APIs'''
+'''This module provides a Client interface to the CC APIs'''
 
 from currencycloud.clients import *
 from contextlib import contextmanager
@@ -41,7 +41,7 @@ class Client(Http):
         return cls(config.login_id, config.api_key, config.environment)
 
     def authenticate(self):
-        '''Generate an auth token an store it in the config.'''
+        '''Generate an auth token and store it in the config.'''
         response = self.auth.authenticate()
         self.config.auth_token = response['auth_token']
 
@@ -184,7 +184,7 @@ class Client(Http):
 
     @property
     def withdrawal_accounts(self):
-        '''Get the WithdrawalAccountss client.'''
+        '''Get the WithdrawalAccounts client.'''
         if self._withdrawal_accounts_client is None:
             self._withdrawal_accounts_client = WithdrawalAccounts(self.config)
         return self._withdrawal_accounts_client
