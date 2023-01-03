@@ -73,7 +73,7 @@ GBP balance to cover the client_sell_amount. Please use your Cash Manager to top
 
 try:
     conversions = client.conversions.split_preview('c805aa35-9bd3-4afe-ade2-d341e551aa16', amount='100')
-    print(f'Your conversion after successful split preview: ')
+    print('Your conversion after successful split preview: ')
     print('Parent conversion ID: ' + conversions['parent_conversion'].get('id'))
     print('Parent conversion buy currency: ' + conversions['parent_conversion'].get('buy_currency') + " amount " + conversions['parent_conversion'].get('buy_amount'))
     print('Parent conversion sell currency: ' + conversions['parent_conversion'].get('sell_currency') + " amount " + conversions['parent_conversion'].get('sell_amount'))
@@ -85,7 +85,7 @@ except ApiError as e:
 
 try:
     conversions = client.conversions.split_history('c805aa35-9bd3-4afe-ade2-d341e551aa16')
-    print(f'Your conversion after successful split history: ')
+    print('Your conversion after successful split history: ')
     for element in conversions['child_conversions']:
         print('Child conversion ID: ' + element.get('id'))
         print('Child conversion buy currency: ' + element.get('sell_currency') + " amount " + element.get('sell_amount'))
@@ -112,7 +112,7 @@ except ApiError as e:
 
 try:
     profit_and_loss = client.conversions.profit_and_loss()
-    print(f'Here is all the information about profit and loss of your conversions:')
+    print('Here is all the information about profit and loss of your conversions:')
     for element in profit_and_loss:
         if float(element.amount) > 0:
             print(f'Your profit for conversion with id {element.conversion_id}, as result of {element.event_type}, '
