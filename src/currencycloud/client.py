@@ -1,8 +1,8 @@
 '''This module provides a the Client interface to the CC APIs'''
 
-from currencycloud.clients import *
 from contextlib import contextmanager
 
+from currencycloud.clients import *
 from currencycloud.config import Config
 from currencycloud.http import Http
 
@@ -16,6 +16,7 @@ class Client(Http):
     _beneficiaries_client = None
     _contacts_client = None
     _conversions_client = None
+    _demo_client = None
     _funding_client = None
     _ibans_client = None
     _payers_client = None
@@ -97,6 +98,13 @@ class Client(Http):
         if self._contacts_client is None:
             self._contacts_client = Contacts(self.config)
         return self._contacts_client
+
+    @property
+    def demo(self):
+        '''Get the Demo client.'''
+        if self._demo_client is None:
+            self._demo_client = Demo(self.config)
+        return self._demo_client
 
     @property
     def conversions(self):

@@ -2,7 +2,13 @@
 
 from currencycloud.resources.resource import Resource
 
+
 class FundingAccount(Resource):
     '''This class represents a CurrencyCloud Funding Account'''
+    pass
+
+
+class SimulateFunding(Resource):
+    '''This class represents a CurrencyCloud Simulate Funding'''
     pass
 

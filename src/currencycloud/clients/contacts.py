@@ -1,7 +1,7 @@
 '''This module provides a class for Contacts calls to the CC API'''
 
 from currencycloud.http import Http
-from currencycloud.resources import PaginatedCollection, Contact
+from currencycloud.resources import Contact, HMACKey, PaginatedCollection
 
 
 class Contacts(Http):
@@ -43,3 +43,7 @@ class Contacts(Http):
         contact.
         '''
         return Contact(self, **self.post('/v2/contacts/' + resource_id, kwargs))
+
+    def generate_hmac_key(self) -> HMACKey:
+        '''Generate a HMAC key for the authenticated contact.'''
+        return HMACKey(self, **self.post("/v2/contacts/generate_hmac_key", None))

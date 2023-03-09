@@ -1,7 +1,7 @@
 """This module provides a class for payments related calls to the CC API"""
 
 from currencycloud.http import Http
-from currencycloud.resources import PaginatedCollection, Payment, QuotePaymentFee, PaymentTrackingInfo
+from currencycloud.resources import PaginatedCollection, Payment, QuotePaymentFee, PaymentTrackingInfo, PaymentValidation
 
 
 class Payments(Http):
@@ -70,23 +70,28 @@ class Payments(Http):
     def authorise(self, **kwargs):
         """
         Authorise pending payment(s) and returns a hash containing the details of the payment authorisation.
-         """
+        """
         return Payment(self, **self.post('/v2/payments/authorise', kwargs))
 
     def payment_delivery_date(self, **kwargs):
         """
         Retrieves Payment Delivery Date.
-         """
+        """
         return Payment(self, **self.get('/v2/payments/payment_delivery_date', query=kwargs))
 
     def quote_payment_fee(self, **kwargs):
         """
         Retrieves Quote Payment Fee.
-         """
+        """
         return QuotePaymentFee(self, **self.get('/v2/payments/quote_payment_fee', query=kwargs))
 
     def tracking_info(self, resource_id, **kwargs):
         """
         Retrieves Payment Tracking Info.
-         """
+        """
         return PaymentTrackingInfo(self, **self.get("/v2/payments/" + resource_id + "/tracking_info", query=kwargs))
+
+    def validate(self, **kwargs) -> PaymentValidation:
+        """Validate Payment"""
+        return PaymentValidation(self, **self.post("/v2/payments/validate", kwargs))
+

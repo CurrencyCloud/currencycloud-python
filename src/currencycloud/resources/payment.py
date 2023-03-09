@@ -1,7 +1,7 @@
 """This module provides the object representation of a CurrencyCloud Payment"""
 
-from currencycloud.resources.resource import Resource
 from currencycloud.resources.actions import DeleteMixin, UpdateMixin
+from currencycloud.resources.resource import Resource
 
 
 class Payment(DeleteMixin, UpdateMixin, Resource):
@@ -16,4 +16,9 @@ class QuotePaymentFee(Resource):
 
 class PaymentTrackingInfo(Resource):
     """This class represents a the tracking info for a CurrencyCloud Payment"""
+    pass
+
+
+class PaymentValidation(Resource):
+    """This class represents a validation for a CurrencyCloud Payment"""
     pass
