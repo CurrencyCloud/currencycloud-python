@@ -32,6 +32,13 @@ def extract_error_messages(errors):
     return error_messages
 
 
+VALUES_TO_REDACT = ["api_key"]
+
+
+def redact_values(params):
+    return {i: "********" if i in VALUES_TO_REDACT else params[i] for i in params.keys()}
+
+
 class ApiError(Exception):
     class ApiErrorMessage:
         def __init__(self, field, error):
@@ -79,7 +86,7 @@ class ApiError(Exception):
         error_details = {
             'platform': self.platform,
             'request': {
-                'parameters': self.params,
+                'parameters': redact_values(self.params),
                 'verb': str(
                     self.verb),
                 'url': self.route,
