@@ -6,7 +6,7 @@ from currencycloud.version import VERSION
 class Http(object):
     '''
     Mixin for other Client classes. Provides abstract get/post methods that will add authentication
-    headers when necessary and poin to the appropriate host for the environment.
+    headers when necessary and point to the appropriate host for the environment.
     '''
 
     USER_AGENT = "CurrencyCloudSDK/2.0 Python/" + VERSION

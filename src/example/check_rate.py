@@ -57,7 +57,7 @@ currency. The offer rate is applicable if you are buying the base currency.
 '''
 3. Get a detailed quote
 To find out exactly how much it will cost you to trade funds in one currency for another, use Currencycloud’s
-Get Detailed Rates endpoint. For example, to get a quote buy 10,000 Euros using funds from your Pound Sterling
+Get Detailed Rates endpoint. For example, to get a quote to buy 10,000 Euros using funds from your Pound Sterling
 balance, make the following call:
 '''
 try:

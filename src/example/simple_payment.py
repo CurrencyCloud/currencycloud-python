@@ -74,7 +74,7 @@ try:
     beneficiary_details = client.reference.beneficiary_required_details(currency='EUR', bank_account_country='DE')
     print("Beneficiary required details: ", end='')
     for element in beneficiary_details[0]:
-            print(element + " ", end='')
+        print(element + " ", end='')
     print()
 except ApiError as e:
     print("Beneficiary Details encountered an error: {0} (HTTP code {1})".format(e.code, e.status_code))

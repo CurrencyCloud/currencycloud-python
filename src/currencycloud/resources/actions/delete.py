@@ -2,7 +2,7 @@
 
 
 class DeleteMixin(object):
-    '''This mixin allows a Resource to be delete from CurrencyCloud servers'''
+    '''This mixin allows a Resource to be deleted from CurrencyCloud servers'''
 
     def delete(self):
         '''Delete the resource from CurrencyCloud'''
