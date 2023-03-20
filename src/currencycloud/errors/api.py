@@ -32,11 +32,12 @@ def extract_error_messages(errors):
     return error_messages
 
 
+REDACTED_STRING = "********"
 VALUES_TO_REDACT = ["api_key"]
 
 
 def redact_values(params):
-    return {i: "********" if i in VALUES_TO_REDACT else params[i] for i in params.keys()}
+    return {i: REDACTED_STRING if i in VALUES_TO_REDACT else params[i] for i in params.keys()}
 
 
 class ApiError(Exception):
