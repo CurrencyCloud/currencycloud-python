@@ -219,3 +219,21 @@ class TestError:
             assert error_message.code == "unknown_error"
             assert error_message.message == "Unhandled Error occurred. Check params for details"
             assert error_message.params
+
+    def test_error_is_handled_missing_params_in_error_message(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette("errors/is_handled_missing_params_in_error_message")
+
+            error = None
+            try:
+                self.client.auth.authenticate()
+                raise Exception("Should have failed")
+            except TooManyRequestsError as e:
+                error = e
+
+            assert len(error.messages) == 1
+            error_message = error.messages[0]
+            assert error_message.field == "base"
+            assert error_message.code == "No Code"
+            assert error_message.message == "No Message"
+            assert not error_message.params
