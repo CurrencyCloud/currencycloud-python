@@ -1,0 +1,45 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2021-03-23T08:49:58",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Content-Length": "104",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/5.2.0"
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api",
+         "body": {
+           "encoding": "utf-8",
+           "string": "{\"error_code\":\"too_many_requests\",\"error_messages\":{\"base\":[{}]}}"
+         },
+         "headers": {
+           "x-request-id": "9bec876a-8ad8-4644-a8d2-e902105a38bd",
+           "connection": "close",
+           "content-type": "application/json;charset=utf-8",
+           "content-length": "429",
+           "server": "nginx",
+           "x-content-type-options": "nosniff",
+           "date": "Tue, 21 Mar 2023 08:49:58 GMT"
+         },
+         "status": {
+           "code": 429,
+           "message": "Too Many Requests"
+         },
+         "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}

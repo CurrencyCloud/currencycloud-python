@@ -44,9 +44,9 @@ class ApiError(Exception):
     class ApiErrorMessage:
         def __init__(self, field, error):
             self.field = field
-            self.code = error['code']
-            self.message = error['message']
-            self.params = error['params']
+            self.code = error["code"] if "code" in error else "No Code"
+            self.message = error["message"] if "message" in error else "No Message"
+            self.params = error["params"] if "params" in error else {}
 
         def to_h(self):
             return {
