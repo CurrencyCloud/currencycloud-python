@@ -3,6 +3,10 @@ from betamax import Betamax
 from currencycloud import Client, Config
 from currencycloud.errors import AuthenticationError, BadRequestError, ForbiddenError, NotFoundError, TooManyRequestsError, ApiError
 from json import JSONDecodeError
+from requests.models import Response
+import datetime
+from currencycloud.errors.api import REDACTED_STRING
+
 
 class TestError:
     def setup_method(self, method):
@@ -33,7 +37,7 @@ class TestError:
 
         expected_error_fields = [
             "login_id: non-existent-login-id",
-            "api_key: " + api_key,
+            "api_key: '" + REDACTED_STRING +"'",
             "verb: post",
             "url: https://devapi.currencycloud.com/v2/authenticate/api",
             "status_code: 400",
@@ -219,3 +223,22 @@ class TestError:
             assert error_message.code == "unknown_error"
             assert error_message.message == "Unhandled Error occurred. Check params for details"
             assert error_message.params
+
+    def test_error_parameter_redaction(self):
+        api_key = "IDoNotWantToSeeThis"
+        login_id = "test@currencycloud.com"
+        params = {"api_key": api_key, "login_id": login_id}
+        url = "https://devapi.currencycloud.com/v2/authenticate/api"
+        verb = "post"
+        response = Response()
+        response.code = "unauthorized"
+        response.error_type = "unauthorized"
+        response.status_code = 401
+        response._content = b'{"error_code": "auth_failed","error_messages": {"username": [{"code": "invalid_supplied_credentials","message": "Authentication failed with the supplied credentials","params": {}}]}}'
+        response.headers["Date"] = datetime.datetime(2023, 3, 20, 0, 0)
+        response.headers["x-request-id"] = "06ac2168-8d8f-4a0c-8033-e81a22a2feb5"
+
+        error = AuthenticationError(verb, url, params, response)
+        s = str(error)
+        assert api_key not in s
+        assert REDACTED_STRING in s
