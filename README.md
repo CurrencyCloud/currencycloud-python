@@ -221,6 +221,9 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [5.3.0]
+    * Redact sensitive data in error logs
+    * Fix handling of malformed error responses
 * [5.2.0]
     * Fixes User-Agent header for authenticated calls
     * Adds support for transfers/{id}/cancel
