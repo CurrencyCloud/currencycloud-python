@@ -1,6 +1,7 @@
 [[source]]
 url = "https://pypi.python.org/simple"
 verify_ssl = true
+name = "pypi"
 
 [packages]
 requests = "==2.22.0"
@@ -8,7 +9,7 @@ PyYAML = "==5.4"
 deprecation = "== 2.0.6"
 
 [dev-packages]
-pytest = "==4.5.0"
+pytest = ">=4.5.0"
 mock = "==3.0.5"
 tox = "==3.11.1"
 requests-mock = "==1.6.0"
