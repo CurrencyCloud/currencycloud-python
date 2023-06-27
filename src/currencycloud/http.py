@@ -53,7 +53,7 @@ class Http(object):
 
         return self.__handle_errors('post', url, data, response)
 
-    def post(self, endpoint, query=None, authenticated=True, retry=True):
+    def post_with_query(self, endpoint, query=None, authenticated=True, retry=True):
         '''Executes a POST request.'''
 
         url = self.__build_url(endpoint)

@@ -23,7 +23,7 @@ class Accounts(Http):
         Return an array containing json structures of details of the accounts matching the
         search criteria for the logged in user.
         '''
-        response = self.post('/v2/accounts/find', query=kwargs)
+        response = self.post_with_query('/v2/accounts/find', query=kwargs)
         data = [Account(self, **fields) for fields in response['accounts']]
         return PaginatedCollection(data, response['pagination'])
 

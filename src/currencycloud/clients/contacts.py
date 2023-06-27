@@ -25,7 +25,7 @@ class Contacts(Http):
         A paged response of an array containing hashes of details of the contacts matching the
         search criteria for the active user.
         '''
-        response = self.post('/v2/contacts/find', query=kwargs)
+        response = self.post_with_query('/v2/contacts/find', query=kwargs)
         data = [Contact(self, **fields) for fields in response['contacts']]
         return PaginatedCollection(data, response['pagination'])
 
