@@ -37,7 +37,7 @@ class Beneficiaries(Http):
         Return an array containing json structures of details of the accounts matching the search
         criteria for the logged in user.
         '''
-        response = self.get('/v2/beneficiaries/find', query=kwargs)
+        response = self.post('/v2/beneficiaries/find', query=kwargs)
         data = [Beneficiary(self, **fields) for fields in response['beneficiaries']]
         return PaginatedCollection(data, response['pagination'])
 

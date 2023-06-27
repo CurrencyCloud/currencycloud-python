@@ -45,7 +45,7 @@ class Reference(Http):
 
     def bank_details(self, **kwargs):
         '''Returns the details of the bank related to the specified identifier.'''
-        response = self.get('/v2/reference/bank_details', query=kwargs)
+        response = self.post('/v2/reference/bank_details', query=kwargs)
         return BankDetails(self, **response)
 
     def payment_fee_rules(self, **kwargs):

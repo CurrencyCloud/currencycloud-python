@@ -47,7 +47,7 @@
     {
       "request": {
         "uri": "https://devapi.currencycloud.com/v2/reference/bank_details?identifier_type=iban&identifier_value=123abc456xyz",
-        "method": "GET",
+        "method": "POST",
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
