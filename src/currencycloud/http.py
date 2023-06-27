@@ -61,7 +61,7 @@ class Http(object):
         headers = self.__build_headers(authenticated)
 
         def execute_request(url, headers, data):
-            return self.session.post(url, headers=headers, query=data)
+            return self.session.post(url, headers=headers, params=data)
 
         response = self.__handle_authentication_errors(execute_request,
                                                        retry,
