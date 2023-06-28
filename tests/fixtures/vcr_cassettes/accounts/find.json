@@ -49,7 +49,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": ""
+          "string": "brand=currencycloud&per_page=1"
         },
         "headers": {
           "Accept": "*/*",
@@ -59,8 +59,8 @@
           "User-Agent": "CurrencyCloudSDK/2.0 Python/5.3.0",
           "X-Auth-Token": "9a80cab6e3b509c64ed7243228ec3c47"
         },
-        "method": "GET",
-        "uri": "https://devapi.currencycloud.com/v2/accounts/find?brand=currencycloud&per_page=1"
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/accounts/find"
       },
       "response": {
         "body": {
@@ -84,7 +84,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.currencycloud.com/v2/accounts/find?brand=currencycloud&per_page=1"
+        "url": "https://devapi.currencycloud.com/v2/accounts/find"
       }
     }
   ],
