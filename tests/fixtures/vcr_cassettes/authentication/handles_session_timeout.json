@@ -100,7 +100,7 @@
           "User-Agent": "CurrencyCloudSDK/2.0 Python/5.3.0",
           "X-Auth-Token": "23435f58324e6c32f7441cf22f521f99"
         },
-        "method": "POST",
+        "method": "GET",
         "uri": "https://devapi.currencycloud.com/v2/beneficiaries/find"
       },
       "response": {
