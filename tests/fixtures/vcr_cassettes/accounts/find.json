@@ -59,7 +59,7 @@
           "User-Agent": "CurrencyCloudSDK/2.0 Python/5.3.0",
           "X-Auth-Token": "9a80cab6e3b509c64ed7243228ec3c47"
         },
-        "method": "POST",
+        "method": "GET",
         "uri": "https://devapi.currencycloud.com/v2/accounts/find?brand=currencycloud&per_page=1"
       },
       "response": {

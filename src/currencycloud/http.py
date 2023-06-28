@@ -53,25 +53,6 @@ class Http(object):
 
         return self.__handle_errors('post', url, data, response)
 
-    def post_with_query(self, endpoint, query=None, authenticated=True, retry=True):
-        '''Executes a POST request.'''
-
-        url = self.__build_url(endpoint)
-        query = self.__encode_arrays(self.__handle_on_behalf_of(query))
-        headers = self.__build_headers(authenticated)
-
-        def execute_request(url, headers, data):
-            return self.session.post(url, headers=headers, params=data)
-
-        response = self.__handle_authentication_errors(execute_request,
-                                                       retry,
-                                                       url,
-                                                       headers,
-                                                       query,
-                                                       authenticated)
-
-        return self.__handle_errors('post', url, query, response)
-
     def __build_url(self, endpoint):
         return self.__environment_url() + endpoint
 

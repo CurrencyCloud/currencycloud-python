@@ -93,8 +93,8 @@
             "deadbeefdeadbeefdeadbeefdeadbeef"
           ]
         },
-        "method": "POST",
-        "uri": "https://devapi.currencycloud.com/v2/reference/bank_details/find?identifier_type=iban&identifier_value=GB19TCCL00997901654515"
+        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/reference/bank_details?identifier_type=iban&identifier_value=GB19TCCL00997901654515"
       },
       "response": {
         "body": {
