@@ -74,7 +74,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": ""
+          "string": "identifier_type=iban&identifier_value=GB19TCCL00997901654515"
         },
         "headers": {
           "Accept": [
@@ -91,10 +91,13 @@
           ],
           "X-Auth-Token": [
             "deadbeefdeadbeefdeadbeefdeadbeef"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
           ]
         },
-        "method": "GET",
-        "uri": "https://devapi.currencycloud.com/v2/reference/bank_details?identifier_type=iban&identifier_value=GB19TCCL00997901654515"
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/reference/bank_details/find"
       },
       "response": {
         "body": {
@@ -132,7 +135,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.currencycloud.com/v2/reference/bank_details?identifier_type=iban&identifier_value=GB19TCCL00997901654515"
+        "url": "https://devapi.currencycloud.com/v2/reference/bank_details/find"
       }
     }
   ],

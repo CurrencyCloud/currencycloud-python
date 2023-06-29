@@ -46,18 +46,19 @@
     },
     {
       "request": {
-        "uri": "https://devapi.currencycloud.com/v2/reference/bank_details?identifier_type=iban&identifier_value=123abc456xyz",
-        "method": "GET",
+        "uri": "https://devapi.currencycloud.com/v2/reference/bank_details/find",
+        "method": "POST",
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "User-Agent": "python-requests/2.7.0 CPython/2.7.6 Darwin/14.4.0",
+          "Content-Type": "application/x-www-form-urlencoded",
           "X-Auth-Token": "d309d718f1a0e949308653258e24c219"
         },
         "body": {
           "encoding": "utf-8",
-          "string": ""
+          "string": "identifier_type=iban&identifier_value=123abc456xyz"
         }
       },
       "recorded_at": "2018-05-11T11:15:30",

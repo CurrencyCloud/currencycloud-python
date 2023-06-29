@@ -57,16 +57,17 @@
           "Connection": "keep-alive",
           "Cookie": "__cfduid=d98d2ca51fed66c7f79948a65c14cc6e41494842775",
           "User-Agent": "CurrencyCloudSDK/2.0 Python/5.3.0",
-          "X-Auth-Token": "59e49920a0d2853e7c79b2233a535cf6"
+          "X-Auth-Token": "59e49920a0d2853e7c79b2233a535cf6",
+          "Content-Type": "application/x-www-form-urlencoded"
         },
-        "method": "GET",
-        "uri": "https://devapi.currencycloud.com/v2/beneficiaries/find?per_page=1&account_number=12345678"
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/beneficiaries/find"
       },
       "response": {
         "body": {
           "base64_string": "H4sIAAAAAAAAA4xUXW/bIBT9K9Z9nT0Zf6XxW7paVbXWrZK0mjRVCANO0RywAHeNqvz3ySTOvMyd9gbnHC6H+8E7VFzyWlBBtOAG8u/vIBjkQMKKRWx2EcRZhIKERvNgHkd1QOI5y6o4YSmfgQ8VkT8woVR10uIX1TCusSRbDjmsubHeo+EafJiA+JaIBnLZNY0PLdltubTY7lpnAjTfdA3R8OyPDO4wYUxz0yvOCGdA74Z4Y4pLK+zOhZ6iqdq2RO6Orv/ma6GN/ZBtyD9IKuyko1YZSxWbPGMssRwrjVutXoWkkyLmNDWuhLYvUwLB+lfXghIrlPzw7WeyV9J0v3V9ZU9phevLodpDLYvV2rtclF+9cnFXnLfC+Ebaac0lPUR5AB8Gkey2FdeQA4riJM1mF+CDVp0VcoP7/LgoGEEORmnroHOFs+wkhxiTEaLBycTRE1cJis1PUdsBEBWRw5rxmnSNxaPkQQ41aUzviGpOrNKYKmkJtdgNEMrSLI2SNEBVlgZJlvCA1DUJ0osYxWgeVWlSn7J2autRWhdXV8titQIfvPJ+7T2ubsprr/i2Lpbl4tZbFcunmy993r2r4qm4vX+4K8q1V5RPN8v7sl9/7ofHWeMMEws5RCGaBWEaoHSNwjxM8gh9CsM8DMGHrmX/J/xjtN4s15I0WPOa9zU+1nz/3I/0RkjXV5C/g1WWNP0oHn4Z5B+RlmyO+0OXWIc4oOV6tNH8VajOHJEA+SD5mx1tlWaul0YvPoKYGIoZN7T/1gyF/f4XAAAA//8DAKLLRyP2BAAA",
           "encoding": "utf-8",
-          "string": ""
+          "string": "per_page=1&account_number=12345678"
         },
         "headers": {
           "CF-RAY": "35f5489bfad1357e-LHR",
@@ -84,7 +85,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.currencycloud.com/v2/beneficiaries/find?per_page=1&account_number=12345678"
+        "url": "https://devapi.currencycloud.com/v2/beneficiaries/find"
       }
     }
   ],
