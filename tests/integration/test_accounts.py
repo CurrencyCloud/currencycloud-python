@@ -40,22 +40,6 @@ class TestAccounts:
 
             assert account.brand == "currencycloud"
 
-    def test_accounts_can_find_post(self):
-        with Betamax(self.client.config.session) as betamax:
-            betamax.use_cassette('accounts/find_post')
-
-            accounts = self.client.accounts.find_post(brand="currencycloud", per_page=1)
-
-            assert accounts
-            assert len(accounts) == 1
-
-            account = accounts[0]
-
-            assert account is not None
-            assert isinstance(account, Account)
-
-            assert account.brand == "currencycloud"
-
     def test_accounts_can_retrieve(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('accounts/retrieve')

@@ -57,7 +57,8 @@
           "Connection": "keep-alive",
           "Cookie": "__cfduid=d7cfc1e64f20a082985f27bc80f2cf81c1494838434",
           "User-Agent": "CurrencyCloudSDK/2.0 Python/5.3.0",
-          "X-Auth-Token": "9a80cab6e3b509c64ed7243228ec3c47"
+          "X-Auth-Token": "9a80cab6e3b509c64ed7243228ec3c47",
+          "Content-Type": "application/x-www-form-urlencoded"
         },
         "method": "POST",
         "uri": "https://devapi.currencycloud.com/v2/accounts/find"

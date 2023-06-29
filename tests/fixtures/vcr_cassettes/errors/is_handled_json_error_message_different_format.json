@@ -47,7 +47,7 @@
     {
       "request": {
         "uri": "https://devapi.currencycloud.com/v2/beneficiaries/find",
-        "method": "GET",
+        "method": "POST",
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",

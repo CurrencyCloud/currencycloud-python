@@ -91,6 +91,9 @@
           ],
           "X-Auth-Token": [
             "deadbeefdeadbeefdeadbeefdeadbeef"
+          ],
+          "Content-Type": [
+            "application/x-www-form-urlencoded"
           ]
         },
         "method": "POST",
