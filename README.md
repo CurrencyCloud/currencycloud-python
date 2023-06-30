@@ -221,6 +221,15 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [5.4.0]
+    * Add POST accounts/find 
+    * Deprecate GET accounts/find     
+    * Add POST beneficiaries/find     
+    * Deprecate GET beneficiaries/find     
+    * Add POST contacts/find     
+    * Deprecate GET contacts/find     
+    * Add POST reference/bank_details/find     
+    * Deprecate GET reference/bank_details
 * [5.3.0]
     * Redact sensitive data in error logs
     * Fix handling of malformed error responses
