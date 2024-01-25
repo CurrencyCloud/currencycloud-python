@@ -1,7 +1,7 @@
 """This module provides a class for payments related calls to the CC API"""
 
 from currencycloud.http import Http
-from currencycloud.resources import PaginatedCollection, Payment, QuotePaymentFee, PaymentTrackingInfo
+from currencycloud.resources import PaginatedCollection, Payment, QuotePaymentFee, PaymentTrackingInfo, PaymentValidation
 
 
 class Payments(Http):
@@ -90,3 +90,7 @@ class Payments(Http):
         Retrieves Payment Tracking Info.
          """
         return PaymentTrackingInfo(self, **self.get("/v2/payments/" + resource_id + "/tracking_info", query=kwargs))
+
+    def validate(self, **kwargs) -> PaymentValidation:
+            """Validate Payment"""
+            return PaymentValidation(self, **self.post("/v2/payments/validate", kwargs))
