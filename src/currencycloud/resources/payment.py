@@ -17,3 +17,7 @@ class QuotePaymentFee(Resource):
 class PaymentTrackingInfo(Resource):
     """This class represents the tracking info for a CurrencyCloud Payment"""
     pass
+
+class PaymentValidation(Resource):
+    """This class represents a validation for a CurrencyCloud Payment"""
+    pass

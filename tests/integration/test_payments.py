@@ -37,6 +37,36 @@ class TestPayments:
 
             TestPayments.paymentId = payment.id
 
+    def test_payments_can_validate(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/validate')
+
+            payment = self.client.payments.validate(currency="GBP",
+                                                  beneficiary_id="a0bd2d78-3621-4c29-932f-a39d6b34d5e7",
+                                                  amount="1000",
+                                                  reason="Testing payments",
+                                                  reference="Testing payments",
+                                                  payment_type="regular")
+
+            assert payment is not None
+            assert isinstance(payment, PaymentValidation)
+
+            assert payment.validation_result == "success"
+
+    def test_payments_validate_raises_on_missing_details(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/validate_error')
+
+            with pytest.raises(BadRequestError) as excinfo:
+                payment = self.client.payments.validate(currency="GBP",
+                                                      beneficiary_id="a0bd2d78-3621-4c29-932f-a39d6b34d5e7",
+                                                      reason="Testing payments",
+                                                      reference="Testing payments",
+                                                      payment_type="regular")
+                raise Exception('Should raise exception')
+
+            assert True
+
     def test_payments_can_find(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('payments/find')

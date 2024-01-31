@@ -1,0 +1,115 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef&login_id=development%40currencycloud.com"
+        },
+        "headers": {
+          "User-Agent": ["CurrencyCloudSDK/2.0 Python/5.4.0"],
+          "Accept-Encoding": ["gzip, deflate"],
+          "Accept": ["*/*"],
+          "Connection": ["keep-alive"],
+          "Content-Length": ["103"],
+          "Content-Type": ["application/x-www-form-urlencoded"]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUkpMtkgySkk1MTBJMjW1NElNNEs2TTIzsjA1NzVKNUo0UqoFAAAA//8DAHIuMzAxAAAA"
+        },
+        "headers": {
+          "Date": ["Thu, 25 Jan 2024 14:14:26 GMT"],
+          "Content-Type": ["application/json;charset=utf-8"],
+          "Transfer-Encoding": ["chunked"],
+          "Connection": ["keep-alive"],
+          "Access-Control-Allow-Headers": [
+            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,apikey,testKey,X-Auth-Token,Origin,Authority,User-Agent,x-google-recaptcha-v3-token,Authorization,Authorization"
+          ],
+          "Access-Control-Allow-Methods": ["POST"],
+          "Access-Control-Allow-Origin": ["*"],
+          "Access-Control-Expose-Headers": [""],
+          "Cache-Control": [
+            "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0, private"
+          ],
+          "Expires": ["0"],
+          "Pragma": ["no-cache"],
+          "Vary": ["Origin"],
+          "X-Content-Type-Options": ["nosniff"],
+          "X-Envoy-Upstream-Service-Time": ["962"],
+          "X-Request-Id": ["3a0b1d69-add4-4319-ad05-c3ba90bcafbd"],
+          "CF-Cache-Status": ["DYNAMIC"],
+          "Set-Cookie": "__cfduid=d62cecb57f2fbb5c324234a525421ae381494843198; expires=Tue, 15-May-18 10:13:18 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Strict-Transport-Security": ["max-age=31536000; includeSubDomains"],
+          "Server": ["cloudflare"],
+          "CF-RAY": ["84b11f575e7d3e9a-CPT"],
+          "Content-Encoding": ["gzip"]
+        },
+        "status": { "code": 200, "message": "OK" },
+        "url": "https://devapi.currencycloud.com/v2/authenticate/api"
+      },
+      "recorded_at": "2024-01-25T14:14:26"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "currency=EUR&beneficiary_id=6fdc699b-b0b4-47cb-b763-f5c9815d0736&amount=1000&reason=Testing+payments&reference=Testing+payments&payment_type=regular"
+        },
+        "headers": {
+          "User-Agent": ["CurrencyCloudSDK/2.0 Python/5.4.0"],
+          "Accept-Encoding": ["gzip, deflate"],
+          "Accept": ["*/*"],
+          "Connection": ["keep-alive"],
+          "X-Auth-Token": ["ac8b2de404b5594ea6c5b6285752e2a2"],
+          "Cookie": "__cfduid=d62cecb57f2fbb5c324234a525421ae381494843198",
+          "Content-Length": ["148"],
+          "Content-Type": ["application/x-www-form-urlencoded"]
+        },
+        "method": "POST",
+        "uri": "https://devapi.currencycloud.com/v2/payments/validate"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"validation_result\":\"success\"}"
+        },
+        "headers": {
+          "Date": ["Thu, 25 Jan 2024 14:14:27 GMT"],
+          "Content-Type": ["application/json;charset=utf-8"],
+          "Content-Length": ["31"],
+          "Connection": ["keep-alive"],
+          "Access-Control-Allow-Headers": [
+            "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,apikey,testKey,X-Auth-Token,Origin,Authority,User-Agent,x-google-recaptcha-v3-token,Authorization,Authorization"
+          ],
+          "Access-Control-Allow-Methods": ["POST"],
+          "Access-Control-Allow-Origin": ["*"],
+          "Access-Control-Expose-Headers": [""],
+          "Cache-Control": [
+            "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0, private"
+          ],
+          "Expires": ["0"],
+          "Pragma": ["no-cache"],
+          "Vary": ["Origin"],
+          "X-Content-Type-Options": ["nosniff"],
+          "X-Envoy-Upstream-Service-Time": ["1086"],
+          "X-Request-Id": ["7c34e56c-b845-4b83-9db1-46eaf7510cd0"],
+          "X-Sca-Id": ["e99c5fb0-88b2-47b6-b9ea-77279fdb3fc2"],
+          "X-Sca-Required": ["false"],
+          "CF-Cache-Status": ["DYNAMIC"],
+          "Strict-Transport-Security": ["max-age=31536000; includeSubDomains"],
+          "Server": ["cloudflare"],
+          "CF-RAY": ["84b11f5f0f5d3e9a-CPT"]
+        },
+        "status": { "code": 200, "message": "OK" },
+        "url": "https://devapi.currencycloud.com/v2/payments/validate"
+      },
+      "recorded_at": "2024-01-25T14:14:27"
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
