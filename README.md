@@ -221,6 +221,8 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [5.5.0]
+    * Adds payments/validate  
 * [5.4.0]
     * Add POST accounts/find 
     * Deprecate GET accounts/find     
