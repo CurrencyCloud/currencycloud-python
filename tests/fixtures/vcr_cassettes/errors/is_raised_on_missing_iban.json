@@ -72,6 +72,7 @@
           "connection": "keep-alive",
           "x-content-type-options": "nosniff",
           "date": "Fri, 11 May 2018 11:15:30 GMT",
+          "content-length": "131",
           "server": "nginx",
           "x-request-id": "2815456303127647695",
           "content-type": "application/json;charset=utf-8"
