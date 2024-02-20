@@ -17,9 +17,6 @@
           "Connection": [
             "keep-alive"
           ],
-          "Content-Length": [
-            "117"
-          ],
           "Content-Type": [
             "application/x-www-form-urlencoded"
           ],
@@ -38,9 +35,6 @@
         "headers": {
           "Connection": [
             "keep-alive"
-          ],
-          "Content-Length": [
-            "49"
           ],
           "Content-Type": [
             "application/json;charset=utf-8"
@@ -103,9 +97,6 @@
         "headers": {
           "Connection": [
             "keep-alive"
-          ],
-          "Content-Length": [
-            "640"
           ],
           "Content-Type": [
             "application/json;charset=utf-8"

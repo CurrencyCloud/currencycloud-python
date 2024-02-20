@@ -70,7 +70,6 @@
         "headers": {
           "X-Request-Id": "c56b752a-94b1-4da9-a287-228f16f46143",
           "date": "Fri, 01 Apr 2022 15:05:28 GMT",
-          "content-length": "162",
           "connection": "keep-alive",
           "content-type": "application/json; charset=UTF-8"
         },
