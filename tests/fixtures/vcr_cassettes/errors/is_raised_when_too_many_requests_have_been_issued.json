@@ -29,6 +29,7 @@
            "connection": "close",
            "content-type": "application/json;charset=utf-8",
            "server": "nginx",
+           "content-length": "218",
            "x-content-type-options": "nosniff",
            "date": "Tue, 23 Jun 2015 12:40:25 GMT"
          },
