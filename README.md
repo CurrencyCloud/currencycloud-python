@@ -224,6 +224,13 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [5.6.0]
+  * Upgrade dependencies
+    * requests 2.22.0 -> 2.31.0
+    * PyYAML 5.4 -> 6.0.1
+    * deprecation 2.0.6 -> 2.1.0
+  * Add support for Python 3.12
+  * Deprecate support for Python 3.7 since it is EOL
 * [5.5.0]
     * Adds payments/validate  
 * [5.4.0]
