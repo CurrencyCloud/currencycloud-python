@@ -28,7 +28,7 @@
            "x-request-id": "2771875643610572878",
            "connection": "close",
            "content-type": "application/json;charset=utf-8",
-           "content-length": "429",
+           "content-length": "218",
            "server": "nginx",
            "x-content-type-options": "nosniff",
            "date": "Tue, 23 Jun 2015 12:40:25 GMT"

@@ -21,9 +21,12 @@ matrix:
       env: TOXENV=py310
     - python: "3.11"
       env: TOXENV=py311
+    - python: "3.12"
+      env: TOXENV=py312
 
   allow_failures:
     - env: TOXENV=py36
+    - env: TOXENV=py37
 
 install:
   - pip install virtualenv

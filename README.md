@@ -32,9 +32,12 @@ follows:
 This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
 under the following Python implementations:
 -  CPython 3.6 (deprecated)
--  CPython 3.7
+-  CPython 3.7 (deprecated)
 -  CPython 3.8
 -  CPython 3.9
+-  CPython 3.10
+-  CPython 3.11
+-  CPython 3.12
 
 ### Install via pip
 When pip is available, the distribution can be downloaded from PyPi and
