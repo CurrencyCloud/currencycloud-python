@@ -5,6 +5,7 @@ from currencycloud.resources.balance import Balance, MarginBalanceTopUp
 from currencycloud.resources.beneficiary import Beneficiary
 from currencycloud.resources.contact import Contact
 from currencycloud.resources.conversion import Conversion
+from currencycloud.resources.funding_transaction import FundingTransaction
 from currencycloud.resources.funding import FundingAccount
 from currencycloud.resources.iban import Iban
 from currencycloud.resources.paginated_collection import PaginatedCollection

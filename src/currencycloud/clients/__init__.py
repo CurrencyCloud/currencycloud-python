@@ -6,6 +6,7 @@ from currencycloud.clients.balances import Balances
 from currencycloud.clients.beneficiaries import Beneficiaries
 from currencycloud.clients.contacts import Contacts
 from currencycloud.clients.conversions import Conversions
+from currencycloud.clients.funding_transactions import FundingTransactions
 from currencycloud.clients.funding import Funding
 from currencycloud.clients.ibans import Ibans
 from currencycloud.clients.payers import Payers
