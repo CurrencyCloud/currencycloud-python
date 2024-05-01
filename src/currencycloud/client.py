@@ -108,7 +108,7 @@ class Client(Http):
     
     @property
     def funding_transactions(self):
-        '''Get the Funding client.'''
+        '''Get the Funding Transactions client.'''
         if self._funding_transactions_client is None:
             self._funding_transactions_client = FundingTransactions(self.config)
         return self._funding_transactions_client
