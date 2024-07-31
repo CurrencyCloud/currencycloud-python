@@ -1,7 +1,7 @@
 '''This module provides a class for beneficiaries calls to the CC API'''
 
 from currencycloud.http import Http
-from currencycloud.resources import PaginatedCollection, Beneficiary
+from currencycloud.resources import PaginatedCollection, Beneficiary, AccountVerification
 
 
 class Beneficiaries(Http):
@@ -70,3 +70,9 @@ class Beneficiaries(Http):
         required.
         '''
         return Beneficiary(self, **self.post('/v2/beneficiaries/validate', kwargs))
+
+    def account_verification(self, **kwargs):
+        '''
+        Validates Bank account details.
+        '''
+        return AccountVerification(self, **self.post('/v2/beneficiaries/account_verification', kwargs))

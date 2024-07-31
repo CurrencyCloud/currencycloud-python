@@ -165,6 +165,27 @@ class TestActions:
             assert beneficiary.account_number == TestActions.beneficiary_params[  # noqa
                 'account_number']
             assert 'regular' in beneficiary.payment_types
+    
+    def test_actions_can_verify_beneficiaries(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('actions/can_verify_beneficiaries')
+
+            params = {
+                'bank_country': 'GB',
+                'account_number': '12345678',
+                'routing_code_type_1': 'sort_code',
+                'routing_code_value_1': '123456',
+                'payment_type': 'regular',
+                'beneficiary_entity_type': 'individual',
+                'beneficiary_first_name': 'test',
+                'beneficiary_last_name': 'last'}
+
+            account_verification = self.client.beneficiaries.account_verification(**params)
+
+            assert isinstance(account_verification, AccountVerification)
+            assert account_verification.actual_name == 'test last'
+            assert account_verification.reason_code == 'AV100'
+
 
     def test_actions_can_use_currency_to_retrieve_balance(self):
         with Betamax(self.client.config.session) as betamax:

@@ -3,6 +3,7 @@
 from currencycloud.resources.account import Account, PaymentChargesSettings
 from currencycloud.resources.balance import Balance, MarginBalanceTopUp
 from currencycloud.resources.beneficiary import Beneficiary
+from currencycloud.resources.account_verification import AccountVerification
 from currencycloud.resources.contact import Contact
 from currencycloud.resources.conversion import Conversion
 from currencycloud.resources.funding import FundingAccount
