@@ -224,6 +224,10 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [5.7.0]
+    * Upgrade dependencies
+        * requests 2.31.0 -> 2.32.0
+    * Add POST beneficiaries/account_verification
 * [5.6.0]
   * Upgrade dependencies
     * requests 2.22.0 -> 2.31.0
