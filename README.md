@@ -224,9 +224,13 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [5.7.0]
+    * Upgrade dependencies
+        * requests 2.22.0 -> 2.31.0
+    * Add POST beneficiaries/account_verification
 * [5.6.0]
   * Upgrade dependencies
-    * requests 2.22.0 -> 2.31.0
+    * requests 2.31.0 -> 2.32.0
     * PyYAML 5.4 -> 6.0.1
     * deprecation 2.0.6 -> 2.1.0
   * Add support for Python 3.12
