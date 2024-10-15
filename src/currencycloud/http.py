@@ -53,6 +53,25 @@ class Http(object):
 
         return self.__handle_errors('post', url, data, response)
 
+    def put(self, endpoint, data, authenticated=True, retry=True):
+        '''Executes a PUT request.'''
+
+        url = self.__build_url(endpoint)
+        data = self.__encode_arrays(self.__handle_on_behalf_of(data))
+        headers = self.__build_headers(authenticated)
+
+        def execute_request(url, headers, data):
+            return self.session.put(url, headers=headers, data=data)
+
+        response = self.__handle_authentication_errors(execute_request,
+                                                       retry,
+                                                       url,
+                                                       headers,
+                                                       data,
+                                                       authenticated)
+
+        return self.__handle_errors('put', url, data, response)
+
     def __build_url(self, endpoint):
         return self.__environment_url() + endpoint
 

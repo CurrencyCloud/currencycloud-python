@@ -29,6 +29,7 @@ class Client(Http):
     _report_client = None
     _sender_client = None
     _withdrawal_accounts_client = None
+    _collections_screening_client = None
 
     def __init__(self, login_id, api_key, environment='demo'):
         config = Config(login_id, api_key, environment)
@@ -188,3 +189,10 @@ class Client(Http):
         if self._withdrawal_accounts_client is None:
             self._withdrawal_accounts_client = WithdrawalAccounts(self.config)
         return self._withdrawal_accounts_client
+
+    @property
+    def collections_screening(self):
+        '''Get the CollectionsScreening client.'''
+        if self._collections_screening_client is None:
+            self._collections_screening_client = CollectionsScreenings(self.config)
+        return self._collections_screening_client

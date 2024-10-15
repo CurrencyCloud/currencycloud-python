@@ -18,3 +18,4 @@ from currencycloud.clients.vans import Vans
 from currencycloud.clients.reports import Reports
 from currencycloud.clients.senders import Senders
 from currencycloud.clients.withdrawal_accounts import WithdrawalAccounts
+from currencycloud.clients.collections_screenings import CollectionsScreenings
