@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2017-05-15T13:03:16",
+      "recorded_at": "2017-05-15T10:49:54",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+          "string": "login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
         },
         "headers": {
           "Accept": "*/*",
@@ -20,22 +20,22 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUrI0TrZMS0oyMjMwSko2NDcwTrIwMUtMtjROSklLSkxJU6oFAAAA//8DAHBdZv0xAAAA",
+          "base64_string": "H4sIAAAAAAAAA6pWSiwtyYgvyc9OzVOyUkpJNTYxNzE1TjYxtzA1Nk8xNDdPSTY2MklMTrJMMzOwUKoFAAAA//8DAJzxSjYxAAAA",
           "encoding": "utf-8",
           "string": ""
         },
         "headers": {
-          "CF-RAY": "35f64bd8d9396b55-LHR",
+          "CF-RAY": "35f5887b6d710cd1-LHR",
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json;charset=utf-8",
-          "Date": "Mon, 15 May 2017 13:03:16 GMT",
+          "Date": "Mon, 15 May 2017 10:49:54 GMT",
           "Server": "cloudflare-nginx",
-          "Set-Cookie": "__cfduid=d0924f1595e70aab228ea4bc2dd95faf21494853395; expires=Tue, 15-May-18 13:03:15 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
+          "Set-Cookie": "__cfduid=dedc72875aeb44d2e92cb69ce9524149e1494845393; expires=Tue, 15-May-18 10:49:53 GMT; path=/; domain=.thecurrencycloud.com; HttpOnly",
           "Transfer-Encoding": "chunked",
           "Vary": "Origin",
           "X-Content-Type-Options": "nosniff",
-          "X-Request-Id": "3316367114220843325"
+          "X-Request-Id": "3316299987430390315"
         },
         "status": {
           "code": 200,
@@ -45,7 +45,7 @@
       }
     },
     {
-      "recorded_at": "2017-05-15T13:03:16",
+      "recorded_at": "2017-05-15T10:49:54",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -55,36 +55,33 @@
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
-          "Cookie": "__cfduid=d0924f1595e70aab228ea4bc2dd95faf21494853395",
+          "Cookie": "__cfduid=dedc72875aeb44d2e92cb69ce9524149e1494845393",
           "User-Agent": "CurrencyCloudSDK/2.0 Python/6.0.0",
-          "X-Auth-Token": "93c9fbb2602bc1703b846ac93bdfbadf"
+          "X-Auth-Token": "de347453c478537d177dc324acb9f608"
         },
         "method": "GET",
-        "uri": "https://devapi.currencycloud.com/v2/transfers/find?currency=GBP&per_page=1"
+        "uri": "https://devapi.currencycloud.com/v2/payments/01d8c0bc-7f0c-4cdd-bc7e-ef81f68500fe/submission_info"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA5xRy27VMBD9l9mSQeP4kcTLbti2VcUChKKJPSmR2vjKdirQ1f13lEsoZYMQy3N0HuPjM9TMa5klF/Cfz7BE8DCbaSaKHSrXtWicjji4iXCQwRndDXroemigfE25jllmybIGAQ83D9iS6sgqi59u7+8+3u2ytOUgI4eQtrWO14ZIHElbwckNA5o5ROROB1R6nmhQxH1voIEopS4r1yWtf/rFGrbSO+yJIxqjDQ40C1LoQ2eVcy4KNBC2vJ/2HTx8uLmFBvh5zwAPiojeE+3nVa5bAQ8hPZ+epEqEBrJwSSt42EOycJU48u7bn4dkUdkHpT21vtXviPw1aTvFvwnNq/C16R+ke3nK/7XeL29Ia+VweJWzzrbGopqcReOMIM8zo+210mpoJ2tmuHxp4MSPx/Tgz1BT5adR1poXKeBVczAnfjzwz63rlbkSJ8lvQJaXJW3lYFA1sMq3+gamHCXv3/B77oMcuYQxSgnggUuAy+UHAAAA//8DAJZcIY22AgAA",
           "encoding": "utf-8",
-          "string": ""
+          "string": "{\"status\":\"pending\", \"submission_ref\":\"MXGGYAGJULIIQKDV\", \"format\":\"MT103\", \"message\":\"{1:F01TCCLGB20AXXX0090000004}{2:I103BARCGB22XXXXN}{4: :20:20160617-ZSYWVY :23B:CRED :32A:160617GBP3000,0 :33B:GBP3000,0 :50K:/150618-00026 PCOMAPNY address [MASKED] Province 555222 GB :53B:/20060513071472 :57C://SC200605 :59:/200605000 First Name Last Name e03036bf6c325dd12c58 London GB :70:test reference Test reason Payment group: 0160617-ZSYWVY :71A:SHA -}\"}"
         },
         "headers": {
-          "CF-RAY": "35f64be27e2c6b55-LHR",
+          "CF-RAY": "35f588852a6b0cd1-LHR",
           "Connection": "keep-alive",
-          "Content-Encoding": "gzip",
           "Content-Type": "application/json;charset=utf-8",
-          "Date": "Mon, 15 May 2017 13:03:16 GMT",
+          "Date": "Mon, 15 May 2017 10:49:54 GMT",
           "Server": "cloudflare-nginx",
-          "Transfer-Encoding": "chunked",
           "Vary": "Origin",
           "X-Content-Type-Options": "nosniff",
-          "X-Request-Id": "3316367127120440644"
+          "X-Request-Id": "2778807612227406608"
         },
         "status": {
           "code": 200,
           "message": "OK"
         },
-        "url": "https://devapi.currencycloud.com/v2/transfers/find?currency=GBP&per_page=1"
+        "url": "https://devapi.currencycloud.com/v2/payments/01d8c0bc-7f0c-4cdd-bc7e-ef81f68500fe/submission_info"
       }
     }
   ],

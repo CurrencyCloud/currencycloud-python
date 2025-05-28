@@ -9,6 +9,10 @@ class Reference(Http):
 
     def beneficiary_required_details(self, **kwargs):
         '''Returns required beneficiary details and their basic validation formats.'''
+        required_params = ['currency', 'bank_account_country', 'beneficiary_country']
+        for param in required_params:
+            if param not in kwargs:
+                raise ValueError(f"The '{param}' parameter is required.")
         response = self.get('/v2/reference/beneficiary_required_details', query=kwargs)['details']
         return [BeneficiaryRequiredDetails(self, **c) for c in response]
 

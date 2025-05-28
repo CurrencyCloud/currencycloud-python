@@ -91,7 +91,7 @@ to make a regular payment in Euros to a beneficiary with a bank account in Germa
 Get Beneficiary Requirements endpoint.
 '''
 try:
-    beneficiary_details = client.reference.beneficiary_required_details(currency='EUR', bank_account_country='DE')
+    beneficiary_details = client.reference.beneficiary_required_details(currency='EUR', bank_account_country='DE', beneficiary_country='DE')
     print("Beneficiary required details: ", end='')
     for element in beneficiary_details[0]:
         print(element + " ", end='')
@@ -118,7 +118,7 @@ try:
                                               beneficiary_country='DE',
                                               bank_country='DE',
                                               bic_swift='COBADEFF',
-                                              iban='DE89370400440532013000')
+                                              iban='DE75512108001245126199')
     beneficiary_id = beneficiary.id
     print("Beneficiary Id {0} for {1}, receiving {2} in {3} created successfully".format(beneficiary_id,
                                                                                          beneficiary.name,
