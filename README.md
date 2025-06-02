@@ -220,10 +220,15 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 
 ### List of features being deprecated
 ```
-(No features are currently being deprecated)
+2025-05-13
+- GET /payments/{id}/submission (to be removed 2025-10-01)
 ```
 
 # Release History
+* [6.0.0]
+    * Add GET payments/{id}/submission_info
+    * Enforces required parameters on reference/beneficiary_required_details
+    * Converts boolean value of `with_deleted` parameter to lowercase on GET payments/{id}
 * [5.7.0]
     * Upgrade dependencies
         * requests 2.31.0 -> 2.32.0

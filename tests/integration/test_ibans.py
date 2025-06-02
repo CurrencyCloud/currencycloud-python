@@ -29,7 +29,7 @@ class TestIbans:
 
             assert iban.id == "8242d1f4-4555-4155-a9bf-30feee785121"
             assert iban.account_id == "e277c9f9-679f-454f-8367-274b3ff977ff"
-            assert iban.iban_code == "GB51TCCL00997961584807"
+            assert iban.iban_code == "GB33BUKB20201555555555"
             assert iban.currency == "EUR"
             assert iban.account_holder_name == "Development CM"
             assert iban.bank_institution_name == "The Currency Cloud"

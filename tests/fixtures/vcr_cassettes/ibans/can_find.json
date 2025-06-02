@@ -13,7 +13,7 @@
           "Connection": "keep-alive",
           "Content-Length": "113",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/5.7.0"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/6.0.0"
         },
         "method": "POST",
         "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
@@ -60,7 +60,7 @@
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
           "Cookie": "__cfduid=db50fe2359349c2043505e6c2f3388f721528236440",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/5.7.0",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/6.0.0",
           "X-Auth-Token": "387fb879906e6b3920dcfa70af37611b"
         },
         "method": "GET",
@@ -68,7 +68,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA4yRQY/bIBCF/wqaa0EyDg42x7jbHJoe2s2eqpVFYMiiOmBhvNsqyn+v7HqlHPbQ4/v05s0buII/6TCC+nkFb0FBXYrScieYqKqKCV5VTDcnxzaFQ0RZV7zkQEEbE6eQu2UGSylN4xq2lY1johKO1ZutZKUUp41zjZTOAV02dSZaBAX7XcWPbXsoiqaRzZZXtagLCRTMlBIG8wcUPDz9uNv0EnuLqQv6Ms9/xlfs43DBkEn7DSicdPjV+TBmn6fsY3g3Hl+QtGsmafs42Y/M2tqE4wgKeEkeM77pZMljToiZkjnine0m31sfzpQcYrAxUPLAyfbLd0r2u4+Cl+5pvuYp+IyWfPXhbONl9nrTjW/e5bll2x72u838siahzmg7PfOy4DUrSsabI5eqFErUn4pCFQVQmAb7P8bbM4VBn33QcyFQV8gx677DkJPHERSnKxn0edX/PiEvZAEDpjuR8NXHaVwJ4xQC/s53MiaLCdT9LSvs9Gg6i6MBBXo0cLv9BQAA//8DAJn2mVyCAgAA",
+          "base64_string": "H4sICAGTm2cAA2FwcGxpY2F0aW9uAI1RTW/cIBT8K4hrjWSwd7F9tJvkkPTQNnuqKsTCI0HxwgrjpNVq/3uft466hxzKAXjDzPsYTtTvdZho9+NEvaUdbUQtLHc1qzebDas5brrdO1aVDgBks+GC04JqY+IcsrpoQEhpWteyrWwdCmvHmmormZD1vnKuldI51CyVlIkWUHLXV1W/u+9FKUqssS4kmTklCOY3cm52364qPcfRQlJBHxb9Z3iFMR4PEDIZviANc78oH6bs85x9DO/Ex2cgw5qTDGOc7UdkbW2CCW2gXJDvGd50sngmgFyQJcU71s9+tD48FeQhBhtDQW442d5+Lchd/1HiS+9pmWYXfAZL7lFs42HheqOmN+/y0uUwPKAli7MmgUai0guO5jSsFIy3j1x2ou7q5lNZdmWJxPlo/4d4/lnQo37yQS8N0e5Ec8x6VOhc8oAj82JFkLXGfz8hX5ALcETn/wUJXn2cpxVhCAX4la/CmPCrsKurWVZQ6ckoC5PBV7zS8/kPunqluoICAAA=",
           "encoding": "utf-8",
           "string": ""
         },

@@ -87,12 +87,44 @@ class TestPayments:
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('payments/retrieve')
 
-            payment = self.client.payments.retrieve(TestPayments.paymentId)
+            payment = self.client.payments.retrieve(TestPayments.paymentId, with_deleted=True)
 
             assert payment is not None
             assert isinstance(payment, Payment)
 
             assert payment.id == TestPayments.paymentId
+
+    def test_payments_can_retrieve_submission_info_mt103(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/retrieve_submission_info_mt103')
+
+            payment_id = "01d8c0bc-7f0c-4cdd-bc7e-ef81f68500fe"
+            submission = self.client.payments.retrieve_submission_info(payment_id)
+
+            assert submission is not None
+            assert "status" in submission
+            assert submission["status"] == "pending"
+            assert "submission_ref" in submission
+            assert submission["submission_ref"] == "MXGGYAGJULIIQKDV"
+            assert "format" in submission
+            assert submission["format"] == "MT103"
+            assert "message" in submission
+
+    def test_payments_can_retrieve_submission_info_pac008(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/retrieve_submission_info_pac008')
+
+            payment_id = "bea7b94c-e4c8-4629-b01f-9e6630264356"
+            submission = self.client.payments.retrieve_submission_info(payment_id)
+
+            assert submission is not None
+            assert "status" in submission
+            assert submission["status"] == "pending"
+            assert "submission_ref" in submission
+            assert submission["submission_ref"] == "GFYQQJHFWIUTPHFN"
+            assert "format" in submission
+            assert submission["format"] == "PACS008"
+            assert "message" in submission
 
     def test_payments_can_update(self):
         with Betamax(self.client.config.session) as betamax:
