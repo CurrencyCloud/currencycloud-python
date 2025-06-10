@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "==2.32.0"
+requests = "==2.32.4"
 PyYAML = "==6.0.1"
 deprecation = "== 2.1.0"
 
