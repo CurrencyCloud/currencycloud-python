@@ -220,10 +220,19 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 
 ### List of features being deprecated
 ```
-(No features are currently being deprecated)
+2025-05-13
+- GET /payments/{id}/submission (to be removed 2025-10-01)
 ```
 
 # Release History
+* [6.0.0]
+    * Add GET payments/{id}/submission_info
+    * Enforces required parameters on reference/beneficiary_required_details
+    * Converts boolean value of `with_deleted` parameter to lowercase on GET payments/{id}
+* [5.7.0]
+    * Upgrade dependencies
+        * requests 2.31.0 -> 2.32.0
+    * Add POST beneficiaries/account_verification
 * [5.6.0]
   * Upgrade dependencies
     * requests 2.22.0 -> 2.31.0
@@ -269,6 +278,10 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 
 # Support
 We actively support the latest version of the SDK. We support the immediate previous version on best-efforts basis. All other versions are no longer supported nor maintained.
+
+# Security Consideration
+1. Authentication
+    1. All data under [this folder](tests/fixtures/vcr_cassettes) provide and return dummy credentials to verify that authentication workflows behave as expected.
 
 ## Copyright
 Copyright (c) 2015-2019 Currencycloud. See [LICENSE](LICENSE.md) for
