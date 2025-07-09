@@ -4,14 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "==2.32.0"
+requests = "==2.32.4"
 PyYAML = "==6.0.1"
 deprecation = "== 2.1.0"
 
 [dev-packages]
 pytest = ">=4.5.0"
-mock = "==3.0.5"
+mock = "==5.2.0"
 tox = "==3.11.1"
-requests-mock = "==1.6.0"
-betamax = "==0.8.1"
-betamax-serializers = "==0.2.0"
+requests-mock = "==1.12.1"
+betamax = "==0.9.0"
+betamax-serializers = "==0.2.1"
