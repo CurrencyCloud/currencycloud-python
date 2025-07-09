@@ -6,7 +6,7 @@
 # Currencycloud
 This is the official Python SDK for v2 of Currencycloud's API.
 Additional documentation for each API endpoint can be found at
-[developer.currencycloud.com](https://developer.currencycloud.com/documentation/getting-started/introduction/).
+[developer.currencycloud.com](https://developer.currencycloud.com/guides/getting-started/introduction/).
 If you have any queries or you require support, please contact our
 development team at development@currencycloud.com
 
@@ -31,8 +31,6 @@ follows:
 ## Supported Python versions
 This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
 under the following Python implementations:
--  CPython 3.6 (deprecated)
--  CPython 3.7 (deprecated)
 -  CPython 3.8
 -  CPython 3.9
 -  CPython 3.10
@@ -225,6 +223,14 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [7.0.0]
+    * Removes support for Python versions [3.6, 3.7]
+    * Upgrade dependencies
+      * requests 2.32.0 -> 2.32.4
+      * mock 3.0.5 -> 5.2.0
+      * requests-mock 1.6.0 -> 1.12.1
+      * betamax 0.8.1 -> 0.9.0
+      * betamax-serializers 0.2.0 -> 0.2.1
 * [6.0.0]
     * Add GET payments/{id}/submission_info
     * Enforces required parameters on reference/beneficiary_required_details
