@@ -34,12 +34,12 @@ class Http(object):
 
         return self.__handle_errors('get', url, query, response)
 
-    def post(self, endpoint, data, authenticated=True, retry=True):
+    def post(self, endpoint, data, authenticated=True, retry=True, return_response_headers=False, additional_headers=None):
         '''Executes a POST request.'''
 
         url = self.__build_url(endpoint)
         data = self.__encode_arrays(self.__handle_on_behalf_of(data))
-        headers = self.__build_headers(authenticated)
+        headers = self.__build_headers(authenticated, additional_headers)
 
         def execute_request(url, headers, data):
             return self.session.post(url, headers=headers, data=data)
@@ -50,8 +50,11 @@ class Http(object):
                                                        headers,
                                                        data,
                                                        authenticated)
+        body = self.__handle_errors('post', url, data, response)
 
-        return self.__handle_errors('post', url, data, response)
+        if return_response_headers:
+            return body, response.headers
+        return body
 
     def __build_url(self, endpoint):
         return self.__environment_url() + endpoint
@@ -80,12 +83,15 @@ class Http(object):
 
             return new_data
 
-    def __build_headers(self, authenticated):
+    def __build_headers(self, authenticated, additional_headers=None):
 
         headers = {"User-Agent":self.USER_AGENT}
 
         if authenticated:
             headers["X-Auth-Token"] = self.config.auth_token
+        
+        if additional_headers:
+            headers.update(additional_headers)
 
         return headers
 

@@ -1,6 +1,5 @@
 # currencycloud-python
-[![Build Status](https://travis-ci.org/CurrencyCloud/currencycloud-python.png?branch=master)](https://travis-ci.org/CurrencyCloud/currencycloud-python)
-[![PyPi Status](https://img.shields.io/pypi/v/currency-cloud.svg)](https://pypi.python.org/pypi/currency-cloud)
+[![PyPi Status](https://img.shields.io/pypi/v/currency-cloud.svg)](https://pypi.python.org/pypi/currency-cloud) [![CodeQL](https://github.com/CurrencyCloud/currencycloud-python/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/CurrencyCloud/currencycloud-python/actions/workflows/github-code-scanning/codeql)
 
 
 # Currencycloud
@@ -29,8 +28,7 @@ follows:
    library can be installed via setup.py or easy_install.
    
 ## Supported Python versions
-This library aims to support and is [tested](https://travis-ci.org/CurrencyCloud/currencycloud-python)
-under the following Python implementations:
+This library aims to support and is tested under the following Python implementations:
 -  CPython 3.8
 -  CPython 3.9
 -  CPython 3.10
@@ -223,6 +221,8 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [7.1.0]
+    * Adds support for [Strong Customer Authentication for Payments](https://developer.currencycloud.com/guides/integration-guides/sca_sponsored_api_payments/)
 * [7.0.0]
     * Removes support for Python versions [3.6, 3.7]
     * Upgrade dependencies
