@@ -3,7 +3,7 @@ from betamax_serializers import pretty_json
 
 import os
 
-record_mode = 'never' if os.environ.get('TRAVIS_GH3') else 'once'
+record_mode = 'never'
 
 Betamax.register_serializer(pretty_json.PrettyJSONSerializer)
 

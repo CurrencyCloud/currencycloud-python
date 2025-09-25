@@ -53,6 +53,42 @@ class TestPayments:
 
             assert payment.validation_result == "success"
 
+    def test_payments_can_validate_and_create_with_sca(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/validate_and_create_with_sca')
+
+            payment_validation_result = self.client.payments.validate(currency="GBP",
+                                                  beneficiary_id="a0bd2d78-3621-4c29-932f-a39d6b34d5e7",
+                                                  amount="1000",
+                                                  reason="Testing SCA payments",
+                                                  reference="Testing SCA payments",
+                                                  payment_type="regular", 
+                                                  sca_to_authenticated_user=True)
+            assert payment_validation_result is not None
+            assert isinstance(payment_validation_result, PaymentValidation)
+            assert payment_validation_result.validation_result == "success"
+            assert hasattr(payment_validation_result, 'response_headers')
+            assert 'x-sca-id' in payment_validation_result.response_headers
+            assert 'x-sca-type' in payment_validation_result.response_headers
+            assert 'x-sca-required' in payment_validation_result.response_headers
+            assert payment_validation_result.response_headers['x-sca-id'] == 'e99c5fb0-88b2-47b6-b9ea-77279fdb3fc2'
+            assert payment_validation_result.response_headers['x-sca-required'] == 'true'
+            assert payment_validation_result.response_headers['x-sca-type'] == 'SMS'
+
+            payment = self.client.payments.create(currency="GBP",
+                                                  beneficiary_id="a0bd2d78-3621-4c29-932f-a39d6b34d5e7",
+                                                  amount="1000",
+                                                  reason="Testing SCA payments",
+                                                  reference="Testing SCA payments",
+                                                  payment_type="regular",
+                                                  sca_id=payment_validation_result.response_headers['x-sca-id'],
+                                                  sca_token="123456")
+            assert payment is not None
+            assert isinstance(payment, Payment)
+            assert payment.id is not None
+            assert payment.currency == "GBP"
+            TestPayments.paymentId = payment.id
+
     def test_payments_validate_raises_on_missing_details(self):
         with Betamax(self.client.config.session) as betamax:
             betamax.use_cassette('payments/validate_error')
