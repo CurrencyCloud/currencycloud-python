@@ -54,12 +54,6 @@ class Payments(Http):
         if 'with_deleted' in kwargs and isinstance(kwargs['with_deleted'], bool):
             kwargs['with_deleted'] = str(kwargs['with_deleted']).lower()
         return Payment(self, **self.get('/v2/payments/' + resource_id, query=kwargs))
-
-    def retrieve_submission(self, resource_id, **kwargs):
-        """
-        Returns a hash containing the details of MT103 information for a SWIFT submitted payment.
-        """
-        return self.get('/v2/payments/' + resource_id + '/submission', query=kwargs)
     
     def retrieve_submission_info(self, resource_id, **kwargs):
         """

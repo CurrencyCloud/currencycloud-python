@@ -13,7 +13,7 @@
           "Connection": "keep-alive",
           "Content-Length": "116",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/7.1.0"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/8.0.0"
         },
         "method": "POST",
         "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
@@ -51,7 +51,7 @@
           "string": "currency=GBP&beneficiary_id=a0bd2d78-3621-4c29-932f-a39d6b34d5e7&amount=1000&reason=Testing+SCA+payments&reference=Testing+SCA+payments&payment_type=regular"
         },
         "headers": {
-          "User-Agent": ["CurrencyCloudSDK/2.0 Python/7.1.0"],
+          "User-Agent": ["CurrencyCloudSDK/2.0 Python/8.0.0"],
           "Accept-Encoding": ["gzip, deflate"],
           "Accept": ["*/*"],
           "Connection": ["keep-alive"],
@@ -116,7 +116,7 @@
           "Content-Length": "148",
           "Content-Type": "application/x-www-form-urlencoded",
           "Cookie": "__cfduid=ddd9c5a9980caca36affe153464ad6ce91494845389",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/7.1.0",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/8.0.0",
           "X-Auth-Token": "e7ba600ddbf4fa12593e877ee6c95111",
           "x-sca-id": ["e99c5fb0-88b2-47b6-b9ea-77279fdb3fc2"],
           "x-sca-token": ["123456"]
