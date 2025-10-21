@@ -122,3 +122,9 @@ class Payments(Http):
         result = PaymentValidation(self, **body)
         result.response_headers = headers
         return result
+
+    def retry_payment_notifications(self, resource_id, **kwargs):
+        """
+        Retries sending payment notification.
+         """
+        return self.post("/v2/payments/" + resource_id + "/notifications/retry", kwargs)

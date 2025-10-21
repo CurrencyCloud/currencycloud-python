@@ -7,7 +7,7 @@
           "string": "api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef&login_id=development%40currencycloud.com"
         },
         "headers": {
-          "User-Agent": ["CurrencyCloudSDK/2.0 Python/8.0.0"],
+          "User-Agent": ["CurrencyCloudSDK/2.0 Python/8.1.0"],
           "Accept-Encoding": ["gzip, deflate"],
           "Accept": ["*/*"],
           "Connection": ["keep-alive"],
@@ -61,7 +61,7 @@
           "string": "currency=EUR&beneficiary_id=a0bd2d78-3621-4c29-932f-a39d6b34d5e7&reason=Testing+payments&reference=Testing+payments&payment_type=regular"
         },
         "headers": {
-          "User-Agent": ["CurrencyCloudSDK/2.0 Python/8.0.0"],
+          "User-Agent": ["CurrencyCloudSDK/2.0 Python/8.1.0"],
           "Accept-Encoding": ["gzip, deflate"],
           "Accept": ["*/*"],
           "Connection": ["keep-alive"],

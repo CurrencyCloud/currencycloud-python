@@ -276,3 +276,18 @@ class TestPayments:
             assert tracking_info.uetr == "46ed4827-7b6f-4491-a06f-b548d5a7512d"
             assert tracking_info.transaction_status["status"] == "processing"
             assert len(tracking_info.payment_events) == 7
+
+    def test_can_retry_payment_notifications(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('payments/retry_payment_notifications')
+
+            # Should fail on invalid notification_type
+            with pytest.raises(BadRequestError) as excinfo:
+                self.client.payments.retry_payment_notifications("46ed4827-7b6f-4491-a06f-b548d5a7512d", notification_type="payment_notification")
+                raise Exception('Should raise exception')
+            assert True
+
+            resp = self.client.payments.retry_payment_notifications("46ed4827-7b6f-4491-a06f-b548d5a7512d",
+                                                             notification_type="payment_released_notification")
+            assert resp is not None
+
