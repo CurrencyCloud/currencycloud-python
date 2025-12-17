@@ -105,15 +105,15 @@ class Payments(Http):
          """
         return PaymentTrackingInfo(self, **self.get("/v2/payments/" + resource_id + "/tracking_info", query=kwargs))
 
-    def validate(self, sca_to_authenticated_user: bool = False, **kwargs) -> PaymentValidation:
+    def validate(self, sca_to_authenticated_user: bool = None, **kwargs) -> PaymentValidation:
         """
         Validate Payment
         
         Args:
-            sca_to_authenticated_user (bool): If True, the SCA will be sent to the authenticated user.
+            sca_to_authenticated_user (bool): Optional - If True, the SCA will be sent to the authenticated user.
             **kwargs: Additional parameters for the payment validation.
         """
-        additional_headers = { "x-sca-to-authenticated-user": str(sca_to_authenticated_user).lower() }
+        additional_headers = {"x-sca-to-authenticated-user": str(sca_to_authenticated_user).lower()} if sca_to_authenticated_user is not None else {}
         body, headers = self.post(
             "/v2/payments/validate", 
             kwargs, 
