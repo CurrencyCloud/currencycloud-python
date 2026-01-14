@@ -11,3 +11,6 @@ class Account(UpdateMixin, Resource):
 
 class PaymentChargesSettings(Resource):
     pass
+
+class AccountComplianceSettings(Resource):
+    pass
