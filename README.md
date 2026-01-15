@@ -219,6 +219,9 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [9.1.0]
+    * Adds GET /accounts/{id}/compliance_settings
+    * Adds POST /accounts/{id}/compliance_settings
 * [9.0.0]
     * Updates default behaviour of setting header `x-sca-to-authenticated-user` to `false` on POST payments/validate to not setting the header value unless provided.
 * [8.1.0]

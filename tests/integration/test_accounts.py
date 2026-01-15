@@ -108,3 +108,57 @@ class TestAccounts:
             assert settings.charge_type == "ours"
             assert settings.enabled is True
             assert settings.default is True
+
+    def test_accounts_can_get_compliance_setting(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('accounts/can_get_compliance_settings')
+
+            settings = self.client.accounts.retrieve_compliance_settings('e277c9f9-679f-454f-8367-274b3ff977ff')
+
+            assert settings is not None
+            assert isinstance(settings, AccountComplianceSettings)
+            assert settings.account_id == "e277c9f9-679f-454f-8367-274b3ff977ff"
+            assert settings.industry_type == "some-type"
+            assert settings.country_of_incorporation == "US"
+            assert settings.date_of_incorporation == "2020-01-30"
+            assert settings.business_website_url == "https://currencycloud.com"
+            assert settings.expected_transaction_countries == ["US", "GB"]
+            assert settings.expected_transaction_currencies == ["GBP"]
+            assert settings.expected_monthly_activity_volume == 10
+            assert settings.expected_monthly_activity_value == "30.00"
+            assert settings.tax_identification == "some-tax-id"
+            assert settings.national_identification == "some-national-id"
+            assert settings.country_of_citizenship == "US"
+            assert settings.trading_address_street == "some-street"
+            assert settings.trading_address_city == "some-city"
+            assert settings.trading_address_state == "NY"
+            assert settings.trading_address_postalcode == "90210"
+            assert settings.trading_address_country == "US"
+            assert settings.customer_risk == "LOW"
+
+    def test_accounts_can_manage_compliance_setting(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('accounts/can_manage_compliance_settings')
+
+            settings = self.client.accounts.update_compliance_settings('e277c9f9-679f-454f-8367-274b3ff977ff',
+                                                                       industry_type='newtype')
+            assert settings is not None
+            assert isinstance(settings, AccountComplianceSettings)
+            assert settings.account_id == "e277c9f9-679f-454f-8367-274b3ff977ff"
+            assert settings.industry_type == "some-type"
+            assert settings.country_of_incorporation == "US"
+            assert settings.date_of_incorporation == "2020-01-30"
+            assert settings.business_website_url == "https://currencycloud.com"
+            assert settings.expected_transaction_countries == ["US", "GB"]
+            assert settings.expected_transaction_currencies == ["GBP"]
+            assert settings.expected_monthly_activity_volume == 10
+            assert settings.expected_monthly_activity_value == "30.00"
+            assert settings.tax_identification == "some-tax-id"
+            assert settings.national_identification == "some-national-id"
+            assert settings.country_of_citizenship == "US"
+            assert settings.trading_address_street == "some-street"
+            assert settings.trading_address_city == "some-city"
+            assert settings.trading_address_state == "NY"
+            assert settings.trading_address_postalcode == "90210"
+            assert settings.trading_address_country == "US"
+            assert settings.customer_risk == "LOW"

@@ -1,7 +1,7 @@
 '''This module provides a class for Accounts calls to the CC API'''
 
 from currencycloud.http import Http
-from currencycloud.resources import PaginatedCollection, Account, PaymentChargesSettings
+from currencycloud.resources import PaginatedCollection, Account, PaymentChargesSettings, AccountComplianceSettings
 
 
 class Accounts(Http):
@@ -52,3 +52,14 @@ class Accounts(Http):
         '''Retrieve payment charges settings for given account.'''
         response = self.get('/v2/accounts/' + resource_id + '/payment_charges_settings', query=kwargs)['payment_charges_settings']
         return [PaymentChargesSettings(self, **c) for c in response]
+
+    def update_compliance_settings(self, account_id, **kwargs):
+        '''
+        Manage given Account's Compliance Settings.
+        '''
+        return AccountComplianceSettings(self, **self.post('/v2/accounts/' + account_id + '/compliance_settings', kwargs))
+
+    def retrieve_compliance_settings(self, account_id, **kwargs):
+        '''Retrieve compliance settings for given account.'''
+        response = self.get('/v2/accounts/' + account_id + '/compliance_settings', query=kwargs)
+        return AccountComplianceSettings(self, **response)
