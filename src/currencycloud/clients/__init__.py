@@ -4,6 +4,7 @@ from currencycloud.clients.accounts import Accounts
 from currencycloud.clients.auth import Auth
 from currencycloud.clients.balances import Balances
 from currencycloud.clients.beneficiaries import Beneficiaries
+from currencycloud.clients.collections_screening import CollectionsScreeningClient
 from currencycloud.clients.contacts import Contacts
 from currencycloud.clients.conversions import Conversions
 from currencycloud.clients.funding import Funding

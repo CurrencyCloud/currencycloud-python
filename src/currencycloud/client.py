@@ -14,6 +14,7 @@ class Client(Http):
     _accounts_client = None
     _balances_client = None
     _beneficiaries_client = None
+    _collections_screening_client = None
     _contacts_client = None
     _conversions_client = None
     _funding_client = None
@@ -97,6 +98,13 @@ class Client(Http):
         if self._contacts_client is None:
             self._contacts_client = Contacts(self.config)
         return self._contacts_client
+
+    @property
+    def collections_screening(self):
+        '''Get the Collections Screening client.'''
+        if self._collections_screening_client is None:
+            self._collections_screening_client = CollectionsScreeningClient(self.config)
+        return self._collections_screening_client
 
     @property
     def conversions(self):

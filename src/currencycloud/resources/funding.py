@@ -6,3 +6,7 @@ class FundingAccount(Resource):
     '''This class represents a CurrencyCloud Funding Account'''
     pass
 
+class FundingTransaction(Resource):
+    '''This class represents a CurrencyCloud Funding Transaction'''
+    pass
+
