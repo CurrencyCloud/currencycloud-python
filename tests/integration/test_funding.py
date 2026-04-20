@@ -43,3 +43,15 @@ class TestFunding:
             assert account.created_at == "2018-05-14T14:18:30+00:00"
             assert account.updated_at == "2018-05-14T14:19:30+00:00"
 
+    def test_funding_transaction_can_retrieve(self):
+        with Betamax(self.client.config.session) as betamax:
+            betamax.use_cassette('funding/transaction_can_retrieve')
+
+            transaction = self.client.funding.retrieve_funding_transaction("e68301d3-5b04-4c1d-8f8b-13a9b8437040")
+
+            assert transaction is not None
+            assert isinstance(transaction, FundingTransaction)
+            assert transaction.id == "e68301d3-5b04-4c1d-8f8b-13a9b8437040"
+            assert transaction.amount == "1.11"
+            assert transaction.currency == "USD"
+

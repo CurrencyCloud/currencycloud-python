@@ -4,9 +4,10 @@ from currencycloud.resources.account import Account, PaymentChargesSettings, Acc
 from currencycloud.resources.balance import Balance, MarginBalanceTopUp
 from currencycloud.resources.beneficiary import Beneficiary
 from currencycloud.resources.account_verification import AccountVerification
+from currencycloud.resources.collections_screening import CollectionsScreening
 from currencycloud.resources.contact import Contact
 from currencycloud.resources.conversion import Conversion
-from currencycloud.resources.funding import FundingAccount
+from currencycloud.resources.funding import FundingAccount, FundingTransaction
 from currencycloud.resources.iban import Iban
 from currencycloud.resources.paginated_collection import PaginatedCollection
 from currencycloud.resources.payer import Payer

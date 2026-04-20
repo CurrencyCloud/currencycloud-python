@@ -219,6 +219,9 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 ```
 
 # Release History
+* [9.2.0]
+    * Adds GET /funding_transactions/{id}
+    * Adds PUT /collections_screening/{transactionId}/complete
 * [9.1.0]
     * Adds GET /accounts/{id}/compliance_settings
     * Adds POST /accounts/{id}/compliance_settings
