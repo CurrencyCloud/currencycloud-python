@@ -13,7 +13,7 @@
           "Connection": "keep-alive",
           "Content-Length": "116",
           "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/9.2.0"
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/9.3.0"
         },
         "method": "POST",
         "uri": "https://devapi.currencycloud.com/v2/authenticate/api"
@@ -49,16 +49,16 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "amount=1000&fixed_side=buy&term_agreement=true&buy_currency=EUR&sell_currency=GBP"
+          "string": "amount=1000&fixed_side=buy&term_agreement=true&buy_currency=EUR&sell_currency=GBP&quote_id=3c25ce4a-3552-45bb-869e-406c795052aa"
         },
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
           "Connection": "keep-alive",
-          "Content-Length": "81",
+          "Content-Length": "128",
           "Content-Type": "application/x-www-form-urlencoded",
           "Cookie": "__cfduid=d81b5e1105e7487f80229e9c0b8e112e81494844465",
-          "User-Agent": "CurrencyCloudSDK/2.0 Python/9.2.0",
+          "User-Agent": "CurrencyCloudSDK/2.0 Python/9.3.0",
           "X-Auth-Token": "6d4cf1640badfcc5a1454bb18980b0c3"
         },
         "method": "POST",
@@ -90,5 +90,5 @@
       }
     }
   ],
-  "recorded_with": "betamax/0.8.0"
+  "recorded_with": "betamax/0.9.0"
 }

@@ -21,6 +21,7 @@ class Client(Http):
     _ibans_client = None
     _payers_client = None
     _payments_client = None
+    _quotes_client = None
     _rates_client = None
     _reference_client = None
     _settlements_client = None
@@ -140,6 +141,13 @@ class Client(Http):
         if self._payments_client is None:
             self._payments_client = Payments(self.config)
         return self._payments_client
+
+    @property
+    def quotes(self):
+        '''Get the Quotes client.'''
+        if self._quotes_client is None:
+            self._quotes_client = Quotes(self.config)
+        return self._quotes_client
 
     @property
     def rates(self):
