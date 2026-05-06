@@ -22,7 +22,8 @@ class TestConversions:
                                                         sell_currency="GBP",
                                                         fixed_side="buy",
                                                         amount="1000",
-                                                        term_agreement="true")
+                                                        term_agreement="true",
+                                                        quote_id="3c25ce4a-3552-45bb-869e-406c795052aa")
 
             assert conversion is not None
             assert isinstance(conversion, Conversion)

@@ -11,6 +11,7 @@ from currencycloud.clients.funding import Funding
 from currencycloud.clients.ibans import Ibans
 from currencycloud.clients.payers import Payers
 from currencycloud.clients.payments import Payments
+from currencycloud.clients.quotes import Quotes
 from currencycloud.clients.rates import Rates
 from currencycloud.clients.reference import Reference
 from currencycloud.clients.transactions import Transactions
